@@ -29,6 +29,7 @@ class ArticleListViewController: UITableViewController {
         let feedURL = URL(string: "https://9to5mac.com/feed/")!
 //        let feedURL = URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!
 //        let feedURL = URL(string: "http://feeds.macrumors.com/MacRumors-All")!
+//        let feedURL = URL(string: "http://f1blogg.teknikensvarld.se/feed/")!
         let parser = FeedParser(URL: feedURL)
         parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
             // Do your thing, then back to the Main thread

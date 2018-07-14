@@ -14,6 +14,8 @@ class ArticleListTableViewCell: UITableViewCell {
     @IBOutlet weak var previewLabel: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
 
+    private var imageDownloadTask: URLSessionDataTask?
+
     var thumbnailURL: URL? {
         didSet {
             guard let newURL = thumbnailURL else { return }
@@ -33,21 +35,33 @@ class ArticleListTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
+        imageDownloadTask?.cancel()
         thumbnail.image = nil
         super.prepareForReuse()
     }
     private func downloadThumbnail(from url: URL) {
-        URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
+        if let cachedImage = Cache.shared.image(for: url.absoluteString) {
+            DispatchQueue.main.async { [weak self] in
+                self?.thumbnail.image = cachedImage
+            }
+            return
+        }
+        imageDownloadTask?.cancel()
+        imageDownloadTask = URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
 
             if error != nil {
                 print(error!)
                 return
             }
 
-            DispatchQueue.main.async { [weak self] in
-                self?.thumbnail.image = UIImage(data: data!)
-            }
-        }).resume()
+            guard let image = UIImage(data: data!) else { return }
 
+            Cache.shared.store(image, for: url.absoluteString)
+
+            DispatchQueue.main.async { [weak self] in
+                self?.thumbnail.image = image
+            }
+        })
+        imageDownloadTask?.resume()
     }
 }
