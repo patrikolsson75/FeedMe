@@ -10,47 +10,53 @@ import UIKit
 import FeedKit
 import SafariServices
 
-struct Article {
-    let title: String
-    let text: String
-    var thumbnail: URL?
-    let url: URL?
+class FeedFetcher {
+    func fetch(completion: @escaping (() -> Void)) {
+        let feedURL = URL(string: "https://9to5mac.com/feed/")!
+        //        let feedURL = URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!
+        //        let feedURL = URL(string: "http://feeds.macrumors.com/MacRumors-All")!
+        //        let feedURL = URL(string: "http://f1blogg.teknikensvarld.se/feed/")!
+        let parser = FeedParser(URL: feedURL)
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
+                completion()
+                return
+            }
+            let store = FeedMeStore.shared
+            feedItems.forEach({ feedItem in
+                guard let guid = feedItem.guid?.value else { return }
+                if let existingArticle = store.article(with: guid) {
+                    existingArticle.title = feedItem.title
+                    existingArticle.previewText = feedItem.description?.withoutHtml
+                    existingArticle.imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
+                    existingArticle.articleURL = URL(string: feedItem.link ?? "")
+                    existingArticle.published = feedItem.pubDate
+                } else {
+                    let newArticle = store.newArticle()
+                    newArticle.guid = guid
+                    newArticle.title = feedItem.title
+                    newArticle.previewText = feedItem.description?.withoutHtml
+                    newArticle.imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
+                    newArticle.articleURL = URL(string: feedItem.link ?? "")
+                    newArticle.published = feedItem.pubDate
+                }
+            })
+            store.saveContext()
+            completion()
+        }
+    }
 }
 
 class ArticleListViewController: UITableViewController {
 
-    var articles: [Article] = []
+    var articles: [ArticleMO] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        let feedURL = URL(string: "https://9to5mac.com/feed/")!
-//        let feedURL = URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!
-//        let feedURL = URL(string: "http://feeds.macrumors.com/MacRumors-All")!
-//        let feedURL = URL(string: "http://f1blogg.teknikensvarld.se/feed/")!
-        let parser = FeedParser(URL: feedURL)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
-            // Do your thing, then back to the Main thread
-            DispatchQueue.main.async { [weak self] in
-                guard let feed = result.rssFeed, result.isSuccess else {
-                    let alert = UIAlertController(title: "Can't load", message: result.error?.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
-                    return
-                }
-                guard let feedItems = feed.items else { return }
-                self?.articles = feedItems.compactMap { item -> Article in
-                    let thumbnailURL = item.media?.mediaThumbnails?.first?.attributes?.url
-                    return Article(title: item.title ?? "n/a",
-                                   text: item.description?.withoutHtml ?? "n/a",
-                                   thumbnail: URL(string: thumbnailURL ?? ""),
-                                   url: URL(string: item.link ?? ""))
-                }
-                self?.tableView.reloadData()
-            }
-        }
+        refreshData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,66 +81,30 @@ class ArticleListViewController: UITableViewController {
         }
         let article = articles[indexPath.row]
         cell.titleLabel.text = article.title
-        cell.previewLabel.text = article.text
-        cell.thumbnailURL = article.thumbnail
+        cell.previewLabel.text = article.previewText
+        cell.thumbnailURL = article.imageURL
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = articles[indexPath.row]
-        guard let url = article.url else { return }
+        guard let url = article.articleURL else { return }
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
         let web = SFSafariViewController(url: url, configuration: configuration)
         present(web, animated: true, completion: nil)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func refreshData() {
+        let fetcher = FeedFetcher()
+        fetcher.fetch { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.articles = FeedMeStore.shared.allArticles()
+                self?.tableView.reloadData()
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension String {

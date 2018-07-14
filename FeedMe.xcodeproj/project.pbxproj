@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7C362A8820F9EF6E008155AA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A8720F9EF6E008155AA /* Cache.swift */; };
+		7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */; };
+		7C362A9720F9F6AB008155AA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C362A9620F9F6AB008155AA /* CoreData.framework */; };
+		7C362A9920F9F9DD008155AA /* FeedMeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9820F9F9DD008155AA /* FeedMeStore.swift */; };
 		7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFA20F93555001C6674 /* AppDelegate.swift */; };
 		7CB8FB0020F93555001C6674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFE20F93555001C6674 /* Main.storyboard */; };
 		7CB8FB0220F93556001C6674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0120F93556001C6674 /* Assets.xcassets */; };
@@ -130,6 +133,9 @@
 
 /* Begin PBXFileReference section */
 		7C362A8720F9EF6E008155AA /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		7C362A9320F9F446008155AA /* FeedMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedMe.xcdatamodel; sourceTree = "<group>"; };
+		7C362A9620F9F6AB008155AA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7C362A9820F9F9DD008155AA /* FeedMeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeStore.swift; sourceTree = "<group>"; };
 		7CB8FAF720F93554001C6674 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FAFA20F93555001C6674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB8FAFF20F93555001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C362A9720F9F6AB008155AA /* CoreData.framework in Frameworks */,
 				7CB8FB4D20F93BA4001C6674 /* FeedKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +180,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C362A9520F9F6AB008155AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C362A9620F9F6AB008155AA /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CB8FAEE20F93554001C6674 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +196,7 @@
 				7CB8FB0E20F93556001C6674 /* FeedMeTests */,
 				7CB8FB1920F93556001C6674 /* FeedMeUITests */,
 				7CB8FAF820F93554001C6674 /* Products */,
+				7C362A9520F9F6AB008155AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +221,8 @@
 				7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */,
 				7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */,
 				7C362A8720F9EF6E008155AA /* Cache.swift */,
+				7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */,
+				7C362A9820F9F9DD008155AA /* FeedMeStore.swift */,
 			);
 			path = FeedMe;
 			sourceTree = "<group>";
@@ -459,6 +477,8 @@
 				7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */,
 				7CB8FB2920F93719001C6674 /* ArticleListViewController.swift in Sources */,
 				7C362A8820F9EF6E008155AA /* Cache.swift in Sources */,
+				7C362A9920F9F9DD008155AA /* FeedMeStore.swift in Sources */,
+				7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */,
 				7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,6 +809,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7C362A9320F9F446008155AA /* FeedMe.xcdatamodel */,
+			);
+			currentVersion = 7C362A9320F9F446008155AA /* FeedMe.xcdatamodel */;
+			path = FeedMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7CB8FAEF20F93554001C6674 /* Project object */;
 }
