@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFA20F93555001C6674 /* AppDelegate.swift */; };
-		7CB8FAFD20F93555001C6674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFC20F93555001C6674 /* ViewController.swift */; };
 		7CB8FB0020F93555001C6674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFE20F93555001C6674 /* Main.storyboard */; };
 		7CB8FB0220F93556001C6674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0120F93556001C6674 /* Assets.xcassets */; };
 		7CB8FB0520F93556001C6674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */; };
 		7CB8FB1020F93556001C6674 /* FeedMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0F20F93556001C6674 /* FeedMeTests.swift */; };
 		7CB8FB1B20F93556001C6674 /* FeedMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB1A20F93556001C6674 /* FeedMeUITests.swift */; };
+		7CB8FB2920F93719001C6674 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */; };
+		7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */; };
+		7CB8FB4D20F93BA4001C6674 /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8FB3A20F93B55001C6674 /* FeedKit.framework */; };
+		7CB8FB4E20F93BA4001C6674 /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8FB3A20F93B55001C6674 /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,12 +34,102 @@
 			remoteGlobalIDString = 7CB8FAF620F93554001C6674;
 			remoteInfo = FeedMe;
 		};
+		7CB8FB3920F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0EF4E0C1CE86D1E00C52142;
+			remoteInfo = "FeedKit iOS";
+		};
+		7CB8FB3B20F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0EF4DE81CE86C3800C52142;
+			remoteInfo = "FeedKit tvOS";
+		};
+		7CB8FB3D20F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0EF4DFA1CE86CA200C52142;
+			remoteInfo = "FeedKit macOS";
+		};
+		7CB8FB3F20F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0370EB91CEF9D5A009583A3;
+			remoteInfo = "FeedKit watchOS";
+		};
+		7CB8FB4120F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0EF4DAC1CE869AD00C52142;
+			remoteInfo = "FeedKit Example iOS";
+		};
+		7CB8FB4320F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0EF4DC21CE86A0600C52142;
+			remoteInfo = "FeedKit Example tvOS";
+		};
+		7CB8FB4520F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0EF4DD51CE86A7700C52142;
+			remoteInfo = "FeedKit Example macOS";
+		};
+		7CB8FB4720F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A09C84FE1CE9AE2300D20CAB;
+			remoteInfo = "FeedKit iOS Tests";
+		};
+		7CB8FB4920F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A09C850D1CE9AE4F00D20CAB;
+			remoteInfo = "FeedKit tvOS Tests";
+		};
+		7CB8FB4B20F93B55001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A09C851C1CE9AE6A00D20CAB;
+			remoteInfo = "FeedKit macOS Tests";
+		};
+		7CB8FB4F20F93BA4001C6674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A0EF4E0B1CE86D1E00C52142;
+			remoteInfo = "FeedKit iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CB8FB5120F93BA4001C6674 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7CB8FB4E20F93BA4001C6674 /* FeedKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7CB8FAF720F93554001C6674 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FAFA20F93555001C6674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7CB8FAFC20F93555001C6674 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CB8FAFF20F93555001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CB8FB0120F93556001C6674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB8FB0420F93556001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +140,9 @@
 		7CB8FB1620F93556001C6674 /* FeedMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FB1A20F93556001C6674 /* FeedMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeUITests.swift; sourceTree = "<group>"; };
 		7CB8FB1C20F93556001C6674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewCell.swift; sourceTree = "<group>"; };
+		7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FeedKit.xcodeproj; path = ../FeedKit/FeedKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB8FB4D20F93BA4001C6674 /* FeedKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +174,7 @@
 		7CB8FAEE20F93554001C6674 = {
 			isa = PBXGroup;
 			children = (
+				7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */,
 				7CB8FAF920F93554001C6674 /* FeedMe */,
 				7CB8FB0E20F93556001C6674 /* FeedMeTests */,
 				7CB8FB1920F93556001C6674 /* FeedMeUITests */,
@@ -97,12 +195,13 @@
 		7CB8FAF920F93554001C6674 /* FeedMe */ = {
 			isa = PBXGroup;
 			children = (
+				7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */,
 				7CB8FAFA20F93555001C6674 /* AppDelegate.swift */,
-				7CB8FAFC20F93555001C6674 /* ViewController.swift */,
 				7CB8FAFE20F93555001C6674 /* Main.storyboard */,
 				7CB8FB0120F93556001C6674 /* Assets.xcassets */,
-				7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */,
 				7CB8FB0620F93556001C6674 /* Info.plist */,
+				7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */,
+				7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */,
 			);
 			path = FeedMe;
 			sourceTree = "<group>";
@@ -125,6 +224,23 @@
 			path = FeedMeUITests;
 			sourceTree = "<group>";
 		};
+		7CB8FB2D20F93B55001C6674 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CB8FB3A20F93B55001C6674 /* FeedKit.framework */,
+				7CB8FB3C20F93B55001C6674 /* FeedKit.framework */,
+				7CB8FB3E20F93B55001C6674 /* FeedKit.framework */,
+				7CB8FB4020F93B55001C6674 /* FeedKit.framework */,
+				7CB8FB4220F93B55001C6674 /* FeedKit Example iOS.app */,
+				7CB8FB4420F93B55001C6674 /* FeedKit Example tvOS.app */,
+				7CB8FB4620F93B55001C6674 /* FeedKit Example macOS.app */,
+				7CB8FB4820F93B55001C6674 /* FeedKit iOS Tests.xctest */,
+				7CB8FB4A20F93B55001C6674 /* FeedKit tvOS Tests.xctest */,
+				7CB8FB4C20F93B55001C6674 /* FeedKit macOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +251,12 @@
 				7CB8FAF320F93554001C6674 /* Sources */,
 				7CB8FAF420F93554001C6674 /* Frameworks */,
 				7CB8FAF520F93554001C6674 /* Resources */,
+				7CB8FB5120F93BA4001C6674 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7CB8FB5020F93BA4001C6674 /* PBXTargetDependency */,
 			);
 			name = FeedMe;
 			productName = FeedMe;
@@ -215,6 +333,12 @@
 			mainGroup = 7CB8FAEE20F93554001C6674;
 			productRefGroup = 7CB8FAF820F93554001C6674 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7CB8FB2D20F93B55001C6674 /* Products */;
+					ProjectRef = 7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7CB8FAF620F93554001C6674 /* FeedMe */,
@@ -223,6 +347,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7CB8FB3A20F93B55001C6674 /* FeedKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeedKit.framework;
+			remoteRef = 7CB8FB3920F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB3C20F93B55001C6674 /* FeedKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeedKit.framework;
+			remoteRef = 7CB8FB3B20F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB3E20F93B55001C6674 /* FeedKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeedKit.framework;
+			remoteRef = 7CB8FB3D20F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4020F93B55001C6674 /* FeedKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeedKit.framework;
+			remoteRef = 7CB8FB3F20F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4220F93B55001C6674 /* FeedKit Example iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "FeedKit Example iOS.app";
+			remoteRef = 7CB8FB4120F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4420F93B55001C6674 /* FeedKit Example tvOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "FeedKit Example tvOS.app";
+			remoteRef = 7CB8FB4320F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4620F93B55001C6674 /* FeedKit Example macOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "FeedKit Example macOS.app";
+			remoteRef = 7CB8FB4520F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4820F93B55001C6674 /* FeedKit iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "FeedKit iOS Tests.xctest";
+			remoteRef = 7CB8FB4720F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4A20F93B55001C6674 /* FeedKit tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "FeedKit tvOS Tests.xctest";
+			remoteRef = 7CB8FB4920F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB8FB4C20F93B55001C6674 /* FeedKit macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "FeedKit macOS Tests.xctest";
+			remoteRef = 7CB8FB4B20F93B55001C6674 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7CB8FAF520F93554001C6674 /* Resources */ = {
@@ -256,8 +453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB8FAFD20F93555001C6674 /* ViewController.swift in Sources */,
 				7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */,
+				7CB8FB2920F93719001C6674 /* ArticleListViewController.swift in Sources */,
+				7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +487,11 @@
 			isa = PBXTargetDependency;
 			target = 7CB8FAF620F93554001C6674 /* FeedMe */;
 			targetProxy = 7CB8FB1720F93556001C6674 /* PBXContainerItemProxy */;
+		};
+		7CB8FB5020F93BA4001C6674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FeedKit iOS";
+			targetProxy = 7CB8FB4F20F93BA4001C6674 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -429,8 +632,10 @@
 		7CB8FB2020F93556001C6674 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7RFDTA3UC;
 				INFOPLIST_FILE = FeedMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,8 +651,10 @@
 		7CB8FB2120F93556001C6674 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7RFDTA3UC;
 				INFOPLIST_FILE = FeedMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
