@@ -13,6 +13,9 @@
 		7C362A9920F9F9DD008155AA /* FeedMeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9820F9F9DD008155AA /* FeedMeStore.swift */; };
 		7C362A9B20FA876E008155AA /* FeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9A20FA876E008155AA /* FeedFetcher.swift */; };
 		7C362A9E20FB7B46008155AA /* FeedMeCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9D20FB7B46008155AA /* FeedMeCoreDataStore.swift */; };
+		7C362AA120FB7FC4008155AA /* FeedFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */; };
+		7C362AA420FB88B0008155AA /* 9to5mac.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7C362AA320FB88B0008155AA /* 9to5mac.xml */; };
+		7C362AA620FBE0DE008155AA /* imore.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7C362AA520FBE0DE008155AA /* imore.xml */; };
 		7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFA20F93555001C6674 /* AppDelegate.swift */; };
 		7CB8FB0020F93555001C6674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFE20F93555001C6674 /* Main.storyboard */; };
 		7CB8FB0220F93556001C6674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0120F93556001C6674 /* Assets.xcassets */; };
@@ -140,6 +143,9 @@
 		7C362A9820F9F9DD008155AA /* FeedMeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeStore.swift; sourceTree = "<group>"; };
 		7C362A9A20FA876E008155AA /* FeedFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetcher.swift; sourceTree = "<group>"; };
 		7C362A9D20FB7B46008155AA /* FeedMeCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeCoreDataStore.swift; sourceTree = "<group>"; };
+		7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetcherTest.swift; sourceTree = "<group>"; };
+		7C362AA320FB88B0008155AA /* 9to5mac.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 9to5mac.xml; sourceTree = "<group>"; };
+		7C362AA520FBE0DE008155AA /* imore.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = imore.xml; sourceTree = "<group>"; };
 		7CB8FAF720F93554001C6674 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FAFA20F93555001C6674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB8FAFF20F93555001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -197,8 +203,27 @@
 			children = (
 				7C362A9820F9F9DD008155AA /* FeedMeStore.swift */,
 				7C362A9D20FB7B46008155AA /* FeedMeCoreDataStore.swift */,
+				7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */,
 			);
 			path = FeedMeStore;
+			sourceTree = "<group>";
+		};
+		7C362A9F20FB7EB1008155AA /* FeedFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				7C362A9A20FA876E008155AA /* FeedFetcher.swift */,
+				7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */,
+			);
+			path = FeedFetcher;
+			sourceTree = "<group>";
+		};
+		7C362AA220FB8874008155AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C362AA320FB88B0008155AA /* 9to5mac.xml */,
+				7C362AA520FBE0DE008155AA /* imore.xml */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7CB8FAEE20F93554001C6674 = {
@@ -226,6 +251,7 @@
 		7CB8FAF920F93554001C6674 /* FeedMe */ = {
 			isa = PBXGroup;
 			children = (
+				7C362A9F20FB7EB1008155AA /* FeedFetcher */,
 				7C362A9C20FB7B18008155AA /* FeedMeStore */,
 				7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */,
 				7CB8FAFA20F93555001C6674 /* AppDelegate.swift */,
@@ -235,8 +261,6 @@
 				7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */,
 				7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */,
 				7C362A8720F9EF6E008155AA /* Cache.swift */,
-				7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */,
-				7C362A9A20FA876E008155AA /* FeedFetcher.swift */,
 			);
 			path = FeedMe;
 			sourceTree = "<group>";
@@ -244,6 +268,7 @@
 		7CB8FB0E20F93556001C6674 /* FeedMeTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C362AA220FB8874008155AA /* Resources */,
 				7CB8FB0F20F93556001C6674 /* FeedMeTests.swift */,
 				7CB8FB1120F93556001C6674 /* Info.plist */,
 			);
@@ -471,6 +496,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C362AA620FBE0DE008155AA /* imore.xml in Resources */,
+				7C362AA420FB88B0008155AA /* 9to5mac.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CB8FB1020F93556001C6674 /* FeedMeTests.swift in Sources */,
+				7C362AA120FB7FC4008155AA /* FeedFetcherTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

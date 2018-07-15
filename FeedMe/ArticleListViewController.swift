@@ -67,16 +67,10 @@ class ArticleListViewController: UITableViewController {
     }
 
     func refreshData() {
-        let fetcher = FeedFetcher()
-        fetcher.fetch(URL(string: "https://9to5mac.com/feed/")!)
-        fetcher.fetch(URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!)
-        fetcher.fetch(URL(string: "http://feeds.macrumors.com/MacRumors-All")!)
-        fetcher.fetch(URL(string: "http://f1blogg.teknikensvarld.se/feed/")!)
-    }
-}
-
-extension String {
-    var withoutHtml: String {
-        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        FeedFetcher(with: URL(string: "https://9to5mac.com/feed/")!).fetch()
+        FeedFetcher(with: URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!).fetch()
+        FeedFetcher(with: URL(string: "http://feeds.macrumors.com/MacRumors-All")!).fetch()
+        FeedFetcher(with: URL(string: "http://f1blogg.teknikensvarld.se/feed/")!).fetch()
+        FeedFetcher(with: URL(string: "http://feeds.feedburner.com/f1fanatic")!).fetch()
     }
 }

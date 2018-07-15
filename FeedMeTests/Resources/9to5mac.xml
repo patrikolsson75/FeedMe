@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>9to5Mac</title>
+	<atom:link href="https://9to5mac.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://9to5mac.com</link>
+	<description>Apple News &#38; Mac Rumors Breaking All Day</description>
+	<lastBuildDate>Fri, 13 Jul 2018 17:14:54 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+
+<image>
+	<url>https://9to5mac.files.wordpress.com/2017/03/mac1.png?w=32</url>
+	<title>9to5Mac</title>
+	<link>https://9to5mac.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<cloud domain='9to5mac.com' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+<atom:link rel="search" type="application/opensearchdescription+xml" href="https://9to5mac.com/osd.xml" title="9to5Mac" />
+	<atom:link rel='hub' href='https://9to5mac.com/?pushpress=hub'/>
+	<item>
+		<title>Uber focuses on passenger safety as it starts rolling out continuous driver background checks</title>
+		<link>https://9to5mac.com/2018/07/13/uber-focuses-on-passenger-safety-as-it-starts-rolling-out-continuous-driver-background-checks/</link>
+		<comments>https://9to5mac.com/2018/07/13/uber-focuses-on-passenger-safety-as-it-starts-rolling-out-continuous-driver-background-checks/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 17:09:57 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Cao]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542515</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/02/uber.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>To improve the safety of both its customers and its drivers, <a href="https://9to5mac.com/guides/uber/">Uber</a> is now pushing out a more aggressive background check program to ensure drivers are fit for the job.</p>
+<p> <a href="https://9to5mac.com/2018/07/13/uber-focuses-on-passenger-safety-as-it-starts-rolling-out-continuous-driver-background-checks/#more-542515" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/uber-focuses-on-passenger-safety-as-it-starts-rolling-out-continuous-driver-background-checks/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/02/uber.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/02/uber.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">uber</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/0c47462dbc0e9b4959fe22331149444d?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">ipetercao</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>9to5Toys Lunch Break: $150 off new MacBook Pro, BOGO FREE iPhone, Twelve South BookArc $43, more</title>
+		<link>https://9to5mac.com/2018/07/13/9to5toys-lunch-break-macbook-pro-iphone-more/</link>
+		<comments>https://9to5mac.com/2018/07/13/9to5toys-lunch-break-macbook-pro-iphone-more/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 16:23:23 +0000</pubDate>
+		<dc:creator><![CDATA[Trevor Daugherty]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542496</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Keep up with the best gear and deals on the web by <em><strong><a href="http://9to5toys.com/9to5toys-newsletter-signup/" target="_blank" rel="noopener noreferrer">signing up for the 9to5Toys Newsletter</a></strong></em>. Also, be sure to check us out on: <a href="http://twitter.com/9to5toys">Twitter</a>, <a href="http://9to5toys.com/feed">RSS Feed</a>, <a href="http://www.facebook.com/pages/9to5toyscom/228249133858390">Facebook</a>, <a href="https://plus.google.com/b/105878626736210310777/105878626736210310777/posts" target="_blank" rel="noopener noreferrer">Google+</a> and <a href="https://9to5mac.com/2013/12/11/safari-push-notifications-are-live-on-all-9to5-sites/" target="_blank" rel="noopener noreferrer">Safari push notifications</a>.</p>
+<h3>Listen to the new 9to5Toys Daily Podcast:</h3>
+<p><!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+<audio class="wp-audio-shortcode" id="audio-542496-1" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-13-2018.mp3?_=1" /><a href="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-13-2018.mp3">https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-13-2018.mp3</a></audio>
+ <a href="https://9to5mac.com/2018/07/13/9to5toys-lunch-break-macbook-pro-iphone-more/#more-542496" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/9to5toys-lunch-break-macbook-pro-iphone-more/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-13-2018.mp3" length="2310853" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-13-2018.mp3" length="2310853" type="audio/mpeg" />
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">9to5toys-Lunch-Break</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/feb2b1ded21e2c5ab2b787830cc5681a?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">trevorjd14</media:title>
+		</media:content>
+
+		<media:content url="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-13-2018.mp3" medium="audio" />
+	</item>
+		<item>
+		<title>Prepare to receive more emergency alerts on your iPhone, but there&#8217;s no cause for panic</title>
+		<link>https://9to5mac.com/2018/07/13/emergency-alert-system/</link>
+		<comments>https://9to5mac.com/2018/07/13/emergency-alert-system/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 13:56:26 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542477</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/amberalert01.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>The US government&#8217;s Emergency Alert System (EAS) is, unfortunately, probably best known for the <a href="https://9to5mac.com/2018/01/13/hawaii-ballistic-missile-threat-alert/" target="_blank" rel="noopener">false alarm in Hawaii</a> back in January. Residents of the island were woken by a loud alarm sound and a message stating that ballistic missiles were on the way &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/13/emergency-alert-system/#more-542477" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/emergency-alert-system/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/amberalert01.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/amberalert01.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">amberalert01</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Plex grid view of live TV guide now available on Apple TV</title>
+		<link>https://9to5mac.com/2018/07/13/plex-grid-view-apple-tv/</link>
+		<comments>https://9to5mac.com/2018/07/13/plex-grid-view-apple-tv/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 13:22:35 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542468</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/plex-apple-tv.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>When <a href="https://9to5mac.com/guides/plex/" target="_blank" rel="noopener">Plex</a> launched a live TV guide <a href="https://9to5mac.com/2018/06/13/plex-grid-view/" target="_blank" rel="noopener">in the traditional grid format</a>, it did so first on the web, promising that other platforms would be coming later.</p>
+<p>It has now made good on that promise, with Apple TV seeing the new feature today &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/13/plex-grid-view-apple-tv/#more-542468" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/plex-grid-view-apple-tv/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/plex-apple-tv.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/plex-apple-tv.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">plex-apple-tv</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Comment: Two things seem obvious about the new MacBook Pro keyboard &#8230;</title>
+		<link>https://9to5mac.com/2018/07/13/2018-macbook-pro-keyboard/</link>
+		<comments>https://9to5mac.com/2018/07/13/2018-macbook-pro-keyboard/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 12:38:09 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542456</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/macbook.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>One of the things Apple <a href="https://www.apple.com/newsroom/2018/07/apple-updates-macbook-pro-with-faster-performance-and-new-features-for-pros/" target="_blank" rel="noopener">mentioned</a> almost in passing in yesterday&#8217;s 2018 MacBook Pro announcement is that it had an improved keyboard. Apple had only seven words to say about it:</p>
+<blockquote><p>improved third-generation keyboard for quieter typing</p></blockquote>
+<p>But two things seem obvious &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/13/2018-macbook-pro-keyboard/#more-542456" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/2018-macbook-pro-keyboard/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/macbook.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/macbook.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">macbook</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple files for 2018 iPhone lineup in Eurasian database ahead of fall release, two additional iPad models</title>
+		<link>https://9to5mac.com/2018/07/13/2018-iphone-eurasian-filings/</link>
+		<comments>https://9to5mac.com/2018/07/13/2018-iphone-eurasian-filings/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 12:20:15 +0000</pubDate>
+		<dc:creator><![CDATA[Benjamin Mayo]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542455</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/06/kgi-2018-iphone-lineup.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>The Eurasian database continues to be a good indicator of Apple&#8217;s forthcoming product releases. Some of the <a href="https://9to5mac.com/2018/07/05/apple-new-ipads-mac-registered/">model identifiers unearthed</a> earlier this month were unveiled yesterday as the <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">new MacBook Pro laptops</a>. <a href="https://consomac.fr/news-8952-eec-apple-depose-de-nouveaux-iphone-et-ipad.html">Consomac today noticed</a> that Apple has now registered a fleet of new iPhones running iOS 12, almost certainly destined to be the 2018 iPhone lineup launching in September.</p>
+<p> <a href="https://9to5mac.com/2018/07/13/2018-iphone-eurasian-filings/#more-542455" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/2018-iphone-eurasian-filings/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/06/kgi-2018-iphone-lineup.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/06/kgi-2018-iphone-lineup.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">kgi-2018-iphone-lineup</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/b10ae05b0de7ef1d0972d92ef3972fef?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benjaminmayo</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Best Buy takes $150 off latest 2018 MacBook Pro models for students</title>
+		<link>http://9to5toys.com/?p=365006</link>
+		<comments>https://9to5mac.com/2018/07/13/best-buy-macbook-pro-student-deals/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 12:10:42 +0000</pubDate>
+		<dc:creator><![CDATA[9to5Toys]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542457</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/apple-2018-macbook-pro.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Yesterday, Apple <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">surprised</a> by announcing a refreshed MacBook Pro lineup. Now Best Buy is offering its own surprise. Students, or those with access to a .edu email address, can<a href="http://bit.ly/2uslBq9"> take <strong>$150 off</strong> the latest MacBook Pros</a>. Simply head over<a href="http://bit.ly/2BFcAiK"> to this landing page</a> and sign-up for the offers, and you&#8217;ll receive a coupon code in your email inbox within hours. This brings the <a href="http://bit.ly/2uslBq9">entry-level 13-inch Touch Bar model to <strong>$1,649.99 shipped</strong></a>. Various other configurations are <a href="http://bit.ly/2uslBq9">also available here</a>. Learn more about <a href="http://bit.ly/2BFcAiK">student discounts at Best Buy here</a>.</p>
+<p> <a href="https://9to5mac.com/2018/07/13/best-buy-macbook-pro-student-deals/#more-542457" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/best-buy-macbook-pro-student-deals/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/apple-2018-macbook-pro.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/apple-2018-macbook-pro.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">apple-2018-macbook-pro</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/6ed979b4cb2fc7955a366f32503da09e?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">sweintraub</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Adobe developing a &#8216;full version&#8217; of Photoshop for iPad as part of major platform rewrite, reportedly launching next year</title>
+		<link>https://9to5mac.com/2018/07/13/photoshop-ipad-next-year/</link>
+		<comments>https://9to5mac.com/2018/07/13/photoshop-ipad-next-year/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 11:57:00 +0000</pubDate>
+		<dc:creator><![CDATA[Benjamin Mayo]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542450</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/06/ipad-pro-10-5-inch.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p><a href="https://www.bloomberg.com/news/articles/2018-07-13/adobe-is-said-to-plan-photoshop-for-ipad-in-app-strategy-shift">Bloomberg reports</a> that Adobe is currently developing a cross-platform Photoshop app for iOS, described as a &#8216;full version&#8217; of the popular desktop image editing suite. Adobe&#8217;s Creative Cloud product officer confirmed the plans and wants to get them &#8216;on the market as soon as possible.&#8217; Bloomberg&#8217;s sources indicate the new app will be demoed in October, targeting a 2019 debut.</p>
+<p>Adobe currently has <a href="http://go.benjaminmayo.co.uk/331975235">several</a> <a href="http://go.benjaminmayo.co.uk/885271158">mobile</a> &#8216;Photoshop&#8217; apps on the App Store, but they constitute small slices of the full desktop app feature-set. The new app will compete against upcoming platform rich photo-editor apps like <a href="http://go.benjaminmayo.co.uk/1117941080">Affinity Photo</a>. Photoshop for iPad would be included as part of the Adobe Creative Cloud subscription, <a href="https://redirect.viglink.com/?key=f8a3aea2c698452463a8bebdf645e9f7&amp;u=https%3A%2F%2Fwww.adobe.com%2Fcreativecloud%2Fplans.html%3Fsdid%3DKKQXH%26mv%3Dsearch%26s_kwcid%3DAL%213085%213%21265892346607%21b%21%21g%21%21photoshop%2520subscription%26ef_id%3DW0iREgAABY6SQTFH%3A20180713114626%3As">which starts at $9.99 per month</a>.</p>
+<p> <a href="https://9to5mac.com/2018/07/13/photoshop-ipad-next-year/#more-542450" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/photoshop-ipad-next-year/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/06/ipad-pro-10-5-inch.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/06/ipad-pro-10-5-inch.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">iPad-Pro-10-5-inch</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/b10ae05b0de7ef1d0972d92ef3972fef?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benjaminmayo</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Supply-chain report says LG to supply screens for 20M 6.1-inch LCD iPhones</title>
+		<link>https://9to5mac.com/2018/07/13/2018-lcd-iphone-lg/</link>
+		<comments>https://9to5mac.com/2018/07/13/2018-lcd-iphone-lg/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 11:52:18 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542449</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/iphone-x.jpg?quality=82&#038;strip=all&#038;w=1000" /></div><p>Earlier reports have suggested that <a href="https://9to5mac.com/guides/lg/" target="_blank" rel="noopener">LG</a> is likely to supply <a href="https://9to5mac.com/guides/oled/" target="_blank" rel="noopener">OLED</a> screens for between <a href="https://9to5mac.com/2018/06/28/lg-oled-supply-iphone/" target="_blank" rel="noopener">two million</a> and <a href="https://9to5mac.com/2018/07/05/lg-iphone-oled-screens/" target="_blank" rel="noopener">five million</a> 2018 iPhones, and a new report today says that the company will also pick up a more substantial order for the <a href="https://9to5mac.com/guides/lcd/" target="_blank" rel="noopener">LCD</a> model &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/13/2018-lcd-iphone-lg/#more-542449" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/2018-lcd-iphone-lg/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/iphone-x.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/iphone-x.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">iphone-x</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>London aerial photographer says new MacBook Pro lets him finish the edit before the helicopter lands</title>
+		<link>https://9to5mac.com/2018/07/13/2018-macbook-pro-video-editing/</link>
+		<comments>https://9to5mac.com/2018/07/13/2018-macbook-pro-video-editing/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 11:24:56 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542446</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/mbp-video.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>London-based aerial photographer Jason Hawkes was given early access to a maxed-out <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/" target="_blank" rel="noopener">2018 MacBook Pro</a>, and was impressed &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/13/2018-macbook-pro-video-editing/#more-542446" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/2018-macbook-pro-video-editing/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/mbp-video.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/mbp-video.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">mbp-video</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Will Apple let you swap your recently-bought 2017 MacBook Pro for a 2018 one?</title>
+		<link>https://9to5mac.com/2018/07/13/can-i-swap-2017-macbook-pro/</link>
+		<comments>https://9to5mac.com/2018/07/13/can-i-swap-2017-macbook-pro/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 10:55:13 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542439</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/mbp1.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Apple managed to keep the lid on its plans to <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/" target="_blank" rel="noopener">update the MacBook Pro</a> yesterday. It was clear that it would need to support the latest Intel processors at some point, but nobody knew the launch date.</p>
+<p>Which would be annoying, to say the least, if you&#8217;ve recently bought the 2017 model. The question is, will Apple let you exchange it for the 2018 one &#8230; ?</p>
+<p> <a href="https://9to5mac.com/2018/07/13/can-i-swap-2017-macbook-pro/#more-542439" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/13/can-i-swap-2017-macbook-pro/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/mbp1.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/mbp1.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">mbp</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple shows off Apple Pay Cash in latest advertisement [Video]</title>
+		<link>https://9to5mac.com/2018/07/12/apple-pay-cash-advertisement/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-pay-cash-advertisement/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 03:24:52 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542428</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/screen-shot-2018-07-12-at-11-15-42-pm.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Apple this evening is out with its latest Apple Pay-focused advertisement. This video focuses on Apple Pay Cash and how it can be used between roommates to easily handle things such as rent payments.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-pay-cash-advertisement/#more-542428" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-pay-cash-advertisement/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/screen-shot-2018-07-12-at-11-15-42-pm.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/screen-shot-2018-07-12-at-11-15-42-pm.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Screen Shot 2018-07-12 at 11.15.42 PM</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple expands Apple Maps Traffic data to six new countries</title>
+		<link>https://9to5mac.com/2018/07/12/apple-maps-traffic-new-countries/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-maps-traffic-new-countries/#respond</comments>
+		<pubDate>Fri, 13 Jul 2018 01:04:30 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542419</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/apple-maps1.jpg?quality=82&#038;strip=all&#038;w=1000" /></div><p>Apple today has updated its <a href="https://www.apple.com/ios/feature-availability/#maps-traffic">Feature Availability</a> webpage to reflect that real-time traffic information is now available in six new countries around the globe. The move marks Apple&#8217;s continued expansion of select region-based features&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-maps-traffic-new-countries/#more-542419" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-maps-traffic-new-countries/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/apple-maps1.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/apple-maps1.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">apple-maps</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple partners w/ suppliers to launch $300 million China Clean Energy Fund</title>
+		<link>https://9to5mac.com/2018/07/12/apple-partners-w-suppliers-to-launch-300-million-china-clean-energy-fund/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-partners-w-suppliers-to-launch-300-million-china-clean-energy-fund/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 23:13:12 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542398</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/weongzdss66zypvmthyoq_thumb_2724.jpg?quality=82&#038;strip=all&#038;w=1182" /></div><p>Apple this evening has announced a $300 million fund for investing in renewable energy projects in China. As the company announced in a <a href="https://www.apple.com/newsroom/2018/07/apple-launches-new-clean-energy-fund-in-china/">press release</a>, The China Clean Energy Fund is a partnership between Apple and several of its suppliers to produce at least 1 gigawatt of energy through renewable means&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-partners-w-suppliers-to-launch-300-million-china-clean-energy-fund/#more-542398" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-partners-w-suppliers-to-launch-300-million-china-clean-energy-fund/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/weongzdss66zypvmthyoq_thumb_2724.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/weongzdss66zypvmthyoq_thumb_2724.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">WeONGzDSS66zypVMThy%oQ_thumb_2724</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple-owned Texture magazine service dropping Premium pricing to $10/month</title>
+		<link>https://9to5mac.com/2018/07/12/texture-premium-price-drop/</link>
+		<comments>https://9to5mac.com/2018/07/12/texture-premium-price-drop/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 23:09:32 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542394</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/03/texture-ipad-app.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Earlier this year, Apple <a href="https://9to5mac.com/2018/03/12/apple-buying-digital-magazine-service-texture-likely-boosting-news-app-revenue/">announced that it was acquiring</a> popular digital magazine service Texture as part of its efforts to highlight quality journalism. Now, Texture has announced that it is cutting the price of its Premium tier from $14.99 to $9.99 per month&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/texture-premium-price-drop/#more-542394" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/texture-premium-price-drop/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/03/texture-ipad-app.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/03/texture-ipad-app.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">texture-ipad-app</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>First MacBook Pro orders begin shipping today and arriving as early as tomorrow</title>
+		<link>https://9to5mac.com/2018/07/12/macbook-pro-mid-2018-now-shipping/</link>
+		<comments>https://9to5mac.com/2018/07/12/macbook-pro-mid-2018-now-shipping/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 22:39:42 +0000</pubDate>
+		<dc:creator><![CDATA[Jeff Benjamin]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542387</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/mbp.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Good news for those of you who can&#8217;t wait to get your hands on <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">Apple&#8217;s just-announced MacBook Pro</a>. First shipments of Apple&#8217;s refreshed laptops begin today, with expedited orders slated to arrive as early as tomorrow. <a href="https://9to5mac.com/2018/07/12/macbook-pro-mid-2018-now-shipping/#more-542387" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/macbook-pro-mid-2018-now-shipping/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/mbp.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/mbp.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">mbp</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/7eb483ea81412828f92621268e8ca287?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">bnjmorg</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Gartner: PC industry sees first growth in 6 years as Apple&#8217;s Mac shipments also rise</title>
+		<link>https://9to5mac.com/2018/07/12/gartner-q2-data-pc-industry/</link>
+		<comments>https://9to5mac.com/2018/07/12/gartner-q2-data-pc-industry/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 22:23:33 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542379</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro1.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Gartner today is <a href="https://www.gartner.com/newsroom/id/3881812">out with its latest research</a> covering the global PC industry during the second quarter of 2018. According to the research, shipments totaled 62.1 million units during the quarter, which is a 1.4 percent increase year over year&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/gartner-q2-data-pc-industry/#more-542379" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/gartner-q2-data-pc-industry/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro1.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro1.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">2018-macbook-pro</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple&#8217;s &#8216;Carpool Karaoke&#8217; spin-off receives short form Emmy nomination</title>
+		<link>https://9to5mac.com/2018/07/12/carpool-karaoke-emmy-nomination/</link>
+		<comments>https://9to5mac.com/2018/07/12/carpool-karaoke-emmy-nomination/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 21:57:31 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542372</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/05/apple-carpool-kareoke.png?w=1600" /></div><p>While not particularly popular among fans and critics, Apple&#8217;s Carpool Karaoke series has received an Emmy nomination today, as reported by <em><a href="https://www.hollywoodreporter.com/news/emmys-apples-carpool-karaoke-nabs-short-form-nomination-1126577">The Hollywood Reporter</a></em>. Apple&#8217;s rendition of Carpool Karaoke is a spin-off of the viral segment from James Corden&#8217;s Late Late Show&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/carpool-karaoke-emmy-nomination/#more-542372" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/carpool-karaoke-emmy-nomination/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/05/apple-carpool-kareoke.png" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/05/apple-carpool-kareoke.png" medium="image">
+			<media:title type="html">apple carpool kareoke</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Department of Justice to appeal AT&#038;T and Time Warner merger approval</title>
+		<link>https://9to5mac.com/2018/07/12/att-time-warner-deal-appealed-doj/</link>
+		<comments>https://9to5mac.com/2018/07/12/att-time-warner-deal-appealed-doj/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 21:13:01 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Cao]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542360</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/02/att-storefront.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Nearly a month after the merger was <a href="https://9to5mac.com/2018/06/14/att-acquires-time-warner/">approved</a>, the Department of Justice now says it will appeal the AT&amp;T and Time Warner deal. The original deal was approved for $85.4B and had no strings attached at the time.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/att-time-warner-deal-appealed-doj/#more-542360" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/att-time-warner-deal-appealed-doj/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/02/att-storefront.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/02/att-storefront.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">ATt-storefront</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/0c47462dbc0e9b4959fe22331149444d?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">ipetercao</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>9to5Mac Daily: July 12, 2018</title>
+		<link>https://9to5mac.com/2018/07/12/9to5mac-daily-july-12-2018/</link>
+		<comments>https://9to5mac.com/2018/07/12/9to5mac-daily-july-12-2018/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 20:17:10 +0000</pubDate>
+		<dc:creator><![CDATA[Zac Hall]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542356</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/01/artboard-12x.jpeg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available <a href="https://geo.itunes.apple.com/us/podcast/id1331816080?at=10laZc&amp;pt=11l8808" target="_blank" rel="noopener noreferrer">on iTunes and Apple’s Podcasts app</a>, <a href="https://www.stitcher.com/podcast/9to5mac-daily">Stitcher</a>, <a href="https://tunein.com/radio/9to5Mac-Daily-p1089524/">TuneIn</a>, <a href="https://play.google.com/music/m/I5d4dzs7dauazmfxvvrynyiuram?t=9to5Mac_Daily">Google Play</a>, or through our <a href="http://feeds.feedburner.com/9to5macDaily">dedicated RSS feed</a> for Overcast and other podcast players.</p>
+<p><audio class="wp-audio-shortcode" id="audio-542356-2" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3?_=2" /><a href="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3">https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3</a></audio></p>
+<p> <a href="https://9to5mac.com/2018/07/12/9to5mac-daily-july-12-2018/#more-542356" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/9to5mac-daily-july-12-2018/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3" length="1890160" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3" length="1890160" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3" length="1890160" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3" length="1890160" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3" length="1890160" type="audio/mpeg" />
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/01/artboard-12x.jpeg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/01/artboard-12x.jpeg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">9to5Mac Daily lead podcast art</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/4403f5bde9b9dd1799eda1756139557d?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">apollozac</media:title>
+		</media:content>
+
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-12-2018.mp3" medium="audio" />
+	</item>
+		<item>
+		<title>Tim Cook &#038; Eddy Cue again attend Sun Valley to mingle with the tech &#038; media elite</title>
+		<link>https://9to5mac.com/2018/07/12/tim-cook-eddy-cue-sun-valley-2018/</link>
+		<comments>https://9to5mac.com/2018/07/12/tim-cook-eddy-cue-sun-valley-2018/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 20:09:44 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542350</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/j5rxiwept6yvvwd3aqsx1w_thumb_2723.jpg?quality=82&#038;strip=all&#038;w=1182" /></div><p>For what <a href="https://9to5mac.com/2016/07/06/tim-cook-eddy-cue-sun-valley-2016/">is now the 7th year</a> in a row, Tim Cook is attending the Sun Valley media conference in Idaho. Much <a href="https://9to5mac.com/2017/07/13/tim-cook-eddy-cue-sun-valley-2017/">like last year</a>, Cook is joined by Eddy Cue, Apple&#8217;s vice president of software and services.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/tim-cook-eddy-cue-sun-valley-2018/#more-542350" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/tim-cook-eddy-cue-sun-valley-2018/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/j5rxiwept6yvvwd3aqsx1w_thumb_2723.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/j5rxiwept6yvvwd3aqsx1w_thumb_2723.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">J5RXiWEPT6yVVwd3AqsX1w_thumb_2723</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Affinity Designer for iPad: 20+ getting started tips and tricks [Video]</title>
+		<link>https://9to5mac.com/2018/07/12/affinity-designer-for-ipad-tips-tricks-video/</link>
+		<comments>https://9to5mac.com/2018/07/12/affinity-designer-for-ipad-tips-tricks-video/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 19:54:41 +0000</pubDate>
+		<dc:creator><![CDATA[Jeff Benjamin]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542096</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/affinity-designer-tips.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>After using <a href="https://9to5mac.com/2018/07/11/professional-illustrator-app-affinity-designer-now-available-on-ipad-for-just-13-99/">Affinity Designer on iPad</a>, I can confidently say that there aren&#8217;t many apps of a similar echelon in the App Store. The companion app to Affinity Photo, Designer is a vector illustration app that can operate as an outright Adobe Illustrator replacement for many graphic artists.</p>
+<p>In this initial hands-on walkthrough, I step through over 20 features in Affinity Designer, focusing heavily on the gesture-based toolset that makes it such a powerful app for iPad users.  <a href="https://9to5mac.com/2018/07/12/affinity-designer-for-ipad-tips-tricks-video/#more-542096" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/affinity-designer-for-ipad-tips-tricks-video/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/affinity-designer-tips.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/affinity-designer-tips.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Affinity Designer Tips</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/7eb483ea81412828f92621268e8ca287?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">bnjmorg</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>9to5Mac Happy Hour 181: Siri&#8217;s new boss, 11-inch iPad Pro, bezel-free Apple Watch rumors</title>
+		<link>https://9to5mac.com/2018/07/12/9to5mac-happy-hour-181/</link>
+		<comments>https://9to5mac.com/2018/07/12/9to5mac-happy-hour-181/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 18:21:18 +0000</pubDate>
+		<dc:creator><![CDATA[Zac Hall]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542335</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/04/9to5mac-happy-hour-lead1.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Benjamin and Zac talk 3D Touch, AirPlay and Apple TV, iTunes 12.8 and Sonos gaining AirPlay 2, John Giannandrea&#8217;s new Chief of ML and AI job, Siri changing bosses again, using Shortcuts on iOS 12, and Ming-Chi Kuo&#8217;s big report on new Macs, iPads, and Apple Watches — which was recorded hours before Apple released new MacBook Pros.</p>
+<p>9to5Mac Happy Hour is available <a href="https://geo.itunes.apple.com/us/podcast/id641836403?at=10laZc&amp;ct=HH" target="_blank" rel="noopener noreferrer">on iTunes and Apple’s Podcasts app</a>, <a href="https://www.stitcher.com/podcast/9to5mac/happy-hour-5?refid=stpr">Stitcher</a>, <a href="https://tunein.com/radio/9to5Mac-Happy-Hour-p1087765/">TuneIn</a>, <a href="https://play.google.com/music/m/I5xn6oxaorvbyxlgotqacicj7ri?t=Happy_Hour">Google Play Music</a>, or through our <a href="http://feeds.feedburner.com/9to5cast/iUSC?format=xml" target="_blank" rel="noopener noreferrer">dedicated RSS feed</a> for Overcast and other podcast players.</p>
+<p><strong><a href="http://ude.my/happyhour">Sponsored by Udemy</a>: </strong><em>Visit <a href="http://ude.my/happyhour" target="_blank" rel="noopener">Ude.my/happyhour</a> and use coupon code HAPPYHOUR to get 90% off life-changing classes!</em></p>
+<p><a href="https://business.linkedin.com/talent-solutions/cx/17/10/jobs-dual-cta?src=re-pod&amp;trk=happyhour&amp;veh=happyhour#"><strong>Sponsored by LinkedIn Jobs</strong></a><strong>:</strong> <em>Go to <a href="https://business.linkedin.com/talent-solutions/cx/17/10/jobs-dual-cta?src=re-pod&amp;trk=happyhour&amp;veh=happyhour#">LinkedIn.com/HAPPYHOUR</a> and get a $50 credit toward your first job post!</em></p>
+<p><audio class="wp-audio-shortcode" id="audio-542335-3" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://9to5mac.files.wordpress.com/2018/07/9to5mac-happy-hour-07-12-2018.mp3?_=3" /><a href="https://9to5mac.files.wordpress.com/2018/07/9to5mac-happy-hour-07-12-2018.mp3">https://9to5mac.files.wordpress.com/2018/07/9to5mac-happy-hour-07-12-2018.mp3</a></audio></p>
+<p> <a href="https://9to5mac.com/2018/07/12/9to5mac-happy-hour-181/#more-542335" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/9to5mac-happy-hour-181/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-happy-hour-07-12-2018.mp3" length="47457503" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-happy-hour-07-12-2018.mp3" length="47457503" type="audio/mpeg" />
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/04/9to5mac-happy-hour-lead1.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/04/9to5mac-happy-hour-lead1.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">9to5mac happy hour lead</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/4403f5bde9b9dd1799eda1756139557d?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">apollozac</media:title>
+		</media:content>
+
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-happy-hour-07-12-2018.mp3" medium="audio" />
+	</item>
+		<item>
+		<title>Canary launches &#8216;Safety Button&#8217; SOS feature for iOS app with precise location tracking</title>
+		<link>https://9to5mac.com/2018/07/12/canary-sos-feature-ios-app/</link>
+		<comments>https://9to5mac.com/2018/07/12/canary-sos-feature-ios-app/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 17:14:09 +0000</pubDate>
+		<dc:creator><![CDATA[Michael Potuck]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542324</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/canary-safety-button-ios.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Canary, maker of <a href="https://amzn.to/2JhfRou">smart home security cameras</a> has unveiled a new SOS feature today that works with its iOS app anywhere users have an Internet connection.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/canary-sos-feature-ios-app/#more-542324" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/canary-sos-feature-ios-app/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/canary-safety-button-ios.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/canary-safety-button-ios.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">canary-safety-button-ios</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/617382fa123c4948681a44755a0146ca?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">michaelpotuck</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>9to5Toys Last Call: 13&#8243; MacBook Pro $1,050, Ring Video Doorbell Pro $180, UE WONDERBOOM $50, more</title>
+		<link>https://9to5mac.com/2018/07/12/9to5toys-macbook-pro-ring-video-doorbell-ue-wonderboom/</link>
+		<comments>https://9to5mac.com/2018/07/12/9to5toys-macbook-pro-ring-video-doorbell-ue-wonderboom/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 16:30:09 +0000</pubDate>
+		<dc:creator><![CDATA[Justin Kahn]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542307</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Keep up with the best gear and deals on the web by <em><strong><a href="http://9to5toys.com/9to5toys-newsletter-signup/" target="_blank" rel="noopener noreferrer">signing up for the 9to5Toys Newsletter</a></strong></em>. Also, be sure to check us out on: <a href="http://twitter.com/9to5toys">Twitter</a>, <a href="http://9to5toys.com/feed">RSS Feed</a>, <a href="http://www.facebook.com/pages/9to5toyscom/228249133858390">Facebook</a>, <a href="https://plus.google.com/b/105878626736210310777/105878626736210310777/posts" target="_blank" rel="noopener noreferrer">Google+</a> and <a href="https://9to5mac.com/2013/12/11/safari-push-notifications-are-live-on-all-9to5-sites/" target="_blank" rel="noopener noreferrer">Safari push notifications</a>.</p>
+<h3>Listen to the new 9to5Toys Daily Podcast:</h3>
+<p><audio class="wp-audio-shortcode" id="audio-542307-4" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-12-2018.mp3?_=4" /><a href="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-12-2018.mp3">https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-12-2018.mp3</a></audio> <a href="https://9to5mac.com/2018/07/12/9to5toys-macbook-pro-ring-video-doorbell-ue-wonderboom/#more-542307" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/9to5toys-macbook-pro-ring-video-doorbell-ue-wonderboom/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-12-2018.mp3" length="2191734" type="audio/mpeg" />
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">9to5toys-Lunch-Break</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/fd9d107c201b4c181853d4b70e3d656f?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">justinkahnmusic</media:title>
+		</media:content>
+
+		<media:content url="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-12-2018.mp3" medium="audio" />
+	</item>
+		<item>
+		<title>Farrago soundboard app for Mac gains MIDI support, accessibility improvements, more</title>
+		<link>https://9to5mac.com/2018/07/12/farrago-1-2-midi/</link>
+		<comments>https://9to5mac.com/2018/07/12/farrago-1-2-midi/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 15:56:41 +0000</pubDate>
+		<dc:creator><![CDATA[Zac Hall]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542298</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/farrago-midi.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Rogue Amoeba has updated Farrago for Mac today with a handful of useful new features. Farrago 1.2 brings MIDI support, multi-tile editing, and accessibility improvements to the Mac soundboard app.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/farrago-1-2-midi/#more-542298" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/farrago-1-2-midi/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/farrago-midi.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/farrago-midi.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Farrago MIDI</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/4403f5bde9b9dd1799eda1756139557d?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">apollozac</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Pre-orders for new MacBook Pro now available at B&#038;H (Tax NY/NJ only)</title>
+		<link>http://9to5toys.com/?p=364772</link>
+		<comments>https://9to5mac.com/2018/07/12/bh-macbook-pro-pre-order/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 15:10:59 +0000</pubDate>
+		<dc:creator><![CDATA[9to5Toys]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542293</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>This morning Apple <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">introduced</a> new MacBook Pros with a refreshed keyboard, upgraded RAM and processors along with a TrueTone display. B&amp;H is now offering pre-orders on all of today&#8217;s new announcements with the added benefit of no tax at the time of purchase for customers outside of New York or New Jersey. Remember, this perk is <a href="https://9to5mac.com/2018/06/21/supreme-court-states-decide-sales-tax/">coming to an end</a> in the near future, so it may be worth avoiding the added tax for a few months until your bill comes in April. You can see all of the listings down below.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/bh-macbook-pro-pre-order/#more-542293" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/bh-macbook-pro-pre-order/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">2018-macbook-pro</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/6ed979b4cb2fc7955a366f32503da09e?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">sweintraub</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>PSA: apple.com went down for some, &#8216;an error occurred while processing this directive&#8217;</title>
+		<link>https://9to5mac.com/2018/07/12/apple-website-down/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-website-down/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 14:35:03 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542284</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/apple-homepage.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Just after <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/" target="_blank" rel="noopener">the new MacBook Pro</a> landed on <a href="https://www.apple.com" target="_blank" rel="noopener">apple.com</a>, the site fell over for some &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-website-down/#more-542284" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-website-down/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/apple-homepage.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/apple-homepage.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">apple-homepage</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>The most expensive MacBook Pro will now cost you a cool $6,699 (or $6,898)</title>
+		<link>https://9to5mac.com/2018/07/12/2018-macbook-pro-price/</link>
+		<comments>https://9to5mac.com/2018/07/12/2018-macbook-pro-price/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 14:26:21 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542272</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/mbp.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>We noted earlier that the <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/" target="_blank" rel="noopener">upgraded MacBook Pro models</a> announced today not only offer the latest 8th-generation processors, but also allow you to spec them up to a maximum of 32GB DDR4 RAM and a massive 4TB PCIe SSD &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/2018-macbook-pro-price/#more-542272" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/2018-macbook-pro-price/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/mbp.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/mbp.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">mbp</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple discontinues its own photo printing service, recommends third-party Photos Projects apps instead</title>
+		<link>https://9to5mac.com/2018/07/12/photo-print-products-discontinued/</link>
+		<comments>https://9to5mac.com/2018/07/12/photo-print-products-discontinued/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 14:21:03 +0000</pubDate>
+		<dc:creator><![CDATA[Benjamin Mayo]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542268</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/photo-print-products-discontinued-2018.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Apple is discontinuing its Photo Print Products service, which has been integrated into iPhoto since its launch in 2002. The service expanded from simple prints, to albums, photo books, and calendars. It stayed around on the Mac when iPhoto was replaced with the Photos app a couple of years ago, but the service never made the leap to iOS.</p>
+<p>Later this year, Apple will stop offering the service altogether. A new message in macOS 10.13.6 Photos app says that final orders for Apple&#8217;s built-in service must be placed by September 30, 2018.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/photo-print-products-discontinued/#more-542268" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/photo-print-products-discontinued/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/photo-print-products-discontinued-2018.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/photo-print-products-discontinued-2018.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">photo-print-products-discontinued-2018</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/b10ae05b0de7ef1d0972d92ef3972fef?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benjaminmayo</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple stops selling 2015 MacBook Pro</title>
+		<link>https://9to5mac.com/2018/07/12/apple-stops-selling-2015-macbook-pro/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-stops-selling-2015-macbook-pro/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 13:36:31 +0000</pubDate>
+		<dc:creator><![CDATA[Benjamin Mayo]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542242</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/macbooker.png?w=1280" /></div><p>In the wake of the <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">new 13-inch and 15-inch Touch Bar models today</a>, Apple has stopped selling the much-beloved 2015 MacBook Pro. For people who despised butterfly keys, or mourned the lack of legacy ports on the 2016 and later MacBook Pro, until today Apple Store stocked a 15-inch 2015 model as an alternative. It may not have been as fast or as svelte as the latest models, but for people who had become disenchanted with Apple&#8217;s latest direction, it was their favorite computer. Whilst supplies last, Apple is <a href="https://www.apple.com/shop/browse/home/specialdeals/clearance/mac">selling some 2015 models in its clearance section</a>.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-stops-selling-2015-macbook-pro/#more-542242" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-stops-selling-2015-macbook-pro/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/macbooker.png" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/macbooker.png" medium="image">
+			<media:title type="html">macbooker</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/b10ae05b0de7ef1d0972d92ef3972fef?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benjaminmayo</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Alongside new models, Apple launches leather sleeves for 13- and 15-inch MacBook Pro [U]</title>
+		<link>https://9to5mac.com/2018/07/12/macbook-pro-apple-leather-sleeve/</link>
+		<comments>https://9to5mac.com/2018/07/12/macbook-pro-apple-leather-sleeve/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 13:21:33 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542223</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/mrql2.jpeg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Alongside the <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/" target="_blank" rel="noopener">upgraded MacBook Pro models</a>, Apple is also offering leather sleeves to keep both existing and new models safe &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/macbook-pro-apple-leather-sleeve/#more-542223" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/macbook-pro-apple-leather-sleeve/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/mrql2.jpeg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/mrql2.jpeg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">MRQL2</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple worked with Blackmagic Design on new Radeon Pro 580-powered eGPU</title>
+		<link>https://9to5mac.com/2018/07/12/apple-blackmagic-design-new-radeon-pro-580-powered-egpu/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-blackmagic-design-new-radeon-pro-580-powered-egpu/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 13:11:30 +0000</pubDate>
+		<dc:creator><![CDATA[Jeff Benjamin]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542224</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/blackmagic-egpu.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Apple&#8217;s launch of <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">refreshed MacBook Pros</a> is the big news for today, and rightfully so. The update checks off many customer wants, such as DDR4 with up to 32GB of RAM on the 15-inch model, and quad-core CPUs on the 13-inch model.</p>
+<p>But graphics are still an area that could use assistance, and Apple recognizes this. Earlier this spring it launched a new version of <a href="https://9to5mac.com/2018/03/29/mac-os-10-13-4/">macOS with official eGPU support in tow</a>. Today, <a href="https://www.theverge.com/circuitbreaker/2018/7/12/17563646/apple-blackmagic-external-gpu-price-release-date">The Verge revealed</a> that Apple has worked with Blackmagic Design, known for its DaVinci Resolve NLE, on a brand new all-in-one $699 eGPU. <a href="https://9to5mac.com/2018/07/12/apple-blackmagic-design-new-radeon-pro-580-powered-egpu/#more-542224" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-blackmagic-design-new-radeon-pro-580-powered-egpu/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/blackmagic-egpu.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/blackmagic-egpu.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Blackmagic eGPU</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/7eb483ea81412828f92621268e8ca287?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">bnjmorg</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple MacBook Pro with Touch Bar updated with max 32 GB RAM, &#8216;improved&#8217; third-generation keyboard, True Tone, and new Intel chips</title>
+		<link>https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 12:38:32 +0000</pubDate>
+		<dc:creator><![CDATA[Benjamin Mayo]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542218</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/macbook-pro-2018.png?w=1600" /></div><p>Apple has today updated the 13-inch and 15-inch MacBook Pro with a spec bump refresh. The laptops feature Intel&#8217;s latest eighth-generation processors, with a six-core option on the 15-inch model. The new 15-inch MacBook Pro can also be specced with up to 32 GB RAM, with a DDR4 configuration. The new 13- and 15-inch models are available to order today, starting at $1799 and $2399.</p>
+<p>The new laptops also bring Apple&#8217;s True Tone display technology to the Mac lineup for the first time, as well as a third-generation butterfly keyboard. Apple says the new keyboard enables quieter typing, although hopefully there are reliability improvements as well. There are no changes today to the non-Touch Bar MacBook Pro.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/#more-542218" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/macbook-pro-2018.png" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/macbook-pro-2018.png" medium="image">
+			<media:title type="html">macbook-pro-2018</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/b10ae05b0de7ef1d0972d92ef3972fef?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benjaminmayo</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Match-owned Hinge dating app uses &#8216;stable marriage&#8217; AI algorithm for its matches</title>
+		<link>https://9to5mac.com/2018/07/12/ai-dating-app-hinge/</link>
+		<comments>https://9to5mac.com/2018/07/12/ai-dating-app-hinge/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 12:20:50 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542214</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/hinge.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>If you&#8217;re single and tired of swiping on photos or browsing endless profiles in the hope of the perfect match, a dating app is now using an AI algorithm to do the work for you &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/ai-dating-app-hinge/#more-542214" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/ai-dating-app-hinge/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/hinge.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/hinge.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">hinge</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Apple&#8217;s Back to School deal is again a free pair of Beats headphones with Mac/iPad Pro purchases [U]</title>
+		<link>https://9to5mac.com/2018/07/12/apple-back-to-school/</link>
+		<comments>https://9to5mac.com/2018/07/12/apple-back-to-school/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 11:51:19 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542207</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/education.jpg?quality=82&#038;strip=all&#038;w=1000" /></div><p><em>Update: Apple has confirmed that this year&#8217;s Back to School deal will again be a free pair of Beats headphones. This year it&#8217;s the Beats Solo3.</em></p>
+<blockquote><p>The <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/" target="_blank" rel="noopener">new MacBook Pro</a> is also part of Apple’s Back to School promotion starting today and available to college students, their parents, faculty and staff through the Apple Education Store. The promotion includes a pair of qualifying Beats headphones with the purchase of any eligible Mac or iPad Pro for college, as well as education pricing on Mac, iPad Pro, AppleCare, select accessories and more.</p></blockquote>
+<p>Apple&#8217;s <a href="https://www.apple.com/us-hed/shop" target="_blank" rel="noopener">higher education website</a> is currently down, with a &#8216;back soon&#8217; message. The message says &#8216;We&#8217;ll be back. We&#8217;re busy updating the Apple Store for you. Please check back soon.&#8217; &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/apple-back-to-school/#more-542207" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/apple-back-to-school/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/education.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/education.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">education</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Latest patent troll accuses Apple&#8217;s Siri of infringing a purchased patent</title>
+		<link>https://9to5mac.com/2018/07/12/siri-patent-infringement-claim/</link>
+		<comments>https://9to5mac.com/2018/07/12/siri-patent-infringement-claim/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 11:24:55 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542202</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/siri.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Apple regularly faces lawsuits from patent trolls – companies whose only business is buying patents and then suing companies for alleged infringement of them.</p>
+<p>We <a href="https://9to5mac.com/2018/07/11/do-not-disturb-while-driving-patent/" target="_blank" rel="noopener">noted only yesterday</a> one relating to the ‘Do Not Disturb While Driving’ feature introduced in iOS 11, and today there&#8217;s a report of a new claim that <a href="https://9to5mac.com/guides/siri/" target="_blank" rel="noopener">Siri</a> infringes a similarly purchased patent &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/siri-patent-infringement-claim/#more-542202" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/siri-patent-infringement-claim/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/siri.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/siri.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">siri</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Fortnite season 5 adds all-terrain kart and new places to explore with it [Video]</title>
+		<link>https://9to5mac.com/2018/07/12/fornite-season-5-iphone-ipad/</link>
+		<comments>https://9to5mac.com/2018/07/12/fornite-season-5-iphone-ipad/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 10:52:17 +0000</pubDate>
+		<dc:creator><![CDATA[Ben Lovejoy]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542199</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/fortnite1.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Epic Games has just updated <a href="https://9to5mac.com/guides/fortnite/" target="_blank" rel="noopener">Fortnite</a> with Season 5, providing an all-terrain kart and some reasons to use it &#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/12/fornite-season-5-iphone-ipad/#more-542199" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/fornite-season-5-iphone-ipad/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/fortnite1.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/fortnite1.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">fortnite</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/ecf44b2f82be1cf21f8195025f24b89b?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">benlovejoy</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Latest Apple Pay promo offers $10 off at StubHub</title>
+		<link>https://9to5mac.com/2018/07/12/latest-apple-pay-promo-offers-10-off-at-stubhub/</link>
+		<comments>https://9to5mac.com/2018/07/12/latest-apple-pay-promo-offers-10-off-at-stubhub/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 10:24:16 +0000</pubDate>
+		<dc:creator><![CDATA[Bradley Chambers]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542194</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/stubhub.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Apple continues to offer weekly deals for iOS-based shopping when using Apple Pay as your payment method. Apple just emailed out their new weekly promo, and you can get $10 off in the StubHub app when your purchase is $100 or more.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/latest-apple-pay-promo-offers-10-off-at-stubhub/#more-542194" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/latest-apple-pay-promo-offers-10-off-at-stubhub/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/stubhub.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/stubhub.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">StubHub</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/f42f8b0cac17d1b7dcddc9f01ae24414?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">bradleychambers</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>How to set 24-hour time on iPhone, iPad, Apple Watch &#038; Mac</title>
+		<link>https://9to5mac.com/2018/07/12/how-to-set-24-hour-time-on-iphone-ipad-apple-watch-mac/</link>
+		<comments>https://9to5mac.com/2018/07/12/how-to-set-24-hour-time-on-iphone-ipad-apple-watch-mac/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 07:01:08 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Cao]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542410</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/img_e9fc37b1cd61-1.jpeg?quality=82&#038;strip=all&#038;w=1125" /></div><p>Those who live outside of the United States are typically accustomed to setting clocks to 24-hour time. However, that is not the default in the U.S.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/how-to-set-24-hour-time-on-iphone-ipad-apple-watch-mac/#more-542410" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/how-to-set-24-hour-time-on-iphone-ipad-apple-watch-mac/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/img_e9fc37b1cd61-1.jpeg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/img_e9fc37b1cd61-1.jpeg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">24 hour time how to lead</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/0c47462dbc0e9b4959fe22331149444d?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">ipetercao</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>How to prepare your Mac for an upgrade to a new MacBook Pro</title>
+		<link>https://9to5mac.com/2018/07/12/how-to-prepare-mac-for-upgrade-to-new-macbook-pro/</link>
+		<comments>https://9to5mac.com/2018/07/12/how-to-prepare-mac-for-upgrade-to-new-macbook-pro/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 07:00:55 +0000</pubDate>
+		<dc:creator><![CDATA[Michael Potuck]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542346</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro1.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Apple today <a href="https://9to5mac.com/2018/07/12/apple-macbook-pro-with-touch-bar-updated-with-max-32-gb-ram-improved-third-generation-keyboard-true-tone-and-new-intel-chips/">updated its MacBook Pro lineup</a>, bringing Intel&#8217;s 8th generation processors, True Tone display, a third-generation butterfly keyboard and more to the 13- and 15-inch notebooks. If you&#8217;re going to be upgrading, follow along for how to get ready to switch to a new MacBook Pro.</p>
+<p> <a href="https://9to5mac.com/2018/07/12/how-to-prepare-mac-for-upgrade-to-new-macbook-pro/#more-542346" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/12/how-to-prepare-mac-for-upgrade-to-new-macbook-pro/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro1.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/2018-macbook-pro1.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">2018-macbook-pro</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/617382fa123c4948681a44755a0146ca?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">michaelpotuck</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Affinity Publisher beta for Mac slated to arrive before end of August</title>
+		<link>https://9to5mac.com/2018/07/11/affinity-publisher-beta-mac-end-of-august/</link>
+		<comments>https://9to5mac.com/2018/07/11/affinity-publisher-beta-mac-end-of-august/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 02:31:52 +0000</pubDate>
+		<dc:creator><![CDATA[Jeff Benjamin]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542186</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/affinity-publisher-mac-beta.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Affinity Publisher is an upcoming desktop publishing app that many are hoping will serve as legitimate Adobe InDesign alternative, much like sister apps Affinity Photo and Affinity Designer have served as viable alternatives to Adobe Photoshop and Adobe Illustrator. Lost amid the shuffle of <a href="https://9to5mac.com/2018/07/11/professional-illustrator-app-affinity-designer-now-available-on-ipad-for-just-13-99/">today&#8217;s release of Designer for iPad</a>, developer Serif says that the <a href="https://affinity.serif.com/en-us/publisher/">Publisher beta will arrive before the end of August</a>. <a href="https://9to5mac.com/2018/07/11/affinity-publisher-beta-mac-end-of-august/#more-542186" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/affinity-publisher-beta-mac-end-of-august/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/affinity-publisher-mac-beta.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/affinity-publisher-mac-beta.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Affinity Publisher Mac Beta</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/7eb483ea81412828f92621268e8ca287?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">bnjmorg</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Timehop says more user data was compromised in data breach than initially thought</title>
+		<link>https://9to5mac.com/2018/07/11/timehop-data-breach/</link>
+		<comments>https://9to5mac.com/2018/07/11/timehop-data-breach/#respond</comments>
+		<pubDate>Thu, 12 Jul 2018 00:50:07 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542184</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/timehop.jpg?quality=82&#038;strip=all&#038;w=1500" /></div><p>Timehop today is providing additional information on the data breach it first <a href="https://9to5mac.com/2018/07/09/timehop-hack-what-to-do/">revealed yesterday</a>. According to <a href="https://techcrunch.com/2018/07/11/timehop-data-breach/">TechCrunch</a>, Timehop has discovered that the breach included more user data than it initially thought&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/11/timehop-data-breach/#more-542184" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/timehop-data-breach/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/timehop.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/timehop.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">timehop</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Gallery: Visualizing an 11-inch iPad Pro and bezel-free Apple Watch Series 4</title>
+		<link>https://9to5mac.com/2018/07/11/11-inch-ipad-pro-apple-watch-series-4-concept/</link>
+		<comments>https://9to5mac.com/2018/07/11/11-inch-ipad-pro-apple-watch-series-4-concept/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 23:13:06 +0000</pubDate>
+		<dc:creator><![CDATA[Michael Steeber]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542171</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/series4_ipadpro_9to5mac.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>A <a href="https://9to5mac.com/2018/07/11/kuo-iphone-ipad-mac-apple-watch-rumors/">report today</a> from analyst Ming-Chi Kuo offered new insight into what Apple’s fall iPad and Apple Watch lineup might look like. Based on these predictions, we’ve visualized what could be in store for later this year.</p>
+<p> <a href="https://9to5mac.com/2018/07/11/11-inch-ipad-pro-apple-watch-series-4-concept/#more-542171" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/11-inch-ipad-pro-apple-watch-series-4-concept/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/series4_ipadpro_9to5mac.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/series4_ipadpro_9to5mac.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Series4_iPadPro_9to5Mac</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/bd3c0ec13b885887050fa53b0e30b243?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">michaelsteeber</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>North Carolina governor &#8216;hopeful&#8217; to win Apple campus despite the company&#8217;s silence</title>
+		<link>https://9to5mac.com/2018/07/11/apple-north-carolina-campus-governor/</link>
+		<comments>https://9to5mac.com/2018/07/11/apple-north-carolina-campus-governor/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 21:41:26 +0000</pubDate>
+		<dc:creator><![CDATA[Chance Miller]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542160</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/07/atbmcpofrv6qhwrdwyqbw_thumb_2716.jpg?quality=82&#038;strip=all&#038;w=1182" /></div><p>Despite a lack of news over recent weeks, Apple is rumored to be eyeing Research Triangle Park in North Carolina for a new United States campus. Today, local news outlet <em><a href="https://www.wraltechwire.com/2018/07/11/governor-hopeful-about-tech-projects-even-as-apple-amazon-hq2-silence-deepens/">WRAL</a></em> reports that North Carolina governor Roy Cooper is hopeful about Apple&#8217;s plans in the state&#8230;</p>
+<p> <a href="https://9to5mac.com/2018/07/11/apple-north-carolina-campus-governor/#more-542160" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/apple-north-carolina-campus-governor/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/07/atbmcpofrv6qhwrdwyqbw_thumb_2716.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/atbmcpofrv6qhwrdwyqbw_thumb_2716.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">ATbmCpOfRV6Qh%WrdWYQBw_thumb_2716</media:title>
+		</media:content>
+
+		<media:content url="https://2.gravatar.com/avatar/8ca0a5473ca1b059b4b0aa628da621ff?s=96&#38;d=https%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">chmiller44</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>How to update Sonos speakers for AirPlay 2 and HomeKit</title>
+		<link>https://9to5mac.com/2018/07/11/how-to-update-sonos-speakers-for-airplay-2-homekit/</link>
+		<comments>https://9to5mac.com/2018/07/11/how-to-update-sonos-speakers-for-airplay-2-homekit/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 20:21:28 +0000</pubDate>
+		<dc:creator><![CDATA[Michael Potuck]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542127</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/10/sonos_1_black_and_white_21.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Today is the day that many Sonos and Apple users have been waiting for! This morning, <a href="https://9to5mac.com/2018/07/11/sonos-airplay-2-update/">Sonos has launched AirPlay 2 support</a> via a software update that brings HomeKit and Siri functionality. Follow along for how to get your Sonos speakers up and running with AirPlay 2.</p>
+<p> <a href="https://9to5mac.com/2018/07/11/how-to-update-sonos-speakers-for-airplay-2-homekit/#more-542127" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/how-to-update-sonos-speakers-for-airplay-2-homekit/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/10/sonos_1_black_and_white_21.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/10/sonos_1_black_and_white_21.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Sonos_1_Black_and_White_2</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/617382fa123c4948681a44755a0146ca?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">michaelpotuck</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>9to5Mac Daily: July 11, 2018</title>
+		<link>https://9to5mac.com/2018/07/11/9to5mac-daily-july-11-2018/</link>
+		<comments>https://9to5mac.com/2018/07/11/9to5mac-daily-july-11-2018/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 19:51:49 +0000</pubDate>
+		<dc:creator><![CDATA[Zac Hall]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542140</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/01/artboard-12x.jpeg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available <a href="https://geo.itunes.apple.com/us/podcast/id1331816080?at=10laZc&amp;pt=11l8808" target="_blank" rel="noopener noreferrer">on iTunes and Apple’s Podcasts app</a>, <a href="https://www.stitcher.com/podcast/9to5mac-daily">Stitcher</a>, <a href="https://tunein.com/radio/9to5Mac-Daily-p1089524/">TuneIn</a>, <a href="https://play.google.com/music/m/I5d4dzs7dauazmfxvvrynyiuram?t=9to5Mac_Daily">Google Play</a>, or through our <a href="http://feeds.feedburner.com/9to5macDaily">dedicated RSS feed</a> for Overcast and other podcast players.</p>
+<p><audio class="wp-audio-shortcode" id="audio-542140-5" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3?_=5" /><a href="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3">https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3</a></audio></p>
+<p> <a href="https://9to5mac.com/2018/07/11/9to5mac-daily-july-11-2018/#more-542140" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/9to5mac-daily-july-11-2018/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+<enclosure url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" length="2327137" type="audio/mpeg" />
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/01/artboard-12x.jpeg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/01/artboard-12x.jpeg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">9to5Mac Daily lead podcast art</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/4403f5bde9b9dd1799eda1756139557d?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">apollozac</media:title>
+		</media:content>
+
+		<media:content url="https://9to5mac.files.wordpress.com/2018/07/9to5mac-daily-07-11-2018.mp3" medium="audio" />
+	</item>
+		<item>
+		<title>Apple signs on Mimi Leder to direct upcoming drama series starring Reese Witherspoon and Jennifer Aniston</title>
+		<link>https://9to5mac.com/2018/07/11/apple-hires-mimi-leder-aniston-witherspoon-drama/</link>
+		<comments>https://9to5mac.com/2018/07/11/apple-hires-mimi-leder-aniston-witherspoon-drama/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 19:28:41 +0000</pubDate>
+		<dc:creator><![CDATA[Peter Cao]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542132</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/11/jennifer-aniston-reese-witherspoon.jpg?quality=82&#038;strip=all&#038;w=1000" /></div><p><em>Variety</em> <a href="https://variety.com/2018/tv/news/apples-jennifer-aniston-reese-witherspoon-series-director-mimi-leder-1202870604/">reports</a> that Apple has signed on a new director, Mimi Leder, for its untitled, unreleased drama series it&#8217;s currently working on behind the scenes. The series stars Jennifer Aniston and Reese Witherspoon with executive producer and showrunner Kerry Ehrin.</p>
+<p> <a href="https://9to5mac.com/2018/07/11/apple-hires-mimi-leder-aniston-witherspoon-drama/#more-542132" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/apple-hires-mimi-leder-aniston-witherspoon-drama/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/11/jennifer-aniston-reese-witherspoon.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/11/jennifer-aniston-reese-witherspoon.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">Jennifer Aniston Reese Witherspoon</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/0c47462dbc0e9b4959fe22331149444d?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">ipetercao</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>9to5Toys Last Call: Apple AirPods $136, iPhone X 50% off, Philips Hue Starter Kit (Refurb) $88, more</title>
+		<link>https://9to5mac.com/2018/07/11/airpods-iphone-x-philips-hue-more/</link>
+		<comments>https://9to5mac.com/2018/07/11/airpods-iphone-x-philips-hue-more/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 16:30:35 +0000</pubDate>
+		<dc:creator><![CDATA[Blair Altland]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542072</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Keep up with the best gear and deals on the web by <em><strong><a href="http://9to5toys.com/9to5toys-newsletter-signup/" target="_blank" rel="noopener noreferrer">signing up for the 9to5Toys Newsletter</a></strong></em>. Also, be sure to check us out on: <a href="http://twitter.com/9to5toys">Twitter</a>, <a href="http://9to5toys.com/feed">RSS Feed</a>, <a href="http://www.facebook.com/pages/9to5toyscom/228249133858390">Facebook</a>, <a href="https://plus.google.com/b/105878626736210310777/105878626736210310777/posts" target="_blank" rel="noopener noreferrer">Google+</a> and <a href="https://9to5mac.com/2013/12/11/safari-push-notifications-are-live-on-all-9to5-sites/" target="_blank" rel="noopener noreferrer">Safari push notifications</a>.</p>
+<h3>Listen to the new 9to5Toys Daily Podcast:</h3>
+<p><audio class="wp-audio-shortcode" id="audio-542072-6" preload="none" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3?_=6" /><a href="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3">https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3</a></audio>
+ <a href="https://9to5mac.com/2018/07/11/airpods-iphone-x-philips-hue-more/#more-542072" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/airpods-iphone-x-philips-hue-more/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+<enclosure url="http://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" length="3023997" type="audio/mpeg" />
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2017/09/9to5toys-lunch-break.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">9to5toys-Lunch-Break</media:title>
+		</media:content>
+
+		<media:content url="https://0.gravatar.com/avatar/02fbc58eb36008b99405f7003f933d72?s=96&#38;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">blairaltland</media:title>
+		</media:content>
+
+		<media:content url="https://9to5toys.com/wp-content/uploads/sites/5/2018/07/9to5Toys-Daily-7-11-2018.mp3" medium="audio" />
+	</item>
+		<item>
+		<title>Kuo: Apple planning 11&#8243; iPad Pro, Mac mini update, 1.57&#8243; &#038; 1.78&#8243; Apple Watch, AirPower for fall</title>
+		<link>https://9to5mac.com/2018/07/11/kuo-iphone-ipad-mac-apple-watch-rumors/</link>
+		<comments>https://9to5mac.com/2018/07/11/kuo-iphone-ipad-mac-apple-watch-rumors/#respond</comments>
+		<pubDate>Wed, 11 Jul 2018 16:13:47 +0000</pubDate>
+		<dc:creator><![CDATA[Zac Hall]]></dc:creator>
+				<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://9to5mac.com/?p=542075</guid>
+		<description><![CDATA[<div class="feat-image"><img src="https://9to5mac.files.wordpress.com/2018/06/public-beta.jpg?quality=82&#038;strip=all&#038;w=1600" /></div><p>Ming-Chi Kuo of TF International Securities has published a new research note for investors that includes new details about what to expect with Apple&#8217;s fall hardware lineup. Adding to his previous reports about new iPhones, Kuo has shared new details and specifics about upcoming iPad Pro updates, Mac refreshes including the Mac mini, Apple Watch screen size expectations, and more.</p>
+<p> <a href="https://9to5mac.com/2018/07/11/kuo-iphone-ipad-mac-apple-watch-rumors/#more-542075" class="more-link">more&#8230;</a></p>
+]]></description>
+		<wfw:commentRss>https://9to5mac.com/2018/07/11/kuo-iphone-ipad-mac-apple-watch-rumors/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+	
+		<media:thumbnail url="https://9to5mac.files.wordpress.com/2018/06/public-beta.jpg?quality=82&#038;strip=all" />
+		<media:content url="https://9to5mac.files.wordpress.com/2018/06/public-beta.jpg?quality=82&#038;strip=all" medium="image">
+			<media:title type="html">public beta (2:1)</media:title>
+		</media:content>
+
+		<media:content url="https://1.gravatar.com/avatar/4403f5bde9b9dd1799eda1756139557d?s=96&#38;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&#38;r=R" medium="image">
+			<media:title type="html">apollozac</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>
