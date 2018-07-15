@@ -57,6 +57,14 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         }
     }
 
+    func articlesResultsController() -> ArticleResultsController {
+        let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
+        let publishedSort = NSSortDescriptor(key: "published", ascending: false)
+        articlesFetch.sortDescriptors = [publishedSort]
+        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "AllArticlesByPublishedDescending")
+        return ArticleResultsControllerCoreData(fc: fc)
+    }
+
     func newBackgroundContext() -> FeedMeStoreContext {
         return persistentContainer.newBackgroundContext() as FeedMeStoreContext
     }
@@ -92,3 +100,34 @@ class ArticleMO: NSManagedObject {
 }
 
 extension ArticleMO: Article {}
+
+class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
+
+    let fc: NSFetchedResultsController<ArticleMO>
+
+    init(fc: NSFetchedResultsController<ArticleMO>) {
+        self.fc = fc
+        super.init()
+        self.fc.delegate = self
+    }
+    var sectionCount: Int {
+        return fc.sections?.count ?? 0
+    }
+
+    var articleCount: Int {
+        return fc.fetchedObjects?.count ?? 0
+    }
+
+    func article(at indexPath: IndexPath) -> Article {
+        return fc.object(at: indexPath)
+    }
+
+    func performFetch() {
+        try? fc.performFetch()
+    }
+}
+
+extension ArticleResultsControllerCoreData: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    }
+}

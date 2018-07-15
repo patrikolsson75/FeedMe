@@ -9,23 +9,17 @@
 import UIKit
 import SafariServices
 
-
 class ArticleListViewController: UITableViewController {
 
-    var articles: [Article] = []
     var store: FeedMeStore = FeedMeCoreDataStore.shared
+    lazy var articlesResultsController =  store.articlesResultsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        NotificationCenter.default.addObserver(forName: .updatedFeed, object: nil, queue: OperationQueue.current) { [store] _ in
-            DispatchQueue.main.async { [weak self, store] in
-                self?.articles = store.allArticles()
-                self?.tableView.reloadData()
-            }
-        }
+        articlesResultsController.performFetch()
         refreshData()
     }
 
@@ -37,11 +31,11 @@ class ArticleListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return articlesResultsController.sectionCount
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return articlesResultsController.articleCount
     }
 
 
@@ -49,7 +43,7 @@ class ArticleListViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListTableViewCell", for: indexPath) as? ArticleListTableViewCell else {
             return UITableViewCell()
         }
-        let article = articles[indexPath.row]
+        let article = articlesResultsController.article(at: indexPath)
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
         cell.thumbnailURL = article.imageURL
@@ -58,7 +52,7 @@ class ArticleListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = articles[indexPath.row]
+        let article = articlesResultsController.article(at: indexPath)
         guard let url = article.articleURL else { return }
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true

@@ -91,6 +91,11 @@ extension XCTest {
 }
 
 class FeedMeStoreMock: FeedMeStore {
+    func articlesResultsController() -> ArticleResultsController {
+        return ArticleResultsControllerMock()
+    }
+
+
     func save(_ context: FeedMeStoreContext) {
     }
 
@@ -112,6 +117,21 @@ class FeedMeStoreMock: FeedMeStore {
     var articleWithGUIDReturnMock: Article? = nil
     func article(with guid: String, in context: FeedMeStoreContext) -> Article? {
         return articleWithGUIDReturnMock
+    }
+
+}
+
+class ArticleResultsControllerMock: ArticleResultsController {
+    var sectionCount: Int = 0
+
+    var articleCount: Int = 0
+
+    func article(at indexPath: IndexPath) -> Article {
+        return ArticleMock()
+    }
+
+    func performFetch() {
+
     }
 
 }
