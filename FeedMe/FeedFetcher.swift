@@ -10,25 +10,27 @@ import Foundation
 import FeedKit
 
 class FeedFetcher {
+
+    var store: FeedMeStore = FeedMeCoreDataStore.shared
+
     func fetch(_ feedURL: URL) {
         let parser = FeedParser(URL: feedURL)
-        let backgroundContext = FeedMeStore.shared.newBackgroundContext()
+        let backgroundContext = store.newBackgroundContext()
 
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { [store] (result) in
             guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
                 return
             }
-            let store = FeedMeStore.shared
-            feedItems.forEach({ feedItem in
+            feedItems.forEach({ [store] feedItem in
                 guard let guid = feedItem.guid?.value else { return }
-                if let existingArticle = store.article(with: guid, in: backgroundContext) {
+                if var existingArticle = store.article(with: guid, in: backgroundContext) {
                     existingArticle.title = feedItem.title
                     existingArticle.previewText = feedItem.description?.withoutHtml
                     existingArticle.imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
                     existingArticle.articleURL = URL(string: feedItem.link ?? "")
                     existingArticle.published = feedItem.pubDate
                 } else {
-                    let newArticle = store.newArticle(in: backgroundContext)
+                    var newArticle = store.newArticle(in: backgroundContext)
                     newArticle.guid = guid
                     newArticle.title = feedItem.title
                     newArticle.previewText = feedItem.description?.withoutHtml

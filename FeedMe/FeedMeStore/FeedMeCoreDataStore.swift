@@ -1,23 +1,21 @@
 //
-//  FeedMeStore.swift
+//  FeedMeCoreDataStore.swift
 //  FeedMe
 //
-//  Created by Patrik Olsson on 2018-07-14.
+//  Created by Patrik Olsson on 2018-07-15.
 //  Copyright © 2018 Patrik Olsson. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-class FeedMeStore: NSObject {
+extension NSManagedObjectContext: FeedMeStoreContext {}
 
-    static let shared = FeedMeStore()
+class FeedMeCoreDataStore: NSObject, FeedMeStore {
 
-    private override init() {
-        super.init()
-    }
+    static let shared = FeedMeCoreDataStore()
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "FeedMe")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -27,7 +25,8 @@ class FeedMeStore: NSObject {
         return container
     }()
 
-    func save(_ context: NSManagedObjectContext) {
+    func save(_ context: FeedMeStoreContext) {
+        guard let context = context as? NSManagedObjectContext else { return }
         if context.hasChanges {
             do {
                 try context.save()
@@ -38,11 +37,15 @@ class FeedMeStore: NSObject {
         }
     }
 
-    func newArticle(in context: NSManagedObjectContext) -> ArticleMO {
+    func newArticle(in context: FeedMeStoreContext) -> Article {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Can't save none NSManagedObjectContext")
+            return ArticleMO()
+        }
         return NSEntityDescription.insertNewObject(forEntityName: "Article", into: context) as! ArticleMO
     }
 
-    func allArticles() -> [ArticleMO] {
+    func allArticles() -> [Article] {
         let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
         let publishedSort = NSSortDescriptor(key: "published", ascending: false)
         articlesFetch.sortDescriptors = [publishedSort]
@@ -54,11 +57,15 @@ class FeedMeStore: NSObject {
         }
     }
 
-    func newBackgroundContext() -> NSManagedObjectContext {
-        return persistentContainer.newBackgroundContext()
+    func newBackgroundContext() -> FeedMeStoreContext {
+        return persistentContainer.newBackgroundContext() as FeedMeStoreContext
     }
 
-    func article(with guid: String, in context: NSManagedObjectContext) -> ArticleMO? {
+    func article(with guid: String, in context: FeedMeStoreContext) -> Article? {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return nil
+        }
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Article")
         let predicateID = NSPredicate(format: "guid == %@", guid)
         fetchRequest.predicate = predicateID
@@ -83,3 +90,5 @@ class ArticleMO: NSManagedObject {
     @NSManaged var guid: String
     @NSManaged var published: Date?
 }
+
+extension ArticleMO: Article {}

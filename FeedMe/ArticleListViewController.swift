@@ -12,16 +12,17 @@ import SafariServices
 
 class ArticleListViewController: UITableViewController {
 
-    var articles: [ArticleMO] = []
+    var articles: [Article] = []
+    var store: FeedMeStore = FeedMeCoreDataStore.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        NotificationCenter.default.addObserver(forName: .updatedFeed, object: nil, queue: OperationQueue.current) { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.articles = FeedMeStore.shared.allArticles()
+        NotificationCenter.default.addObserver(forName: .updatedFeed, object: nil, queue: OperationQueue.current) { [store] _ in
+            DispatchQueue.main.async { [weak self, store] in
+                self?.articles = store.allArticles()
                 self?.tableView.reloadData()
             }
         }
