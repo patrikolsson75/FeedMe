@@ -27,8 +27,7 @@ class FeedMeStore: NSObject {
         return container
     }()
 
-    func saveContext() {
-        let context = persistentContainer.viewContext
+    func save(_ context: NSManagedObjectContext) {
         if context.hasChanges {
             do {
                 try context.save()
@@ -39,8 +38,8 @@ class FeedMeStore: NSObject {
         }
     }
 
-    func newArticle() -> ArticleMO {
-        return NSEntityDescription.insertNewObject(forEntityName: "Article", into: persistentContainer.viewContext) as! ArticleMO
+    func newArticle(in context: NSManagedObjectContext) -> ArticleMO {
+        return NSEntityDescription.insertNewObject(forEntityName: "Article", into: context) as! ArticleMO
     }
 
     func allArticles() -> [ArticleMO] {
@@ -55,29 +54,17 @@ class FeedMeStore: NSObject {
         }
     }
 
-    func articleExists(guid: String) -> Bool {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Article")
-        fetchRequest.includesSubentities = false
-
-        var entitiesCount = 0
-
-        do {
-            entitiesCount = try persistentContainer.viewContext.count(for: fetchRequest)
-        }
-        catch {
-            print("error executing fetch request: \(error)")
-        }
-
-        return entitiesCount > 0
+    func newBackgroundContext() -> NSManagedObjectContext {
+        return persistentContainer.newBackgroundContext()
     }
 
-    func article(with guid: String) -> ArticleMO? {
+    func article(with guid: String, in context: NSManagedObjectContext) -> ArticleMO? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Article")
         let predicateID = NSPredicate(format: "guid == %@", guid)
         fetchRequest.predicate = predicateID
         do {
 
-            let results = try persistentContainer.viewContext.fetch(fetchRequest)
+            let results = try context.fetch(fetchRequest)
             return results.first as? ArticleMO
         }
         catch let error {

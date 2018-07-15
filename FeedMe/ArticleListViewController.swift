@@ -7,45 +7,8 @@
 //
 
 import UIKit
-import FeedKit
 import SafariServices
 
-class FeedFetcher {
-    func fetch(completion: @escaping (() -> Void)) {
-        let feedURL = URL(string: "https://9to5mac.com/feed/")!
-        //        let feedURL = URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!
-        //        let feedURL = URL(string: "http://feeds.macrumors.com/MacRumors-All")!
-        //        let feedURL = URL(string: "http://f1blogg.teknikensvarld.se/feed/")!
-        let parser = FeedParser(URL: feedURL)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
-            guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
-                completion()
-                return
-            }
-            let store = FeedMeStore.shared
-            feedItems.forEach({ feedItem in
-                guard let guid = feedItem.guid?.value else { return }
-                if let existingArticle = store.article(with: guid) {
-                    existingArticle.title = feedItem.title
-                    existingArticle.previewText = feedItem.description?.withoutHtml
-                    existingArticle.imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
-                    existingArticle.articleURL = URL(string: feedItem.link ?? "")
-                    existingArticle.published = feedItem.pubDate
-                } else {
-                    let newArticle = store.newArticle()
-                    newArticle.guid = guid
-                    newArticle.title = feedItem.title
-                    newArticle.previewText = feedItem.description?.withoutHtml
-                    newArticle.imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
-                    newArticle.articleURL = URL(string: feedItem.link ?? "")
-                    newArticle.published = feedItem.pubDate
-                }
-            })
-            store.saveContext()
-            completion()
-        }
-    }
-}
 
 class ArticleListViewController: UITableViewController {
 
@@ -56,6 +19,12 @@ class ArticleListViewController: UITableViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        NotificationCenter.default.addObserver(forName: .updatedFeed, object: nil, queue: OperationQueue.current) { _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.articles = FeedMeStore.shared.allArticles()
+                self?.tableView.reloadData()
+            }
+        }
         refreshData()
     }
 
@@ -98,12 +67,10 @@ class ArticleListViewController: UITableViewController {
 
     func refreshData() {
         let fetcher = FeedFetcher()
-        fetcher.fetch { [weak self] in
-            DispatchQueue.main.async { [weak self] in
-                self?.articles = FeedMeStore.shared.allArticles()
-                self?.tableView.reloadData()
-            }
-        }
+        fetcher.fetch(URL(string: "https://9to5mac.com/feed/")!)
+        fetcher.fetch(URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!)
+        fetcher.fetch(URL(string: "http://feeds.macrumors.com/MacRumors-All")!)
+        fetcher.fetch(URL(string: "http://f1blogg.teknikensvarld.se/feed/")!)
     }
 }
 
