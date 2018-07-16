@@ -122,6 +122,20 @@ class FeedMeStoreMock: FeedMeStore {
 }
 
 class ArticleResultsControllerMock: ArticleResultsController {
+    func articleCount(in section: Int) -> Int {
+        return 0
+    }
+
+    var willChangeContent: (() -> Void)?
+
+    var insertRowsAtIndexPaths: (([IndexPath]) -> Void)?
+
+    var deleteRowsAtIndexPaths: (([IndexPath]) -> Void)?
+
+    var updateRowsAtIndexPath: ((IndexPath) -> Void)?
+
+    var didChangeContent: (() -> Void)?
+
     var sectionCount: Int = 0
 
     var articleCount: Int = 0

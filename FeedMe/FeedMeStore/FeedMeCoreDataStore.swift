@@ -61,7 +61,7 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
         let publishedSort = NSSortDescriptor(key: "published", ascending: false)
         articlesFetch.sortDescriptors = [publishedSort]
-        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "AllArticlesByPublishedDescending")
+        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         return ArticleResultsControllerCoreData(fc: fc)
     }
 
@@ -105,6 +105,12 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
 
     let fc: NSFetchedResultsController<ArticleMO>
 
+    var willChangeContent: (() -> Void)? = nil
+    var insertRowsAtIndexPaths: (([IndexPath]) -> Void)? = nil
+    var deleteRowsAtIndexPaths: (([IndexPath]) -> Void)? = nil
+    var updateRowsAtIndexPath: ((IndexPath) -> Void)? = nil
+    var didChangeContent: (() -> Void)? = nil
+
     init(fc: NSFetchedResultsController<ArticleMO>) {
         self.fc = fc
         super.init()
@@ -114,8 +120,12 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
         return fc.sections?.count ?? 0
     }
 
-    var articleCount: Int {
-        return fc.fetchedObjects?.count ?? 0
+    func articleCount(in section: Int) -> Int {
+        guard let sections = fc.sections else {
+            fatalError("No sections in fetchedResultsController")
+        }
+        let sectionInfo = sections[section]
+        return sectionInfo.numberOfObjects
     }
 
     func article(at indexPath: IndexPath) -> Article {
@@ -128,6 +138,32 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
 }
 
 extension ArticleResultsControllerCoreData: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        willChangeContent?()
     }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            insertRowsAtIndexPaths?([newIndexPath])
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            deleteRowsAtIndexPaths?([indexPath])
+        case .update:
+            guard let indexPath = indexPath else { return }
+            updateRowsAtIndexPath?(indexPath)
+        case .move:
+            guard let newIndexPath = newIndexPath else { return }
+            guard let indexPath = indexPath else { return }
+            deleteRowsAtIndexPaths?([indexPath])
+            insertRowsAtIndexPaths?([newIndexPath])
+        }
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        didChangeContent?()
+    }
+
 }

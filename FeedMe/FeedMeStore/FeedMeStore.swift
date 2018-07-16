@@ -31,7 +31,12 @@ protocol Article {
 
 protocol ArticleResultsController {
     var sectionCount: Int { get }
-    var articleCount: Int { get }
+    func articleCount(in section: Int) -> Int
     func article(at indexPath: IndexPath) -> Article
     func performFetch()
+    var willChangeContent: (() -> Void)? { get set }
+    var insertRowsAtIndexPaths: (([IndexPath]) -> Void)? { get set }
+    var deleteRowsAtIndexPaths: (([IndexPath]) -> Void)? { get set }
+    var updateRowsAtIndexPath: ((IndexPath) -> Void)? { get set }
+    var didChangeContent: (() -> Void)? { get set }
 }

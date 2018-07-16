@@ -19,6 +19,23 @@ class ArticleListViewController: UITableViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
+
+        articlesResultsController.willChangeContent = { [tableView] in
+            tableView?.beginUpdates()
+        }
+        articlesResultsController.didChangeContent = { [tableView] in
+            tableView?.endUpdates()
+        }
+        articlesResultsController.insertRowsAtIndexPaths = { [tableView] indexPaths in
+            tableView?.insertRows(at: indexPaths, with: .automatic)
+        }
+        articlesResultsController.deleteRowsAtIndexPaths = { [tableView] indexPaths in
+            tableView?.deleteRows(at: indexPaths, with: .automatic)
+        }
+        articlesResultsController.updateRowsAtIndexPath = { [weak self, tableView] indexPath in
+            guard let cell = tableView?.cellForRow(at: indexPath) as? ArticleListTableViewCell else { return }
+            self?.configure(cell, at: indexPath)
+        }
         articlesResultsController.performFetch()
         refreshData()
     }
@@ -35,19 +52,22 @@ class ArticleListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articlesResultsController.articleCount
+        return articlesResultsController.articleCount(in: section)
     }
 
+
+    fileprivate func configure(_ cell: ArticleListTableViewCell, at indexPath: IndexPath) {
+        let article = articlesResultsController.article(at: indexPath)
+        cell.titleLabel.text = article.title
+        cell.previewLabel.text = article.previewText
+        cell.thumbnailURL = article.imageURL
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListTableViewCell", for: indexPath) as? ArticleListTableViewCell else {
             return UITableViewCell()
         }
-        let article = articlesResultsController.article(at: indexPath)
-        cell.titleLabel.text = article.title
-        cell.previewLabel.text = article.previewText
-        cell.thumbnailURL = article.imageURL
-
+        configure(cell, at: indexPath)
         return cell
     }
 
