@@ -14,18 +14,22 @@ class FeedFetcherTest: XCTestCase {
 
     func testThatItParse_9to5mac() {
         let store = FeedMeStoreMock()
+        let dataDownloader = DataDownloaderMock()
         let rssData = contentsOfXMLFile(named: "9to5mac")
         let notificationCenter = NotificationCenter()
-        let fetcher = FeedFetcher(with: rssData, using: store, notify: notificationCenter)
+        let fetcher = FeedFetcher(store: store, dataDownloader: dataDownloader, notificationCenter: notificationCenter)
         let asyncExpectation = expectation(description: "updatedFeed")
 
+        notificationCenter.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { notification in
+            guard let operationCount = notification.userInfo?["operationCount"] as? Int,
+            operationCount == 0 else { return }
+            asyncExpectation.fulfill()
+        })
+        dataDownloader.dataContentsOfURLMock = rssData
         store.newArticlesReturned = []
         store.articleWithGUIDReturnMock = nil
-        fetcher.fetch()
+        fetcher.fetch([URL(string: "https://9to5mac.com/feed/")!])
 
-        notificationCenter.addObserver(forName: .updatedFeed, object: nil, queue: nil) { _ in
-            asyncExpectation.fulfill()
-        }
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(store.newArticlesReturned.count, 50)
 
@@ -40,18 +44,22 @@ class FeedFetcherTest: XCTestCase {
 
     func testThatItParse_iMore() {
         let store = FeedMeStoreMock()
+        let dataDownloader = DataDownloaderMock()
         let rssData = contentsOfXMLFile(named: "imore")
         let notificationCenter = NotificationCenter()
-        let fetcher = FeedFetcher(with: rssData, using: store, notify: notificationCenter)
+        let fetcher = FeedFetcher(store: store, dataDownloader: dataDownloader, notificationCenter: notificationCenter)
         let asyncExpectation = expectation(description: "updatedFeed")
 
+        notificationCenter.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { notification in
+            guard let operationCount = notification.userInfo?["operationCount"] as? Int,
+                operationCount == 0 else { return }
+            asyncExpectation.fulfill()
+        })
+        dataDownloader.dataContentsOfURLMock = rssData
         store.newArticlesReturned = []
         store.articleWithGUIDReturnMock = nil
-        fetcher.fetch()
+        fetcher.fetch([URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!])
 
-        notificationCenter.addObserver(forName: .updatedFeed, object: nil, queue: nil) { _ in
-            asyncExpectation.fulfill()
-        }
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(store.newArticlesReturned.count, 30)
 
@@ -146,6 +154,15 @@ class ArticleResultsControllerMock: ArticleResultsController {
 
     func performFetch() {
 
+    }
+
+}
+
+class DataDownloaderMock: DataDownloader {
+
+    var dataContentsOfURLMock: Data? = nil
+    func data(contentsOf dataURL: URL) -> Data? {
+        return dataContentsOfURLMock
     }
 
 }

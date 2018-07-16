@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -84,22 +85,57 @@
                             <outlet property="delegate" destination="kWD-fW-IWg" id="y0M-cs-Mjn"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="5AO-vI-pRw"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="gKv-L4-OFW" id="2XJ-0N-wRw"/>
+                        <outlet property="statusSpinner" destination="BP7-xH-6Nc" id="Yht-as-P7A"/>
+                        <outlet property="statusView" destination="YiE-4l-yZE" id="RcZ-LH-fox"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qK3-uq-NA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="YiE-4l-yZE">
+                    <rect key="frame" x="0.0" y="0.0" width="129" height="65"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKv-L4-OFW">
+                            <rect key="frame" x="0.0" y="0.0" width="101" height="65"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BP7-xH-6Nc">
+                            <rect key="frame" x="109" y="22.5" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gKv-L4-OFW" firstAttribute="leading" secondItem="YiE-4l-yZE" secondAttribute="leading" id="6kb-sb-YPH"/>
+                        <constraint firstAttribute="bottom" secondItem="gKv-L4-OFW" secondAttribute="bottom" id="DKK-hH-rWS"/>
+                        <constraint firstItem="gKv-L4-OFW" firstAttribute="top" secondItem="YiE-4l-yZE" secondAttribute="top" id="E0X-G9-IV4"/>
+                        <constraint firstItem="BP7-xH-6Nc" firstAttribute="leading" secondItem="gKv-L4-OFW" secondAttribute="trailing" constant="8" id="N8W-Yh-HOL"/>
+                        <constraint firstAttribute="trailing" secondItem="BP7-xH-6Nc" secondAttribute="trailing" id="UtY-iV-VMq"/>
+                        <constraint firstItem="BP7-xH-6Nc" firstAttribute="centerY" secondItem="gKv-L4-OFW" secondAttribute="centerY" id="WlM-V5-bDO"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="aap-Dd-62z"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1264.8" y="353.9730134932534"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fDl-1C-Dqt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KR7-xu-7wi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="KR7-xu-7wi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zgm-yR-KOg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CnL-SR-dUx">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="kWD-fW-IWg" kind="relationship" relationship="rootViewController" id="39U-WX-z9E"/>
                     </connections>

@@ -9,54 +9,40 @@
 import Foundation
 import FeedKit
 
-class FeedFetcher {
+class FeedFetcher: NSObject {
 
     let store: FeedMeStore
-    let parser: FeedParser
-    let parseQueue: DispatchQueue
     let notificationCenter: NotificationCenter
+    let dataDownloader: DataDownloader
+    var fetchFeedQueueOperationCountObservation: NSKeyValueObservation?
 
-    init(with data: Data,
-         using store: FeedMeStore = FeedMeCoreDataStore.shared,
-         on parseQueue: DispatchQueue = DispatchQueue.global(qos: .userInitiated),
-         notify notificationCenter: NotificationCenter = NotificationCenter.default) {
-        self.parser = FeedParser(data: data)
+    lazy var fetchFeedQueue: OperationQueue = {
+        var queue = OperationQueue()
+        queue.name = "FetchFeed queue"
+        queue.maxConcurrentOperationCount = 3
+        return queue
+    }()
+
+    init(store: FeedMeStore,
+         dataDownloader: DataDownloader = SimpleDataDownloader(),
+         notificationCenter: NotificationCenter = NotificationCenter.default) {
         self.store = store
-        self.parseQueue = parseQueue
+        self.dataDownloader = dataDownloader
         self.notificationCenter = notificationCenter
+        super.init()
+        fetchFeedQueueOperationCountObservation = fetchFeedQueue.observe(\.operationCount) { (queue, change) in
+            notificationCenter.post(name: .fetchingFeedCount, object: nil, userInfo: ["operationCount": queue.operationCount])
+        }
+
     }
 
-    init(with url: URL,
-         using store: FeedMeStore = FeedMeCoreDataStore.shared,
-         on parseQueue: DispatchQueue = DispatchQueue.global(qos: .userInitiated),
-         notify notificationCenter: NotificationCenter = NotificationCenter.default) {
-        self.parser = FeedParser(URL: url)
-        self.store = store
-        self.parseQueue = parseQueue
-        self.notificationCenter = notificationCenter
-    }
-
-    func fetch() {
-        let backgroundContext = store.newBackgroundContext()
-
-        parser.parseAsync(queue: parseQueue) { [store, notificationCenter] (result) in
-            guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
-                return
-            }
-            feedItems.forEach({ [store] feedItem in
-                guard let guid = feedItem.guid?.value else { return }
-                if var existingArticle = store.article(with: guid, in: backgroundContext) {
-                    existingArticle.update(with: feedItem)
-                } else {
-                    var newArticle = store.newArticle(in: backgroundContext)
-                    newArticle.guid = guid
-                    newArticle.update(with: feedItem)
-                }
-            })
-            store.save(backgroundContext)
-            notificationCenter.post(name: .updatedFeed, object: nil)
+    func fetch(_ feedURLS: [URL]) {
+        feedURLS.forEach { feedURL in
+            let op = FetchFeedOperation(feedURL: feedURL, store: store, dataDownloader: dataDownloader)
+            fetchFeedQueue.addOperation(op)
         }
     }
+
 }
 
 extension String {
@@ -86,5 +72,69 @@ extension Article {
 }
 
 extension Notification.Name {
-    static let updatedFeed = Notification.Name("updatedFeed")
+    static let fetchingFeedCount = Notification.Name("fetchingFeedCount")
+}
+
+protocol DataDownloader {
+    func data(contentsOf dataURL: URL) -> Data?
+}
+
+class SimpleDataDownloader: DataDownloader {
+    func data(contentsOf dataURL: URL) -> Data? {
+        return try? Data(contentsOf: dataURL)
+    }
+
+}
+
+class FetchFeedOperation: Operation {
+
+    let feedURL: URL
+    let store: FeedMeStore
+    let dataDownloader: DataDownloader
+
+    init(feedURL: URL, store: FeedMeStore, dataDownloader: DataDownloader) {
+        self.feedURL = feedURL
+        self.store = store
+        self.dataDownloader = dataDownloader
+    }
+
+    override func main() {
+        if isCancelled {
+            return
+        }
+
+        guard let feedData = dataDownloader.data(contentsOf: feedURL) else { return }
+
+        let parser = FeedParser(data: feedData)
+        let result = parser.parse()
+
+        if isCancelled {
+            return
+        }
+
+        guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
+            return
+        }
+
+        print("Downloaded \(feedItems.count) for \(feed.title ?? "n/a")")
+
+        let backgroundContext = store.newBackgroundContext()
+
+        feedItems.forEach({ [store] feedItem in
+
+            if isCancelled {
+                return
+            }
+
+            guard let guid = feedItem.guid?.value else { return }
+            if var existingArticle = store.article(with: guid, in: backgroundContext) {
+                existingArticle.update(with: feedItem)
+            } else {
+                var newArticle = store.newArticle(in: backgroundContext)
+                newArticle.guid = guid
+                newArticle.update(with: feedItem)
+            }
+        })
+        store.save(backgroundContext)
+    }
 }

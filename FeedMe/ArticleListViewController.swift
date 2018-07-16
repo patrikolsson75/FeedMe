@@ -13,12 +13,32 @@ class ArticleListViewController: UITableViewController {
 
     var store: FeedMeStore = FeedMeCoreDataStore.shared
     lazy var articlesResultsController =  store.articlesResultsController()
-
+    lazy var feedFetcher = FeedFetcher(store: store)
+    @IBOutlet var statusView: UIView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusSpinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        toolbarItems = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+                        UIBarButtonItem(customView: statusView),
+                        UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
+
+        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [statusLabel, statusSpinner] notification in
+            guard let operationCount = notification.userInfo?["operationCount"] as? Int else { return }
+            DispatchQueue.main.async {
+                if operationCount > 0 {
+                    statusLabel?.text = "Loading"
+                    statusSpinner?.startAnimating()
+                } else {
+                    statusLabel?.text = ""
+                    statusSpinner?.stopAnimating()
+                }
+            }
+        })
 
         articlesResultsController.willChangeContent = { [tableView] in
             tableView?.beginUpdates()
@@ -81,10 +101,11 @@ class ArticleListViewController: UITableViewController {
     }
 
     func refreshData() {
-        FeedFetcher(with: URL(string: "https://9to5mac.com/feed/")!).fetch()
-        FeedFetcher(with: URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!).fetch()
-        FeedFetcher(with: URL(string: "http://feeds.macrumors.com/MacRumors-All")!).fetch()
-        FeedFetcher(with: URL(string: "http://f1blogg.teknikensvarld.se/feed/")!).fetch()
-        FeedFetcher(with: URL(string: "http://feeds.feedburner.com/f1fanatic")!).fetch()
+        let feedURLS = [URL(string: "https://9to5mac.com/feed/")!,
+                        URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!,
+                        URL(string: "http://feeds.macrumors.com/MacRumors-All")!,
+                        URL(string: "http://f1blogg.teknikensvarld.se/feed/")!,
+                        URL(string: "http://feeds.feedburner.com/f1fanatic")!]
+        feedFetcher.fetch(feedURLS)
     }
 }
