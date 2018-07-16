@@ -22,6 +22,9 @@
 		7C362AB020FCFBCB008155AA /* FeedMeStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AAF20FCFBCB008155AA /* FeedMeStoreMock.swift */; };
 		7C362AB220FCFBF4008155AA /* ArticleResultsControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB120FCFBF4008155AA /* ArticleResultsControllerMock.swift */; };
 		7C362AB420FCFC30008155AA /* DataDownloaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB320FCFC30008155AA /* DataDownloaderMock.swift */; };
+		7C362AB720FCFDD1008155AA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB620FCFDD1008155AA /* StringExtension.swift */; };
+		7C362AB920FCFE0A008155AA /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB820FCFE0A008155AA /* DataDownloader.swift */; };
+		7C362ABB20FCFE2B008155AA /* FetchFeedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362ABA20FCFE2B008155AA /* FetchFeedOperation.swift */; };
 		7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFA20F93555001C6674 /* AppDelegate.swift */; };
 		7CB8FB0020F93555001C6674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFE20F93555001C6674 /* Main.storyboard */; };
 		7CB8FB0220F93556001C6674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0120F93556001C6674 /* Assets.xcassets */; };
@@ -157,6 +160,9 @@
 		7C362AAF20FCFBCB008155AA /* FeedMeStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeStoreMock.swift; sourceTree = "<group>"; };
 		7C362AB120FCFBF4008155AA /* ArticleResultsControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleResultsControllerMock.swift; sourceTree = "<group>"; };
 		7C362AB320FCFC30008155AA /* DataDownloaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloaderMock.swift; sourceTree = "<group>"; };
+		7C362AB620FCFDD1008155AA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		7C362AB820FCFE0A008155AA /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		7C362ABA20FCFE2B008155AA /* FetchFeedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFeedOperation.swift; sourceTree = "<group>"; };
 		7CB8FAF720F93554001C6674 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FAFA20F93555001C6674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB8FAFF20F93555001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 			children = (
 				7C362A9A20FA876E008155AA /* FeedFetcher.swift */,
 				7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */,
+				7C362AB820FCFE0A008155AA /* DataDownloader.swift */,
+				7C362ABA20FCFE2B008155AA /* FetchFeedOperation.swift */,
 			);
 			path = FeedFetcher;
 			sourceTree = "<group>";
@@ -256,6 +264,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7C362AB520FCFDB8008155AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C362AB620FCFDD1008155AA /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7CB8FAEE20F93554001C6674 = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +297,7 @@
 		7CB8FAF920F93554001C6674 /* FeedMe */ = {
 			isa = PBXGroup;
 			children = (
+				7C362AB520FCFDB8008155AA /* Extensions */,
 				7C362A9F20FB7EB1008155AA /* FeedFetcher */,
 				7C362A9C20FB7B18008155AA /* FeedMeStore */,
 				7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */,
@@ -549,8 +566,11 @@
 				7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */,
 				7CB8FB2920F93719001C6674 /* ArticleListViewController.swift in Sources */,
 				7C362A9E20FB7B46008155AA /* FeedMeCoreDataStore.swift in Sources */,
+				7C362ABB20FCFE2B008155AA /* FetchFeedOperation.swift in Sources */,
 				7C362A9B20FA876E008155AA /* FeedFetcher.swift in Sources */,
 				7C362A8820F9EF6E008155AA /* Cache.swift in Sources */,
+				7C362AB720FCFDD1008155AA /* StringExtension.swift in Sources */,
+				7C362AB920FCFE0A008155AA /* DataDownloader.swift in Sources */,
 				7C362A9920F9F9DD008155AA /* FeedMeStore.swift in Sources */,
 				7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */,
 				7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */,

@@ -38,103 +38,17 @@ class FeedFetcher: NSObject {
 
     func fetch(_ feedURLS: [URL]) {
         feedURLS.forEach { feedURL in
-            let op = FetchFeedOperation(feedURL: feedURL, store: store, dataDownloader: dataDownloader)
-            fetchFeedQueue.addOperation(op)
+            let operation = FetchFeedOperation(feedURL: feedURL, store: store, dataDownloader: dataDownloader)
+            fetchFeedQueue.addOperation(operation)
         }
     }
 
 }
 
-extension String {
-    var removingRepeatingNewlines: String {
-        return components(separatedBy: .newlines).filter { !$0.isEmpty }.joined(separator: " ")
-    }
-    var removingRepeatingWhiteSpace: String {
-        return components(separatedBy: .whitespaces).filter { $0.count > 0 }.joined(separator: " ")
-    }
-    var withoutHtml: String {
-        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-    }
-}
 
-extension Article {
-    mutating func update(with feedItem: RSSFeedItem) {
-        var itemPreviewText = feedItem.description?.withoutHtml
-        itemPreviewText = itemPreviewText?.trimmingCharacters(in: .whitespacesAndNewlines)
-        itemPreviewText = itemPreviewText?.removingRepeatingNewlines
-        itemPreviewText = itemPreviewText?.removingRepeatingWhiteSpace
-        title = feedItem.title
-        previewText = itemPreviewText
-        imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
-        articleURL = URL(string: feedItem.link ?? "")
-        published = feedItem.pubDate
-    }
-}
 
 extension Notification.Name {
     static let fetchingFeedCount = Notification.Name("fetchingFeedCount")
 }
 
-protocol DataDownloader {
-    func data(contentsOf dataURL: URL) -> Data?
-}
 
-class SimpleDataDownloader: DataDownloader {
-    func data(contentsOf dataURL: URL) -> Data? {
-        return try? Data(contentsOf: dataURL)
-    }
-
-}
-
-class FetchFeedOperation: Operation {
-
-    let feedURL: URL
-    let store: FeedMeStore
-    let dataDownloader: DataDownloader
-
-    init(feedURL: URL, store: FeedMeStore, dataDownloader: DataDownloader) {
-        self.feedURL = feedURL
-        self.store = store
-        self.dataDownloader = dataDownloader
-    }
-
-    override func main() {
-        if isCancelled {
-            return
-        }
-
-        guard let feedData = dataDownloader.data(contentsOf: feedURL) else { return }
-
-        let parser = FeedParser(data: feedData)
-        let result = parser.parse()
-
-        if isCancelled {
-            return
-        }
-
-        guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
-            return
-        }
-
-        print("Downloaded \(feedItems.count) for \(feed.title ?? "n/a")")
-
-        let backgroundContext = store.newBackgroundContext()
-
-        feedItems.forEach({ [store] feedItem in
-
-            if isCancelled {
-                return
-            }
-
-            guard let guid = feedItem.guid?.value else { return }
-            if var existingArticle = store.article(with: guid, in: backgroundContext) {
-                existingArticle.update(with: feedItem)
-            } else {
-                var newArticle = store.newArticle(in: backgroundContext)
-                newArticle.guid = guid
-                newArticle.update(with: feedItem)
-            }
-        })
-        store.save(backgroundContext)
-    }
-}
