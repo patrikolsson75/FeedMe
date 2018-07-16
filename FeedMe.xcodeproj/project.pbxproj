@@ -16,11 +16,16 @@
 		7C362AA120FB7FC4008155AA /* FeedFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */; };
 		7C362AA420FB88B0008155AA /* 9to5mac.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7C362AA320FB88B0008155AA /* 9to5mac.xml */; };
 		7C362AA620FBE0DE008155AA /* imore.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7C362AA520FBE0DE008155AA /* imore.xml */; };
+		7C362AA920FCFB16008155AA /* ArticleMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AA820FCFB16008155AA /* ArticleMock.swift */; };
+		7C362AAB20FCFB64008155AA /* FeedMeStoreContextMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AAA20FCFB64008155AA /* FeedMeStoreContextMock.swift */; };
+		7C362AAE20FCFBA5008155AA /* XCTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AAD20FCFBA5008155AA /* XCTestExtension.swift */; };
+		7C362AB020FCFBCB008155AA /* FeedMeStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AAF20FCFBCB008155AA /* FeedMeStoreMock.swift */; };
+		7C362AB220FCFBF4008155AA /* ArticleResultsControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB120FCFBF4008155AA /* ArticleResultsControllerMock.swift */; };
+		7C362AB420FCFC30008155AA /* DataDownloaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB320FCFC30008155AA /* DataDownloaderMock.swift */; };
 		7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFA20F93555001C6674 /* AppDelegate.swift */; };
 		7CB8FB0020F93555001C6674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFE20F93555001C6674 /* Main.storyboard */; };
 		7CB8FB0220F93556001C6674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0120F93556001C6674 /* Assets.xcassets */; };
 		7CB8FB0520F93556001C6674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */; };
-		7CB8FB1020F93556001C6674 /* FeedMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0F20F93556001C6674 /* FeedMeTests.swift */; };
 		7CB8FB1B20F93556001C6674 /* FeedMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB1A20F93556001C6674 /* FeedMeUITests.swift */; };
 		7CB8FB2920F93719001C6674 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */; };
 		7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */; };
@@ -146,6 +151,12 @@
 		7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFetcherTest.swift; sourceTree = "<group>"; };
 		7C362AA320FB88B0008155AA /* 9to5mac.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 9to5mac.xml; sourceTree = "<group>"; };
 		7C362AA520FBE0DE008155AA /* imore.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = imore.xml; sourceTree = "<group>"; };
+		7C362AA820FCFB16008155AA /* ArticleMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMock.swift; sourceTree = "<group>"; };
+		7C362AAA20FCFB64008155AA /* FeedMeStoreContextMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeStoreContextMock.swift; sourceTree = "<group>"; };
+		7C362AAD20FCFBA5008155AA /* XCTestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtension.swift; sourceTree = "<group>"; };
+		7C362AAF20FCFBCB008155AA /* FeedMeStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeStoreMock.swift; sourceTree = "<group>"; };
+		7C362AB120FCFBF4008155AA /* ArticleResultsControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleResultsControllerMock.swift; sourceTree = "<group>"; };
+		7C362AB320FCFC30008155AA /* DataDownloaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloaderMock.swift; sourceTree = "<group>"; };
 		7CB8FAF720F93554001C6674 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FAFA20F93555001C6674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB8FAFF20F93555001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,7 +164,6 @@
 		7CB8FB0420F93556001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CB8FB0620F93556001C6674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CB8FB0B20F93556001C6674 /* FeedMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CB8FB0F20F93556001C6674 /* FeedMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeTests.swift; sourceTree = "<group>"; };
 		7CB8FB1120F93556001C6674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CB8FB1620F93556001C6674 /* FeedMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FB1A20F93556001C6674 /* FeedMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeUITests.swift; sourceTree = "<group>"; };
@@ -226,6 +236,26 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7C362AA720FCFAF8008155AA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7C362AA820FCFB16008155AA /* ArticleMock.swift */,
+				7C362AAA20FCFB64008155AA /* FeedMeStoreContextMock.swift */,
+				7C362AAF20FCFBCB008155AA /* FeedMeStoreMock.swift */,
+				7C362AB120FCFBF4008155AA /* ArticleResultsControllerMock.swift */,
+				7C362AB320FCFC30008155AA /* DataDownloaderMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		7C362AAC20FCFB8C008155AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C362AAD20FCFBA5008155AA /* XCTestExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7CB8FAEE20F93554001C6674 = {
 			isa = PBXGroup;
 			children = (
@@ -268,8 +298,9 @@
 		7CB8FB0E20F93556001C6674 /* FeedMeTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C362AAC20FCFB8C008155AA /* Extensions */,
+				7C362AA720FCFAF8008155AA /* Mocks */,
 				7C362AA220FB8874008155AA /* Resources */,
-				7CB8FB0F20F93556001C6674 /* FeedMeTests.swift */,
 				7CB8FB1120F93556001C6674 /* Info.plist */,
 			);
 			path = FeedMeTests;
@@ -530,8 +561,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB8FB1020F93556001C6674 /* FeedMeTests.swift in Sources */,
+				7C362AB220FCFBF4008155AA /* ArticleResultsControllerMock.swift in Sources */,
+				7C362AAB20FCFB64008155AA /* FeedMeStoreContextMock.swift in Sources */,
 				7C362AA120FB7FC4008155AA /* FeedFetcherTest.swift in Sources */,
+				7C362AB020FCFBCB008155AA /* FeedMeStoreMock.swift in Sources */,
+				7C362AAE20FCFBA5008155AA /* XCTestExtension.swift in Sources */,
+				7C362AB420FCFC30008155AA /* DataDownloaderMock.swift in Sources */,
+				7C362AA920FCFB16008155AA /* ArticleMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
