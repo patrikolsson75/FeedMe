@@ -17,12 +17,17 @@ class ArticleListViewController: UITableViewController {
     @IBOutlet var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusSpinner: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
+
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
+        self.refreshControl = refreshControl
+
         toolbarItems = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
                         UIBarButtonItem(customView: statusView),
                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
@@ -36,6 +41,7 @@ class ArticleListViewController: UITableViewController {
                 } else {
                     statusLabel?.text = ""
                     statusSpinner?.stopAnimating()
+                    refreshControl.endRefreshing()
                 }
             }
         })
@@ -100,6 +106,7 @@ class ArticleListViewController: UITableViewController {
         present(web, animated: true, completion: nil)
     }
 
+    @objc
     func refreshData() {
         let feedURLS = [URL(string: "https://9to5mac.com/feed/")!,
                         URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!,
