@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FF9DE9B2101E5DA0054DAB7 /* RemoteImageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DE9A2101E5DA0054DAB7 /* RemoteImageMock.swift */; };
 		7C362A8820F9EF6E008155AA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A8720F9EF6E008155AA /* Cache.swift */; };
 		7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */; };
 		7C362A9720F9F6AB008155AA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C362A9620F9F6AB008155AA /* CoreData.framework */; };
@@ -25,6 +26,7 @@
 		7C362AB720FCFDD1008155AA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB620FCFDD1008155AA /* StringExtension.swift */; };
 		7C362AB920FCFE0A008155AA /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AB820FCFE0A008155AA /* DataDownloader.swift */; };
 		7C362ABB20FCFE2B008155AA /* FetchFeedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362ABA20FCFE2B008155AA /* FetchFeedOperation.swift */; };
+		7C362AC120FD23FA008155AA /* FeedMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362AC020FD23FA008155AA /* FeedMock.swift */; };
 		7CB8FAFB20F93555001C6674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFA20F93555001C6674 /* AppDelegate.swift */; };
 		7CB8FB0020F93555001C6674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FAFE20F93555001C6674 /* Main.storyboard */; };
 		7CB8FB0220F93556001C6674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0120F93556001C6674 /* Assets.xcassets */; };
@@ -145,6 +147,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5FF9DE9A2101E5DA0054DAB7 /* RemoteImageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageMock.swift; sourceTree = "<group>"; };
 		7C362A8720F9EF6E008155AA /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		7C362A9320F9F446008155AA /* FeedMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedMe.xcdatamodel; sourceTree = "<group>"; };
 		7C362A9620F9F6AB008155AA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,7 @@
 		7C362AB620FCFDD1008155AA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7C362AB820FCFE0A008155AA /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
 		7C362ABA20FCFE2B008155AA /* FetchFeedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFeedOperation.swift; sourceTree = "<group>"; };
+		7C362AC020FD23FA008155AA /* FeedMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMock.swift; sourceTree = "<group>"; };
 		7CB8FAF720F93554001C6674 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB8FAFA20F93555001C6674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB8FAFF20F93555001C6674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				7C362AAF20FCFBCB008155AA /* FeedMeStoreMock.swift */,
 				7C362AB120FCFBF4008155AA /* ArticleResultsControllerMock.swift */,
 				7C362AB320FCFC30008155AA /* DataDownloaderMock.swift */,
+				7C362AC020FD23FA008155AA /* FeedMock.swift */,
+				5FF9DE9A2101E5DA0054DAB7 /* RemoteImageMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -587,7 +593,9 @@
 				7C362AB020FCFBCB008155AA /* FeedMeStoreMock.swift in Sources */,
 				7C362AAE20FCFBA5008155AA /* XCTestExtension.swift in Sources */,
 				7C362AB420FCFC30008155AA /* DataDownloaderMock.swift in Sources */,
+				5FF9DE9B2101E5DA0054DAB7 /* RemoteImageMock.swift in Sources */,
 				7C362AA920FCFB16008155AA /* ArticleMock.swift in Sources */,
+				7C362AC120FD23FA008155AA /* FeedMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

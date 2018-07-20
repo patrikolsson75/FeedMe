@@ -10,6 +10,35 @@ import Foundation
 @testable import FeedMe
 
 class FeedMeStoreMock: FeedMeStore {
+    func articles(for feedURL: URL, in context: FeedMeStoreContext) -> [Article] {
+        return []
+    }
+    
+    func load(_ article: Article, from context: FeedMeStoreContext) -> Article? {
+        return nil
+    }
+    
+    func existsArticle(with guid: String, in context: FeedMeStoreContext) -> Bool {
+        return false
+    }
+    
+    var feedInContextReturnMock: Feed?
+    func feed(feed: Feed, in context: FeedMeStoreContext) -> Feed? {
+        return feedInContextReturnMock
+    }
+    
+    func load(_ image: RemoteImage, from context: FeedMeStoreContext) -> RemoteImage? {
+        return nil
+    }
+    
+    var allFeedsReturnMock: [Feed] = []
+    func allFeeds() -> [Feed] {
+        return allFeedsReturnMock
+    }
+
+    func prePopulateFeeds() {
+    }
+
     func articlesResultsController() -> ArticleResultsController {
         return ArticleResultsControllerMock()
     }

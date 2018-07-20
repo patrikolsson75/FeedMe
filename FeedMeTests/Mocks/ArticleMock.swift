@@ -10,11 +10,13 @@ import Foundation
 @testable import FeedMe
 
 class ArticleMock: Article {
+    var feed: Feed = FeedMock()
+    
+    var image: RemoteImage = RemoteImageMock()
+    
     var title: String?
 
     var previewText: String?
-
-    var imageURL: URL?
 
     var articleURL: URL?
 

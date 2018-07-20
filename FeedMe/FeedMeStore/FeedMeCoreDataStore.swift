@@ -22,6 +22,7 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        container.viewContext.automaticallyMergesChangesFromParent = true
         return container
     }()
 
@@ -42,7 +43,10 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
             assertionFailure("Can't save none NSManagedObjectContext")
             return ArticleMO()
         }
-        return NSEntityDescription.insertNewObject(forEntityName: "Article", into: context) as! ArticleMO
+        let articleMO = NSEntityDescription.insertNewObject(forEntityName: "Article", into: context) as! ArticleMO
+        let remoteImageMO = NSEntityDescription.insertNewObject(forEntityName: "RemoteImage", into: context) as! RemoteImageMO
+        articleMO.imageMO = remoteImageMO
+        return articleMO
     }
 
     func allArticles() -> [Article] {
@@ -53,7 +57,25 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         do {
             return try persistentContainer.viewContext.fetch(articlesFetch)
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch Articles: \(error)")
+        }
+    }
+
+    func articles(for feedURL: URL, in context: FeedMeStoreContext) -> [Article] {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return []
+        }
+        let fetchRequest = NSFetchRequest<ArticleMO>(entityName: "Article")
+        let predicateID = NSPredicate(format: "feedMO.feedURL == %@", feedURL.absoluteString)
+        fetchRequest.predicate = predicateID
+        let publishedSort = NSSortDescriptor(key: "published", ascending: false)
+        fetchRequest.sortDescriptors = [publishedSort]
+
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            fatalError("Failed to fetch Articles: \(error)")
         }
     }
 
@@ -66,7 +88,8 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
     }
 
     func newBackgroundContext() -> FeedMeStoreContext {
-        return persistentContainer.newBackgroundContext() as FeedMeStoreContext
+        let newContext = persistentContainer.newBackgroundContext()
+        return newContext as FeedMeStoreContext
     }
 
     func article(with guid: String, in context: FeedMeStoreContext) -> Article? {
@@ -87,19 +110,151 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
             return nil
         }
     }
+
+    func existsArticle(with guid: String, in context: FeedMeStoreContext) -> Bool {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return false
+        }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Article")
+        let predicateID = NSPredicate(format: "guid == %@", guid)
+        fetchRequest.predicate = predicateID
+        fetchRequest.includesSubentities = false
+
+        var entitiesCount = 0
+
+        do {
+            entitiesCount = try context.count(for: fetchRequest)
+        }
+        catch {
+            print("error executing fetch request: \(error)")
+        }
+
+        return entitiesCount > 0
+    }
+
+    func load(_ article: Article, from context: FeedMeStoreContext) -> Article? {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return nil
+        }
+        guard let articleMO = article as? ArticleMO else {
+            assertionFailure("Article objects is not ArticleMO")
+            return nil
+        }
+        return context.object(with: articleMO.objectID) as? Article
+    }
+
+    func load(_ image: RemoteImage, from context: FeedMeStoreContext) -> RemoteImage? {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return nil
+        }
+        guard let managedObject = image as? RemoteImageMO else {
+            assertionFailure("RemoteImage objects is not RemoteImageMO")
+            return nil
+        }
+        return context.object(with: managedObject.objectID) as? RemoteImageMO
+    }
+
+    func allFeeds() -> [Feed] {
+        let fetchRequest = NSFetchRequest<FeedMO>(entityName: "Feed")
+//        let publishedSort = NSSortDescriptor(key: "published", ascending: false)
+//        articlesFetch.sortDescriptors = [publishedSort]
+
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch {
+            fatalError("Failed to fetch Feeds: \(error)")
+        }
+    }
+
+    func feed(feed: Feed, in context: FeedMeStoreContext) -> Feed? {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return nil
+        }
+        guard let feedMO = feed as? FeedMO else {
+            assertionFailure("Feed objects is not FeedMO")
+            return nil
+        }
+        return context.object(with: feedMO.objectID) as? Feed
+    }
+
+    func prePopulateFeeds() {
+        guard allFeeds().count == 0 else { return }
+        print("Prepopulating Feeds...")
+        let feedURLS = [URL(string: "https://9to5mac.com/feed/")!,
+                        URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!,
+                        URL(string: "http://feeds.macrumors.com/MacRumors-All")!,
+                        URL(string: "http://f1blogg.teknikensvarld.se/feed/")!,
+                        URL(string: "http://feeds.feedburner.com/f1fanatic")!]
+        let context = persistentContainer.newBackgroundContext()
+        feedURLS.forEach { feedURL in
+            let feedMO = NSEntityDescription.insertNewObject(forEntityName: "Feed", into: context) as! FeedMO
+            feedMO.feedURL = feedURL
+        }
+        save(context)
+    }
+}
+
+class RemoteImageMO: NSManagedObject {
+    @NSManaged var url: URL?
+    @NSManaged var urlStatusMO: Int16
+}
+
+extension RemoteImageMO: RemoteImage {
+    var urlStatus: DownloadStatus {
+        get {
+            return DownloadStatus(rawValue: self.urlStatusMO) ?? .notDownloaded
+        }
+        set {
+            self.urlStatusMO = newValue.rawValue
+        }
+    }
+
+
 }
 
 class ArticleMO: NSManagedObject {
-
+    @NSManaged var feedMO: FeedMO
     @NSManaged var title: String?
     @NSManaged var previewText: String?
-    @NSManaged var imageURL: URL?
     @NSManaged var articleURL: URL?
     @NSManaged var guid: String
     @NSManaged var published: Date?
+    @NSManaged var imageMO: RemoteImageMO
 }
 
-extension ArticleMO: Article {}
+class FeedMO: NSManagedObject {
+    @NSManaged var feedURL: URL
+    @NSManaged var articles: NSSet?
+}
+
+extension ArticleMO: Article {
+    var image: RemoteImage {
+        get {
+            return imageMO
+        }
+        set {
+            guard let managedImage = newValue as? RemoteImageMO else { return }
+            imageMO = managedImage
+        }
+    }
+
+
+    var feed: Feed {
+        get {
+            return feedMO
+        }
+        set {
+            guard let managedFeed = newValue as? FeedMO else { return }
+            feedMO = managedFeed
+        }
+    }
+}
+
+extension FeedMO: Feed {}
 
 class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
 

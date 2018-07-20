@@ -53,10 +53,10 @@ class ArticleListViewController: UITableViewController {
             tableView?.endUpdates()
         }
         articlesResultsController.insertRowsAtIndexPaths = { [tableView] indexPaths in
-            tableView?.insertRows(at: indexPaths, with: .automatic)
+            tableView?.insertRows(at: indexPaths, with: .none)
         }
         articlesResultsController.deleteRowsAtIndexPaths = { [tableView] indexPaths in
-            tableView?.deleteRows(at: indexPaths, with: .automatic)
+            tableView?.deleteRows(at: indexPaths, with: .none)
         }
         articlesResultsController.updateRowsAtIndexPath = { [weak self, tableView] indexPath in
             guard let cell = tableView?.cellForRow(at: indexPath) as? ArticleListTableViewCell else { return }
@@ -86,7 +86,7 @@ class ArticleListViewController: UITableViewController {
         let article = articlesResultsController.article(at: indexPath)
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
-        cell.thumbnailURL = article.imageURL
+        cell.thumbnailURL = article.image.url
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,11 +108,6 @@ class ArticleListViewController: UITableViewController {
 
     @objc
     func refreshData() {
-        let feedURLS = [URL(string: "https://9to5mac.com/feed/")!,
-                        URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!,
-                        URL(string: "http://feeds.macrumors.com/MacRumors-All")!,
-                        URL(string: "http://f1blogg.teknikensvarld.se/feed/")!,
-                        URL(string: "http://feeds.feedburner.com/f1fanatic")!]
-        feedFetcher.fetch(feedURLS)
+        feedFetcher.fetch()
     }
 }

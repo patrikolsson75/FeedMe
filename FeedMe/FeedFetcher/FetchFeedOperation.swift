@@ -11,12 +11,12 @@ import FeedKit
 
 class FetchFeedOperation: Operation {
 
-    let feedURL: URL
+    let feed: Feed
     let store: FeedMeStore
     let dataDownloader: DataDownloader
 
-    init(feedURL: URL, store: FeedMeStore, dataDownloader: DataDownloader) {
-        self.feedURL = feedURL
+    init(feed: Feed, store: FeedMeStore, dataDownloader: DataDownloader) {
+        self.feed = feed
         self.store = store
         self.dataDownloader = dataDownloader
     }
@@ -26,7 +26,7 @@ class FetchFeedOperation: Operation {
             return
         }
 
-        guard let feedData = dataDownloader.data(contentsOf: feedURL) else { return }
+        guard let feedData = dataDownloader.data(contentsOf: feed.feedURL) else { return }
 
         let parser = FeedParser(data: feedData)
         let result = parser.parse()
@@ -35,13 +35,17 @@ class FetchFeedOperation: Operation {
             return
         }
 
-        guard let feed = result.rssFeed, result.isSuccess, let feedItems = feed.items else {
+        guard let rssFeed = result.rssFeed, result.isSuccess, let feedItems = rssFeed.items else {
             return
         }
 
-        print("Downloaded \(feedItems.count) for \(feed.title ?? "n/a")")
+        print("Downloaded \(feedItems.count) for \(rssFeed.title ?? "n/a")")
 
-        let backgroundContext = store.newBackgroundContext()
+        let context = store.newBackgroundContext()
+        guard let feedInContext = store.feed(feed: feed, in: context) else {
+            assertionFailure("Could not fetch FeedMO from background context")
+            return
+        }
 
         feedItems.forEach({ [store] feedItem in
 
@@ -50,15 +54,22 @@ class FetchFeedOperation: Operation {
             }
 
             guard let guid = feedItem.guid?.value else { return }
-            if var existingArticle = store.article(with: guid, in: backgroundContext) {
+            if store.existsArticle(with: guid, in: context) {
+                guard var existingArticle = store.article(with: guid, in: context) else {
+                    return
+                }
                 existingArticle.update(with: feedItem)
+                store.save(context)
             } else {
-                var newArticle = store.newArticle(in: backgroundContext)
+                var newArticle = store.newArticle(in: context)
+                newArticle.feed = feedInContext
                 newArticle.guid = guid
                 newArticle.update(with: feedItem)
+                store.save(context)
             }
+
         })
-        store.save(backgroundContext)
+
     }
 }
 
@@ -70,7 +81,12 @@ private extension Article {
         itemPreviewText = itemPreviewText?.removingRepeatingWhiteSpace
         title = feedItem.title
         previewText = itemPreviewText
-        imageURL = URL(string: feedItem.media?.mediaThumbnails?.first?.attributes?.url ?? "")
+        if let mediaThumbnail = feedItem.media?.mediaThumbnails?.first?.attributes?.url,
+            let mediaThumbnailURL = URL(string: mediaThumbnail) {
+            if image.url != mediaThumbnailURL {
+                image.url = mediaThumbnailURL
+            }
+        }
         articleURL = URL(string: feedItem.link ?? "")
         published = feedItem.pubDate
     }

@@ -36,16 +36,15 @@ class FeedFetcher: NSObject {
 
     }
 
-    func fetch(_ feedURLS: [URL]) {
-        feedURLS.forEach { feedURL in
-            let operation = FetchFeedOperation(feedURL: feedURL, store: store, dataDownloader: dataDownloader)
-            fetchFeedQueue.addOperation(operation)
+    func fetch() {
+        let feeds = store.allFeeds()
+        feeds.forEach { feed in
+            let fetchOperation = FetchFeedOperation(feed: feed, store: store, dataDownloader: dataDownloader)
+            fetchFeedQueue.addOperation(fetchOperation)
         }
     }
 
 }
-
-
 
 extension Notification.Name {
     static let fetchingFeedCount = Notification.Name("fetchingFeedCount")
