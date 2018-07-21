@@ -71,6 +71,13 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-gX-OVJ">
+                                                    <rect key="frame" x="0.0" y="168" width="359" height="1"/>
+                                                    <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="VCe-6J-Jtr"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -79,8 +86,11 @@
                                                 <constraint firstItem="LbT-hq-u7z" firstAttribute="trailing" secondItem="qRm-YB-iVG" secondAttribute="trailing" id="82K-AU-sXJ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="dkm-PB-1ND" secondAttribute="bottom" id="9gf-Uk-e1T"/>
                                                 <constraint firstItem="LbT-hq-u7z" firstAttribute="top" secondItem="qRm-YB-iVG" secondAttribute="top" id="K7H-QA-EZn"/>
+                                                <constraint firstAttribute="trailing" secondItem="FjT-gX-OVJ" secondAttribute="trailing" id="PVS-nF-igE"/>
+                                                <constraint firstAttribute="bottom" secondItem="FjT-gX-OVJ" secondAttribute="bottom" id="XHU-KG-KJA"/>
                                                 <constraint firstItem="dkm-PB-1ND" firstAttribute="leading" secondItem="qRm-YB-iVG" secondAttribute="leadingMargin" id="acM-bo-RYY"/>
                                                 <constraint firstItem="LbT-hq-u7z" firstAttribute="leading" secondItem="qRm-YB-iVG" secondAttribute="leading" id="rsY-kh-h3T"/>
+                                                <constraint firstItem="FjT-gX-OVJ" firstAttribute="leading" secondItem="qRm-YB-iVG" secondAttribute="leading" id="wOM-TP-x5a"/>
                                             </constraints>
                                         </view>
                                     </subviews>
