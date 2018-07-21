@@ -99,8 +99,8 @@ class ArticleListViewController: UITableViewController {
     lazy var publishedDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.doesRelativeDateFormatting = true
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
         return formatter
     }()
 
