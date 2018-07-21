@@ -38,15 +38,18 @@ class FetchFeedOperation: Operation {
         guard let rssFeed = result.rssFeed, result.isSuccess, let feedItems = rssFeed.items else {
             return
         }
-
-        print("Downloaded \(feedItems.count) for \(rssFeed.title ?? "n/a")")
+        var feedTitle: String?
+        if let feedLink = rssFeed.link, let feedURL = URL(string: feedLink) {
+            feedTitle = feedURL.host
+        }
+        print("Downloaded \(feedItems.count) for \(feedTitle ?? "n/a")")
 
         let context = store.newBackgroundContext()
-        guard let feedInContext = store.feed(feed: feed, in: context) else {
+        guard var feedInContext = store.feed(feed: feed, in: context) else {
             assertionFailure("Could not fetch FeedMO from background context")
             return
         }
-
+        feedInContext.title = feedTitle
         feedItems.forEach({ [store] feedItem in
 
             if isCancelled {
@@ -86,6 +89,13 @@ private extension Article {
             if image.url != mediaThumbnailURL {
                 image.url = mediaThumbnailURL
             }
+        }
+        if image.url == nil,
+            let mediaContents = feedItem.media?.mediaContents?.first,
+            mediaContents.attributes?.type?.hasPrefix("image") ?? false,
+            let urlString = mediaContents.attributes?.url,
+            let imageURL = URL(string: urlString) {
+            image.url = imageURL
         }
         articleURL = URL(string: feedItem.link ?? "")
         published = feedItem.pubDate

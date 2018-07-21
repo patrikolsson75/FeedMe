@@ -10,5 +10,6 @@ import Foundation
 @testable import FeedMe
 
 class FeedMock: Feed {
+    var title: String?
     var feedURL: URL = URL(string: "http://www.example.com")!
 }

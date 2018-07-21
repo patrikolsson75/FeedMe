@@ -33,7 +33,7 @@
 		7CB8FB0520F93556001C6674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8FB0320F93556001C6674 /* LaunchScreen.storyboard */; };
 		7CB8FB1B20F93556001C6674 /* FeedMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB1A20F93556001C6674 /* FeedMeUITests.swift */; };
 		7CB8FB2920F93719001C6674 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */; };
-		7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */; };
+		7CB8FB2B20F93749001C6674 /* ArticleImageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB8FB2A20F93749001C6674 /* ArticleImageListTableViewCell.swift */; };
 		7CB8FB4D20F93BA4001C6674 /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8FB3A20F93B55001C6674 /* FeedKit.framework */; };
 		7CB8FB4E20F93BA4001C6674 /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB8FB3A20F93B55001C6674 /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -179,7 +179,7 @@
 		7CB8FB1A20F93556001C6674 /* FeedMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeUITests.swift; sourceTree = "<group>"; };
 		7CB8FB1C20F93556001C6674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
-		7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewCell.swift; sourceTree = "<group>"; };
+		7CB8FB2A20F93749001C6674 /* ArticleImageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImageListTableViewCell.swift; sourceTree = "<group>"; };
 		7CB8FB2C20F93B55001C6674 /* FeedKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FeedKit.xcodeproj; path = ../FeedKit/FeedKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,7 +312,7 @@
 				7CB8FB0120F93556001C6674 /* Assets.xcassets */,
 				7CB8FB0620F93556001C6674 /* Info.plist */,
 				7CB8FB2820F93719001C6674 /* ArticleListViewController.swift */,
-				7CB8FB2A20F93749001C6674 /* ArticleListTableViewCell.swift */,
+				7CB8FB2A20F93749001C6674 /* ArticleImageListTableViewCell.swift */,
 				7C362A8720F9EF6E008155AA /* Cache.swift */,
 			);
 			path = FeedMe;
@@ -579,7 +579,7 @@
 				7C362AB920FCFE0A008155AA /* DataDownloader.swift in Sources */,
 				7C362A9920F9F9DD008155AA /* FeedMeStore.swift in Sources */,
 				7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */,
-				7CB8FB2B20F93749001C6674 /* ArticleListTableViewCell.swift in Sources */,
+				7CB8FB2B20F93749001C6674 /* ArticleImageListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

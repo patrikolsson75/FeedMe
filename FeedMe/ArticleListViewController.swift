@@ -58,9 +58,11 @@ class ArticleListViewController: UITableViewController {
         articlesResultsController.deleteRowsAtIndexPaths = { [tableView] indexPaths in
             tableView?.deleteRows(at: indexPaths, with: .none)
         }
-        articlesResultsController.updateRowsAtIndexPath = { [weak self, tableView] indexPath in
-            guard let cell = tableView?.cellForRow(at: indexPath) as? ArticleListTableViewCell else { return }
-            self?.configure(cell, at: indexPath)
+        articlesResultsController.updateRowsAtIndexPath = { [weak self, tableView, articlesResultsController] indexPath in
+            let article = articlesResultsController.article(at: indexPath)
+            if let cell = tableView?.cellForRow(at: indexPath) as? ArticleImageListTableViewCell {
+                self?.configure(cell, for: article)
+            }
         }
         articlesResultsController.performFetch()
         refreshData()
@@ -82,18 +84,32 @@ class ArticleListViewController: UITableViewController {
     }
 
 
-    fileprivate func configure(_ cell: ArticleListTableViewCell, at indexPath: IndexPath) {
-        let article = articlesResultsController.article(at: indexPath)
+    fileprivate func configure(_ cell: ArticleImageListTableViewCell, for article: Article) {
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
         cell.thumbnailURL = article.image.url
+        cell.sourceTitleLabel.text = article.feed.title
+        if let publishedDate = article.published {
+            cell.publishedDateLabel.text = publishedDateFormatter.string(from: publishedDate)
+        } else {
+            cell.publishedDateLabel.text = ""
+        }
     }
 
+    lazy var publishedDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.doesRelativeDateFormatting = true
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListTableViewCell", for: indexPath) as? ArticleListTableViewCell else {
+        let article = articlesResultsController.article(at: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleImageListTableViewCell", for: indexPath) as? ArticleImageListTableViewCell else {
             return UITableViewCell()
         }
-        configure(cell, at: indexPath)
+        configure(cell, for: article)
         return cell
     }
 

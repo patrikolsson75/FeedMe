@@ -8,24 +8,32 @@
 
 import UIKit
 
-class ArticleListTableViewCell: UITableViewCell {
+class ArticleImageListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var previewLabel: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var sourceTitleLabel: UILabel!
+    @IBOutlet weak var publishedDateLabel: UILabel!
+    @IBOutlet weak var thumbnailHeight: NSLayoutConstraint!
 
     private var imageDownloadTask: URLSessionDataTask?
 
     var thumbnailURL: URL? {
         didSet {
-            guard let newURL = thumbnailURL else { return }
+            guard let newURL = thumbnailURL else {
+                thumbnailHeight.constant = 0
+                setNeedsLayout()
+                return
+            }
+            thumbnailHeight.constant = 75
+            setNeedsLayout()
             downloadThumbnail(from: newURL)
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,19 +43,17 @@ class ArticleListTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        imageDownloadTask?.cancel()
-        thumbnail.image = nil
         super.prepareForReuse()
     }
     private func downloadThumbnail(from url: URL) {
         if let cachedImage = Cache.shared.image(for: url.absoluteString) {
             DispatchQueue.main.async { [weak self] in
-                self?.thumbnail.image = cachedImage
+                self?.showThumbnail(cachedImage)
             }
             return
         }
         imageDownloadTask?.cancel()
-        imageDownloadTask = URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
+        imageDownloadTask = URLSession.shared.dataTask(with: url, completionHandler: { [weak self, thumbnailURL] (data, response, error) in
 
             if error != nil {
                 print(error!)
@@ -58,10 +64,16 @@ class ArticleListTableViewCell: UITableViewCell {
 
             Cache.shared.store(image, for: url.absoluteString)
 
+            guard thumbnailURL == url else { return }
+
             DispatchQueue.main.async { [weak self] in
-                self?.thumbnail.image = image
+                self?.showThumbnail(image)
             }
         })
         imageDownloadTask?.resume()
+    }
+    
+    private func showThumbnail(_ image: UIImage) {
+        thumbnail.image = image
     }
 }

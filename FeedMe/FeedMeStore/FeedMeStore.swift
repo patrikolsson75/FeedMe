@@ -50,6 +50,7 @@ protocol Article {
 }
 
 protocol Feed {
+    var title: String? { get set }
     var feedURL: URL { get set }
 }
 

@@ -184,11 +184,17 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
     func prePopulateFeeds() {
         guard allFeeds().count == 0 else { return }
         print("Prepopulating Feeds...")
-        let feedURLS = [URL(string: "https://9to5mac.com/feed/")!,
-                        URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!,
-                        URL(string: "http://feeds.macrumors.com/MacRumors-All")!,
-                        URL(string: "http://f1blogg.teknikensvarld.se/feed/")!,
-                        URL(string: "http://feeds.feedburner.com/f1fanatic")!]
+        let feedURLS = [
+//            URL(string: "https://9to5mac.com/feed/")!,
+//            URL(string: "http://feeds.feedburner.com/TheIphoneBlog")!,
+//            URL(string: "http://feeds.macrumors.com/MacRumors-All")!,
+//            URL(string: "http://f1blogg.teknikensvarld.se/feed/")!,
+//            URL(string: "http://feeds.feedburner.com/f1fanatic")!,
+            URL(string: "https://www.svt.se/nyheter/rss.xml")!,
+            URL(string: "https://www.dn.se/rss")!,
+            URL(string: "https://www.svd.se/?service=rss")!,
+            URL(string: "http://www.aftonbladet.se/rss.xml")!
+        ]
         let context = persistentContainer.newBackgroundContext()
         feedURLS.forEach { feedURL in
             let feedMO = NSEntityDescription.insertNewObject(forEntityName: "Feed", into: context) as! FeedMO
@@ -227,6 +233,7 @@ class ArticleMO: NSManagedObject {
 }
 
 class FeedMO: NSManagedObject {
+    @NSManaged var title: String?
     @NSManaged var feedURL: URL
     @NSManaged var articles: NSSet?
 }
