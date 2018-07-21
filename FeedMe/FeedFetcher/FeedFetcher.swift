@@ -23,6 +23,15 @@ class FeedFetcher: NSObject {
         return queue
     }()
 
+    var lastFetched: Date? {
+        get {
+            return UserDefaults.standard.object(forKey: "lastFetchedDate") as? Date
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "lastFetchedDate")
+        }
+    }
+
     init(store: FeedMeStore,
          dataDownloader: DataDownloader = SimpleDataDownloader(),
          notificationCenter: NotificationCenter = NotificationCenter.default) {
@@ -42,6 +51,7 @@ class FeedFetcher: NSObject {
             let fetchOperation = FetchFeedOperation(feed: feed, store: store, dataDownloader: dataDownloader)
             fetchFeedQueue.addOperation(fetchOperation)
         }
+        lastFetched = Date()
     }
 
 }

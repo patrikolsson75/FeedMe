@@ -32,14 +32,14 @@ class ArticleListViewController: UITableViewController {
                         UIBarButtonItem(customView: statusView),
                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
 
-        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [statusLabel, statusSpinner] notification in
+        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner] notification in
             guard let operationCount = notification.userInfo?["operationCount"] as? Int else { return }
             DispatchQueue.main.async {
                 if operationCount > 0 {
                     statusLabel?.text = "Loading"
                     statusSpinner?.startAnimating()
                 } else {
-                    statusLabel?.text = ""
+                    self?.updateStatusLabel()
                     statusSpinner?.stopAnimating()
                     refreshControl.endRefreshing()
                 }
@@ -53,10 +53,10 @@ class ArticleListViewController: UITableViewController {
             tableView?.endUpdates()
         }
         articlesResultsController.insertRowsAtIndexPaths = { [tableView] indexPaths in
-            tableView?.insertRows(at: indexPaths, with: .none)
+            tableView?.insertRows(at: indexPaths, with: .fade)
         }
         articlesResultsController.deleteRowsAtIndexPaths = { [tableView] indexPaths in
-            tableView?.deleteRows(at: indexPaths, with: .none)
+            tableView?.deleteRows(at: indexPaths, with: .fade)
         }
         articlesResultsController.updateRowsAtIndexPath = { [weak self, tableView, articlesResultsController] indexPath in
             let article = articlesResultsController.article(at: indexPath)
@@ -66,6 +66,7 @@ class ArticleListViewController: UITableViewController {
         }
         articlesResultsController.performFetch()
         refreshData()
+        updateStatusLabel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,5 +126,14 @@ class ArticleListViewController: UITableViewController {
     @objc
     func refreshData() {
         feedFetcher.fetch()
+    }
+
+    func updateStatusLabel() {
+        guard let lastFetchedDate = feedFetcher.lastFetched else {
+            statusLabel.text = NSLocalizedString("Never updated", comment: "")
+            return
+        }
+        let dateString = publishedDateFormatter.string(from: lastFetchedDate)
+        statusLabel.text = String.localizedStringWithFormat(NSLocalizedString("Last updated %@", comment: ""), dateString)
     }
 }
