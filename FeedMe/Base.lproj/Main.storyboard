@@ -15,8 +15,8 @@
         <!--Article List View Controller-->
         <scene sceneID="wQp-6z-pTI">
             <objects>
-                <tableViewController id="kWD-fW-IWg" customClass="ArticleListViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BoQ-jV-N69">
+                <tableViewController restorationIdentifier="ArticleListViewController" id="kWD-fW-IWg" customClass="ArticleListViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArticleListTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BoQ-jV-N69">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -158,7 +158,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fDl-1C-Dqt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="KR7-xu-7wi" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="FeedListNavigationController" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="KR7-xu-7wi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zgm-yR-KOg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -61,8 +61,13 @@ class FetchFeedOperation: Operation {
                 guard var existingArticle = store.article(with: guid, in: context) else {
                     return
                 }
-                existingArticle.update(with: feedItem)
-                store.save(context)
+                if let feedItemPubDate = feedItem.pubDate,
+                    let existingPubDate = existingArticle.published,
+                    existingPubDate < feedItemPubDate {
+                    existingArticle.update(with: feedItem)
+                    store.save(context)
+                    print("Updated article \(existingArticle.title ?? "")")
+                }
             } else {
                 var newArticle = store.newArticle(in: context)
                 newArticle.feed = feedInContext

@@ -40,6 +40,7 @@ protocol RemoteImage {
 }
 
 protocol Article {
+    var identifier: String { get }
     var feed: Feed { get set }
     var title: String? { get set }
     var previewText: String? { get set }
@@ -58,6 +59,7 @@ protocol ArticleResultsController {
     var sectionCount: Int { get }
     func articleCount(in section: Int) -> Int
     func article(at indexPath: IndexPath) -> Article
+    func indexPath(for identifier: String) -> IndexPath?
     func performFetch()
     var willChangeContent: (() -> Void)? { get set }
     var insertRowsAtIndexPaths: (([IndexPath]) -> Void)? { get set }

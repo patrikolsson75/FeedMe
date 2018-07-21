@@ -137,3 +137,15 @@ class ArticleListViewController: UITableViewController {
         statusLabel.text = String.localizedStringWithFormat(NSLocalizedString("Last updated %@", comment: ""), dateString)
     }
 }
+
+extension ArticleListViewController: UIDataSourceModelAssociation {
+    func modelIdentifierForElement(at idx: IndexPath, in view: UIView) -> String? {
+        let article = articlesResultsController.article(at: idx)
+        return article.identifier
+    }
+
+    func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
+        return articlesResultsController.indexPath(for: identifier)
+    }
+
+}

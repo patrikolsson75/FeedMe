@@ -83,7 +83,7 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
         let publishedSort = NSSortDescriptor(key: "published", ascending: false)
         articlesFetch.sortDescriptors = [publishedSort]
-        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "ArticleList")
         return ArticleResultsControllerCoreData(fc: fc)
     }
 
@@ -239,6 +239,10 @@ class FeedMO: NSManagedObject {
 }
 
 extension ArticleMO: Article {
+    var identifier: String {
+        return String(describing: objectID.uriRepresentation())
+    }
+
     var image: RemoteImage {
         get {
             return imageMO
@@ -296,6 +300,17 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
 
     func performFetch() {
         try? fc.performFetch()
+    }
+
+    func indexPath(for identifier: String) -> IndexPath? {
+        if let url = URL(string: identifier),
+            let objectID = fc.managedObjectContext.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url),
+            let object = fc.managedObjectContext.object(with: objectID) as? ArticleMO
+        {
+            return fc.indexPath(forObject: object)
+        }
+        print("Can't find indexPath for \(identifier)")
+        return nil
     }
 }
 
