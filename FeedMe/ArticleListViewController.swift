@@ -65,10 +65,10 @@ class ArticleListViewController: UITableViewController {
             }
         }
         articlesResultsController.insertSections = { [tableView] indexSet in
-            tableView?.insertSections(indexSet, with: .automatic)
+            tableView?.insertSections(indexSet, with: .fade)
         }
         articlesResultsController.deleteSections = { [tableView] indexSet in
-            tableView?.deleteSections(indexSet, with: .automatic)
+            tableView?.deleteSections(indexSet, with: .fade)
         }
         articlesResultsController.performFetch()
         updateStatusLabel()

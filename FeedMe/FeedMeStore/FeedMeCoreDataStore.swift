@@ -190,6 +190,9 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
 //            URL(string: "http://feeds.macrumors.com/MacRumors-All")!,
 //            URL(string: "http://f1blogg.teknikensvarld.se/feed/")!,
 //            URL(string: "http://feeds.feedburner.com/f1fanatic")!,
+//            URL(string: "http://feeds.bbci.co.uk/sport/formula1/rss.xml")!,
+//            URL(string: "http://feeds.feedburner.com/appcoda")!,
+//            URL(string: "https://swiftbysundell.com/?format=rss")!,
             URL(string: "https://www.svt.se/nyheter/rss.xml")!,
             URL(string: "https://www.dn.se/rss")!,
             URL(string: "https://www.svd.se/?service=rss")!,
@@ -220,7 +223,14 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         batchUpdateRequest.propertiesToUpdate = ["isNew": NSNumber(value: false)]
 
         do {
-            try context.execute(batchUpdateRequest)
+            let result = try context.execute(batchUpdateRequest) as? NSBatchUpdateResult
+
+            // Retrieves the IDs updated
+            guard let objectIDs = result?.result as? [NSManagedObjectID] else { return }
+
+            // Updates the main context
+            let changes = [NSUpdatedObjectsKey: objectIDs]
+            NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [persistentContainer.viewContext])
         } catch {
             let updateError = error as NSError
             print("\(updateError), \(updateError.userInfo)")
