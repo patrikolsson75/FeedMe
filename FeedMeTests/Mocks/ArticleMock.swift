@@ -10,6 +10,10 @@ import Foundation
 @testable import FeedMe
 
 class ArticleMock: Article {
+    var identifier: String = ""
+
+    var isNew: Bool = false
+
     var feed: Feed = FeedMock()
     
     var image: RemoteImage = RemoteImageMock()

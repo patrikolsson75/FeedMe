@@ -10,6 +10,9 @@ import Foundation
 @testable import FeedMe
 
 class FeedMeStoreMock: FeedMeStore {
+    func checkAllArticlesAsOld(in context: FeedMeStoreContext) {
+    }
+
     func articles(for feedURL: URL, in context: FeedMeStoreContext) -> [Article] {
         return []
     }

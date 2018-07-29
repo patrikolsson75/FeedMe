@@ -44,6 +44,7 @@ class FeedFetcherTest: XCTestCase {
         XCTAssertEqual(firstArticle?.articleURL?.absoluteString, "https://9to5mac.com/2018/07/13/uber-focuses-on-passenger-safety-as-it-starts-rolling-out-continuous-driver-background-checks/")
         XCTAssertEqual(firstArticle?.guid, "http://9to5mac.com/?p=542515")
         XCTAssertEqual(firstArticle?.published?.description, "2018-07-13 17:09:57 +0000")
+        XCTAssertEqual(firstArticle?.isNew, true)
     }
 
     func testThatItParse_iMore() {

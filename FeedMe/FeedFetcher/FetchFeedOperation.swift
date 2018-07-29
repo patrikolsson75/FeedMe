@@ -50,6 +50,15 @@ class FetchFeedOperation: Operation {
             return
         }
         feedInContext.title = feedTitle
+
+//        var newArticle = store.newArticle(in: context)
+//        newArticle.feed = feedInContext
+//        newArticle.guid = UUID().uuidString
+//        newArticle.title = Date().description
+//        newArticle.previewText = "Test"
+//        newArticle.published = Date()
+//        newArticle.isNew = true
+
         feedItems.forEach({ [store] feedItem in
 
             if isCancelled {
@@ -65,17 +74,17 @@ class FetchFeedOperation: Operation {
                     let existingPubDate = existingArticle.published,
                     existingPubDate < feedItemPubDate {
                     existingArticle.update(with: feedItem)
-                    store.save(context)
                     print("Updated article \(existingArticle.title ?? "")")
                 }
             } else {
                 var newArticle = store.newArticle(in: context)
                 newArticle.feed = feedInContext
                 newArticle.guid = guid
+                newArticle.isNew = true
                 newArticle.update(with: feedItem)
-                store.save(context)
-            }
 
+            }
+            store.save(context)
         })
 
     }

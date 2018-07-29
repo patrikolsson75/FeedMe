@@ -83,7 +83,7 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
         let publishedSort = NSSortDescriptor(key: "published", ascending: false)
         articlesFetch.sortDescriptors = [publishedSort]
-        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "ArticleList")
+        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: "isNew", cacheName: nil)
         return ArticleResultsControllerCoreData(fc: fc)
     }
 
@@ -202,6 +202,30 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         }
         save(context)
     }
+
+    func checkAllArticlesAsOld(in context: FeedMeStoreContext) {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return
+        }
+
+        // Create Entity Description
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Article", in: context)
+
+        // Initialize Batch Update Request
+        let batchUpdateRequest = NSBatchUpdateRequest(entity: entityDescription!)
+
+        // Configure Batch Update Request
+        batchUpdateRequest.resultType = .updatedObjectIDsResultType
+        batchUpdateRequest.propertiesToUpdate = ["isNew": NSNumber(value: false)]
+
+        do {
+            try context.execute(batchUpdateRequest)
+        } catch {
+            let updateError = error as NSError
+            print("\(updateError), \(updateError.userInfo)")
+        }
+    }
 }
 
 class RemoteImageMO: NSManagedObject {
@@ -230,6 +254,7 @@ class ArticleMO: NSManagedObject {
     @NSManaged var guid: String
     @NSManaged var published: Date?
     @NSManaged var imageMO: RemoteImageMO
+    @NSManaged var isNew: Bool
 }
 
 class FeedMO: NSManagedObject {
@@ -276,6 +301,8 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
     var deleteRowsAtIndexPaths: (([IndexPath]) -> Void)? = nil
     var updateRowsAtIndexPath: ((IndexPath) -> Void)? = nil
     var didChangeContent: (() -> Void)? = nil
+    var insertSections: ((IndexSet) -> Void)? = nil
+    var deleteSections: ((IndexSet) -> Void)? = nil
 
     init(fc: NSFetchedResultsController<ArticleMO>) {
         self.fc = fc
@@ -312,12 +339,30 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
         print("Can't find indexPath for \(identifier)")
         return nil
     }
+
+    func titleForHeader(in section: Int) -> String? {
+        guard let sectionInfo = fc.sections?[section] else {
+            return nil
+        }
+        return sectionInfo.name
+    }
 }
 
 extension ArticleResultsControllerCoreData: NSFetchedResultsControllerDelegate {
 
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         willChangeContent?()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            insertSections?(IndexSet(integer: sectionIndex))
+        case .delete:
+            deleteSections?(IndexSet(integer: sectionIndex))
+        default:
+            break
+        }
     }
 
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {

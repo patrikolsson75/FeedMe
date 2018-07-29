@@ -64,8 +64,13 @@ class ArticleListViewController: UITableViewController {
                 self?.configure(cell, for: article)
             }
         }
+        articlesResultsController.insertSections = { [tableView] indexSet in
+            tableView?.insertSections(indexSet, with: .automatic)
+        }
+        articlesResultsController.deleteSections = { [tableView] indexSet in
+            tableView?.deleteSections(indexSet, with: .automatic)
+        }
         articlesResultsController.performFetch()
-        refreshData()
         updateStatusLabel()
     }
 
@@ -85,6 +90,15 @@ class ArticleListViewController: UITableViewController {
     }
 
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionName = articlesResultsController.titleForHeader(in: section)
+        if sectionName == "0" {
+            return "Äldre"
+        } else {
+            return "Nya"
+        }
+    }
+    
     fileprivate func configure(_ cell: ArticleImageListTableViewCell, for article: Article) {
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
@@ -120,6 +134,7 @@ class ArticleListViewController: UITableViewController {
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
         let web = SFSafariViewController(url: url, configuration: configuration)
+        web.restorationIdentifier = "SFArticleViewController"
         present(web, animated: true, completion: nil)
     }
 

@@ -25,6 +25,7 @@ protocol FeedMeStore {
     func feed(feed: Feed, in context: FeedMeStoreContext) -> Feed?
     func prePopulateFeeds()
     func load(_ image: RemoteImage, from context: FeedMeStoreContext) -> RemoteImage?
+    func checkAllArticlesAsOld(in context: FeedMeStoreContext)
 }
 
 enum DownloadStatus: Int16 {
@@ -48,6 +49,7 @@ protocol Article {
     var guid: String { get set }
     var published: Date? { get set }
     var image: RemoteImage { get set }
+    var isNew: Bool { get set }
 }
 
 protocol Feed {
@@ -61,9 +63,12 @@ protocol ArticleResultsController {
     func article(at indexPath: IndexPath) -> Article
     func indexPath(for identifier: String) -> IndexPath?
     func performFetch()
+    func titleForHeader(in section: Int) -> String?
     var willChangeContent: (() -> Void)? { get set }
     var insertRowsAtIndexPaths: (([IndexPath]) -> Void)? { get set }
     var deleteRowsAtIndexPaths: (([IndexPath]) -> Void)? { get set }
     var updateRowsAtIndexPath: ((IndexPath) -> Void)? { get set }
     var didChangeContent: (() -> Void)? { get set }
+    var insertSections: ((IndexSet) -> Void)? { get set }
+    var deleteSections: ((IndexSet) -> Void)? { get set }
 }

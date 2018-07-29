@@ -46,6 +46,9 @@ class FeedFetcher: NSObject {
     }
 
     func fetch() {
+        let context = store.newBackgroundContext()
+        store.checkAllArticlesAsOld(in: context)
+        store.save(context)
         let feeds = store.allFeeds()
         feeds.forEach { feed in
             let fetchOperation = FetchFeedOperation(feed: feed, store: store, dataDownloader: dataDownloader)

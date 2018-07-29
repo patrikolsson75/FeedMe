@@ -10,6 +10,18 @@ import Foundation
 @testable import FeedMe
 
 class ArticleResultsControllerMock: ArticleResultsController {
+    func titleForHeader(in section: Int) -> String? {
+        return nil
+    }
+
+    var insertSections: ((IndexSet) -> Void)?
+
+    var deleteSections: ((IndexSet) -> Void)?
+
+    func indexPath(for identifier: String) -> IndexPath? {
+        return nil
+    }
+
     func articleCount(in section: Int) -> Int {
         return 0
     }
