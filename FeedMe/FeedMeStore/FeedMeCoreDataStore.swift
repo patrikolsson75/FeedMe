@@ -49,6 +49,15 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         return articleMO
     }
 
+    func newFeed(in context: FeedMeStoreContext) -> Feed {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Can't save none NSManagedObjectContext")
+            return FeedMO()
+        }
+        let feedMO = NSEntityDescription.insertNewObject(forEntityName: "Feed", into: context) as! FeedMO
+        return feedMO
+    }
+
     func allArticles() -> [Article] {
         let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
         let publishedSort = NSSortDescriptor(key: "published", ascending: false)
@@ -79,12 +88,20 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         }
     }
 
-    func articlesResultsController() -> ArticleResultsController {
-        let articlesFetch = NSFetchRequest<ArticleMO>(entityName: "Article")
+    func articlesResultsController() -> ItemResultsController {
+        let fetchRequest = NSFetchRequest<ArticleMO>(entityName: "Article")
         let publishedSort = NSSortDescriptor(key: "published", ascending: false)
-        articlesFetch.sortDescriptors = [publishedSort]
-        let fc = NSFetchedResultsController(fetchRequest: articlesFetch, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: "isNew", cacheName: nil)
-        return ArticleResultsControllerCoreData(fc: fc)
+        fetchRequest.sortDescriptors = [publishedSort]
+        let fc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: "isNew", cacheName: nil)
+        return ItemResultsControllerCoreData(fc: fc as! NSFetchedResultsController<NSFetchRequestResult>)
+    }
+
+    func feedResultsController() -> ItemResultsController {
+        let fetchRequest = NSFetchRequest<ArticleMO>(entityName: "Feed")
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        return ItemResultsControllerCoreData(fc: fc as! NSFetchedResultsController<NSFetchRequestResult>)
     }
 
     func newBackgroundContext() -> FeedMeStoreContext {
@@ -236,6 +253,15 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
             print("\(updateError), \(updateError.userInfo)")
         }
     }
+
+    func delete(_ feed: Feed) {
+        guard let feedMO = feed as? FeedMO else {
+            assertionFailure("Feed objects is not FeedMO")
+            return
+        }
+        feedMO.managedObjectContext?.delete(feedMO)
+        try? feedMO.managedObjectContext?.save()
+    }
 }
 
 class RemoteImageMO: NSManagedObject {
@@ -302,9 +328,9 @@ extension ArticleMO: Article {
 
 extension FeedMO: Feed {}
 
-class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
+class ItemResultsControllerCoreData: NSObject, ItemResultsController {
 
-    let fc: NSFetchedResultsController<ArticleMO>
+    let fc: NSFetchedResultsController<NSFetchRequestResult>
 
     var willChangeContent: (() -> Void)? = nil
     var insertRowsAtIndexPaths: (([IndexPath]) -> Void)? = nil
@@ -314,7 +340,7 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
     var insertSections: ((IndexSet) -> Void)? = nil
     var deleteSections: ((IndexSet) -> Void)? = nil
 
-    init(fc: NSFetchedResultsController<ArticleMO>) {
+    init(fc: NSFetchedResultsController<NSFetchRequestResult>) {
         self.fc = fc
         super.init()
         self.fc.delegate = self
@@ -323,7 +349,7 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
         return fc.sections?.count ?? 0
     }
 
-    func articleCount(in section: Int) -> Int {
+    func itemCount(in section: Int) -> Int {
         guard let sections = fc.sections else {
             fatalError("No sections in fetchedResultsController")
         }
@@ -331,8 +357,8 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
         return sectionInfo.numberOfObjects
     }
 
-    func article(at indexPath: IndexPath) -> Article {
-        return fc.object(at: indexPath)
+    func item<Item>(at indexPath: IndexPath) -> Item {
+        return fc.object(at: indexPath) as! Item
     }
 
     func performFetch() {
@@ -341,9 +367,9 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
 
     func indexPath(for identifier: String) -> IndexPath? {
         if let url = URL(string: identifier),
-            let objectID = fc.managedObjectContext.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url),
-            let object = fc.managedObjectContext.object(with: objectID) as? ArticleMO
+            let objectID = fc.managedObjectContext.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url)
         {
+            let object = fc.managedObjectContext.object(with: objectID)
             return fc.indexPath(forObject: object)
         }
         print("Can't find indexPath for \(identifier)")
@@ -358,7 +384,7 @@ class ArticleResultsControllerCoreData: NSObject, ArticleResultsController {
     }
 }
 
-extension ArticleResultsControllerCoreData: NSFetchedResultsControllerDelegate {
+extension ItemResultsControllerCoreData: NSFetchedResultsControllerDelegate {
 
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         willChangeContent?()

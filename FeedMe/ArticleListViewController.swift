@@ -9,10 +9,40 @@
 import UIKit
 import SafariServices
 
+class ArticleListController {
+
+    struct Section {
+        let title: String
+        let articles: [Article]
+    }
+
+    var sections: [Section] = []
+
+    func update(_ articles: [Article]) {
+        sections = []
+        let newArticles = articles.filter({ article -> Bool in
+            return article.isNew
+        })
+        if newArticles.count > 0 {
+            let newArticleSection = Section(title: "New", articles: newArticles)
+            sections.append(newArticleSection)
+        }
+
+        let oldArticles = articles.filter({ article -> Bool in
+            return !article.isNew
+        })
+        if oldArticles.count > 0 {
+            let oldArticleSection = Section(title: "Old", articles: oldArticles)
+            sections.append(oldArticleSection)
+        }
+    }
+
+}
+
 class ArticleListViewController: UITableViewController {
 
     var store: FeedMeStore = FeedMeCoreDataStore.shared
-    lazy var articlesResultsController =  store.articlesResultsController()
+    var articleListController = ArticleListController()
     lazy var feedFetcher = FeedFetcher(store: store)
     @IBOutlet var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
@@ -32,7 +62,7 @@ class ArticleListViewController: UITableViewController {
                         UIBarButtonItem(customView: statusView),
                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
 
-        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner] notification in
+        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner, store, articleListController] notification in
             guard let operationCount = notification.userInfo?["operationCount"] as? Int else { return }
             DispatchQueue.main.async {
                 if operationCount > 0 {
@@ -42,35 +72,14 @@ class ArticleListViewController: UITableViewController {
                     self?.updateStatusLabel()
                     statusSpinner?.stopAnimating()
                     refreshControl.endRefreshing()
+                    articleListController.update(store.allArticles())
+                    self?.tableView.reloadData()
                 }
             }
         })
 
-        articlesResultsController.willChangeContent = { [tableView] in
-            tableView?.beginUpdates()
-        }
-        articlesResultsController.didChangeContent = { [tableView] in
-            tableView?.endUpdates()
-        }
-        articlesResultsController.insertRowsAtIndexPaths = { [tableView] indexPaths in
-            tableView?.insertRows(at: indexPaths, with: .fade)
-        }
-        articlesResultsController.deleteRowsAtIndexPaths = { [tableView] indexPaths in
-            tableView?.deleteRows(at: indexPaths, with: .fade)
-        }
-        articlesResultsController.updateRowsAtIndexPath = { [weak self, tableView, articlesResultsController] indexPath in
-            let article = articlesResultsController.article(at: indexPath)
-            if let cell = tableView?.cellForRow(at: indexPath) as? ArticleImageListTableViewCell {
-                self?.configure(cell, for: article)
-            }
-        }
-        articlesResultsController.insertSections = { [tableView] indexSet in
-            tableView?.insertSections(indexSet, with: .fade)
-        }
-        articlesResultsController.deleteSections = { [tableView] indexSet in
-            tableView?.deleteSections(indexSet, with: .fade)
-        }
-        articlesResultsController.performFetch()
+        articleListController.update(store.allArticles())
+        tableView.reloadData()
         updateStatusLabel()
     }
 
@@ -82,23 +91,18 @@ class ArticleListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return articlesResultsController.sectionCount
+        return articleListController.sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articlesResultsController.articleCount(in: section)
+        return articleListController.sections[section].articles.count
     }
 
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectionName = articlesResultsController.titleForHeader(in: section)
-        if sectionName == "0" {
-            return "Äldre"
-        } else {
-            return "Nya"
-        }
+        return articleListController.sections[section].title
     }
-    
+
     fileprivate func configure(_ cell: ArticleImageListTableViewCell, for article: Article) {
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
@@ -120,7 +124,7 @@ class ArticleListViewController: UITableViewController {
     }()
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article = articlesResultsController.article(at: indexPath)
+        let article: Article = articleListController.sections[indexPath.section].articles[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleImageListTableViewCell", for: indexPath) as? ArticleImageListTableViewCell else {
             return UITableViewCell()
         }
@@ -129,7 +133,7 @@ class ArticleListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = articlesResultsController.article(at: indexPath)
+        let article: Article = articleListController.sections[indexPath.section].articles[indexPath.row]
         guard let url = article.articleURL else { return }
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
@@ -151,16 +155,32 @@ class ArticleListViewController: UITableViewController {
         let dateString = publishedDateFormatter.string(from: lastFetchedDate)
         statusLabel.text = String.localizedStringWithFormat(NSLocalizedString("Last updated %@", comment: ""), dateString)
     }
+
+    @IBAction func unwindToArticleList(_ sender: UIStoryboardSegue) {
+//        let sourceViewController = sender.source
+        // Use data from the view controller which initiated the unwind segue
+    }
 }
 
 extension ArticleListViewController: UIDataSourceModelAssociation {
     func modelIdentifierForElement(at idx: IndexPath, in view: UIView) -> String? {
-        let article = articlesResultsController.article(at: idx)
+        guard !idx.isEmpty else {
+            return nil
+        }
+        let article: Article = articleListController.sections[idx.section].articles[idx.row]
         return article.identifier
     }
 
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
-        return articlesResultsController.indexPath(for: identifier)
+        for (sectionIndex, section) in articleListController.sections.enumerated() {
+            let articleIndex = section.articles.index { (article) -> Bool in
+                return article.identifier == identifier
+            }
+            if articleIndex != nil {
+                return IndexPath(row: articleIndex!, section: sectionIndex)
+            }
+        }
+        return nil
     }
 
 }

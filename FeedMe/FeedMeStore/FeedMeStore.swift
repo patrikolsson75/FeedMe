@@ -14,9 +14,11 @@ protocol FeedMeStoreContext: class {
 protocol FeedMeStore {
     func save(_ context: FeedMeStoreContext)
     func newArticle(in context: FeedMeStoreContext) -> Article
+    func newFeed(in context: FeedMeStoreContext) -> Feed
     func allArticles() -> [Article]
     func articles(for feedURL: URL, in context: FeedMeStoreContext) -> [Article]
-    func articlesResultsController() -> ArticleResultsController
+    func articlesResultsController() -> ItemResultsController
+    func feedResultsController() -> ItemResultsController
     func newBackgroundContext() -> FeedMeStoreContext
     func article(with guid: String, in context: FeedMeStoreContext) -> Article?
     func load(_ article: Article, from context: FeedMeStoreContext) -> Article?
@@ -26,6 +28,7 @@ protocol FeedMeStore {
     func prePopulateFeeds()
     func load(_ image: RemoteImage, from context: FeedMeStoreContext) -> RemoteImage?
     func checkAllArticlesAsOld(in context: FeedMeStoreContext)
+    func delete(_ feed: Feed)
 }
 
 enum DownloadStatus: Int16 {
@@ -57,10 +60,10 @@ protocol Feed {
     var feedURL: URL { get set }
 }
 
-protocol ArticleResultsController {
+protocol ItemResultsController {
     var sectionCount: Int { get }
-    func articleCount(in section: Int) -> Int
-    func article(at indexPath: IndexPath) -> Article
+    func itemCount(in section: Int) -> Int
+    func item<Item>(at indexPath: IndexPath) -> Item
     func indexPath(for identifier: String) -> IndexPath?
     func performFetch()
     func titleForHeader(in section: Int) -> String?
@@ -72,3 +75,4 @@ protocol ArticleResultsController {
     var insertSections: ((IndexSet) -> Void)? { get set }
     var deleteSections: ((IndexSet) -> Void)? { get set }
 }
+

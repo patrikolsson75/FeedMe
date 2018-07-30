@@ -35,21 +35,15 @@ class FetchFeedOperation: Operation {
             return
         }
 
-        guard let rssFeed = result.rssFeed, result.isSuccess, let feedItems = rssFeed.items else {
+        guard result.isSuccess else {
             return
         }
-        var feedTitle: String?
-        if let feedLink = rssFeed.link, let feedURL = URL(string: feedLink) {
-            feedTitle = feedURL.host
-        }
-        print("Downloaded \(feedItems.count) for \(feedTitle ?? "n/a")")
 
         let context = store.newBackgroundContext()
-        guard var feedInContext = store.feed(feed: feed, in: context) else {
+        guard let feedInContext = store.feed(feed: feed, in: context) else {
             assertionFailure("Could not fetch FeedMO from background context")
             return
         }
-        feedInContext.title = feedTitle
 
 //        var newArticle = store.newArticle(in: context)
 //        newArticle.feed = feedInContext
@@ -59,13 +53,25 @@ class FetchFeedOperation: Operation {
 //        newArticle.published = Date()
 //        newArticle.isNew = true
 
+        if let rssFeed = result.rssFeed {
+            parseRSS(rssFeed: rssFeed, into: context, on: feedInContext)
+        } else if let atomFeed = result.atomFeed {
+            parseATOM(atomFeed: atomFeed, into: context, on: feedInContext)
+        }
+
+    }
+
+    private func parseRSS(rssFeed: RSSFeed, into context: FeedMeStoreContext, on feed: Feed) {
+        guard let feedItems = rssFeed.items else { return }
+
+        print("Downloaded \(feedItems.count) for \(rssFeed.title ?? "n/a")")
         feedItems.forEach({ [store] feedItem in
 
             if isCancelled {
                 return
             }
 
-            guard let guid = feedItem.guid?.value else { return }
+            guard let guid = feedItem.guid?.value ?? feedItem.link else { return }
             if store.existsArticle(with: guid, in: context) {
                 guard var existingArticle = store.article(with: guid, in: context) else {
                     return
@@ -78,7 +84,7 @@ class FetchFeedOperation: Operation {
                 }
             } else {
                 var newArticle = store.newArticle(in: context)
-                newArticle.feed = feedInContext
+                newArticle.feed = feed
                 newArticle.guid = guid
                 newArticle.isNew = true
                 newArticle.update(with: feedItem)
@@ -86,11 +92,44 @@ class FetchFeedOperation: Operation {
             }
             store.save(context)
         })
+    }
 
+    private func parseATOM(atomFeed: AtomFeed, into context: FeedMeStoreContext, on feed: Feed) {
+        guard let feedItems = atomFeed.entries else { return }
+
+        print("Downloaded \(feedItems.count) for \(atomFeed.title ?? "n/a")")
+        feedItems.forEach({ [store] feedItem in
+
+            if isCancelled {
+                return
+            }
+
+            guard let guid = feedItem.id else { return }
+            if store.existsArticle(with: guid, in: context) {
+                guard var existingArticle = store.article(with: guid, in: context) else {
+                    return
+                }
+                if let feedItemPubDate = feedItem.published,
+                    let existingPubDate = existingArticle.published,
+                    existingPubDate < feedItemPubDate {
+                    existingArticle.update(with: feedItem)
+                    print("Updated article \(existingArticle.title ?? "")")
+                }
+            } else {
+                var newArticle = store.newArticle(in: context)
+                newArticle.feed = feed
+                newArticle.guid = guid
+                newArticle.isNew = true
+                newArticle.update(with: feedItem)
+
+            }
+            store.save(context)
+        })
     }
 }
 
 private extension Article {
+
     mutating func update(with feedItem: RSSFeedItem) {
         var itemPreviewText = feedItem.description?.withoutHtml
         itemPreviewText = itemPreviewText?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -114,4 +153,29 @@ private extension Article {
         articleURL = URL(string: feedItem.link ?? "")
         published = feedItem.pubDate
     }
+
+    mutating func update(with feedItem: AtomFeedEntry) {
+        var itemPreviewText = feedItem.content?.value?.withoutHtml
+        itemPreviewText = itemPreviewText?.trimmingCharacters(in: .whitespacesAndNewlines)
+        itemPreviewText = itemPreviewText?.removingRepeatingNewlines
+        itemPreviewText = itemPreviewText?.removingRepeatingWhiteSpace
+        title = feedItem.title
+        previewText = itemPreviewText
+        if let mediaThumbnail = feedItem.media?.mediaThumbnails?.first?.attributes?.url,
+            let mediaThumbnailURL = URL(string: mediaThumbnail) {
+            if image.url != mediaThumbnailURL {
+                image.url = mediaThumbnailURL
+            }
+        }
+        if image.url == nil,
+            let mediaContents = feedItem.media?.mediaContents?.first,
+            mediaContents.attributes?.type?.hasPrefix("image") ?? false,
+            let urlString = mediaContents.attributes?.url,
+            let imageURL = URL(string: urlString) {
+            image.url = imageURL
+        }
+        articleURL = URL(string: feedItem.links?.first?.attributes?.href ?? "")
+        published = feedItem.published ?? feedItem.updated
+    }
+
 }

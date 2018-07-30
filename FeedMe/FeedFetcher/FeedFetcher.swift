@@ -50,6 +50,10 @@ class FeedFetcher: NSObject {
         store.checkAllArticlesAsOld(in: context)
         store.save(context)
         let feeds = store.allFeeds()
+        guard feeds.count > 0 else {
+            notificationCenter.post(name: .fetchingFeedCount, object: nil, userInfo: ["operationCount": 0])
+            return
+        }
         feeds.forEach { feed in
             let fetchOperation = FetchFeedOperation(feed: feed, store: store, dataDownloader: dataDownloader)
             fetchFeedQueue.addOperation(fetchOperation)

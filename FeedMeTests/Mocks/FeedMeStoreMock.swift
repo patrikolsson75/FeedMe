@@ -10,6 +10,17 @@ import Foundation
 @testable import FeedMe
 
 class FeedMeStoreMock: FeedMeStore {
+    func newFeed(in context: FeedMeStoreContext) -> Feed {
+        return FeedMock()
+    }
+
+    func feedResultsController() -> ItemResultsController {
+        return ItemResultsControllerMock()
+    }
+
+    func delete(_ feed: Feed) {
+    }
+
     func checkAllArticlesAsOld(in context: FeedMeStoreContext) {
     }
 
@@ -42,8 +53,8 @@ class FeedMeStoreMock: FeedMeStore {
     func prePopulateFeeds() {
     }
 
-    func articlesResultsController() -> ArticleResultsController {
-        return ArticleResultsControllerMock()
+    func articlesResultsController() -> ItemResultsController {
+        return ItemResultsControllerMock()
     }
 
 

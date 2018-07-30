@@ -1,0 +1,1911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[The Clean Code Blog]]></title>
+  <link href="http://blog.cleancoder.com/atom.xml" rel="self"/>
+  <link href="http://blog.cleancoder.com/"/>
+  <updated>2018-06-21T13:22:12+00:00</updated>
+  <id>http://blog.cleancoder.com/</id>
+  <author>
+    <name><![CDATA[Uncle Bob Martin]]></name>
+    
+  </author>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Integers and Estimates]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/06/21/IntegersAndEstimates.html"/>
+    <updated>2018-06-21T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/06/21/IntegersAndEstimates</id>
+    <content type="html"><![CDATA[<blockquote>
+  <p><em>What is this: <code class="highlighter-rouge">a^2 + b^2 = c^2</code></em></p>
+</blockquote>
+
+<p>The Pythagorean Theorem.</p>
+
+<blockquote>
+  <p><em>Right.  What else is it?</em></p>
+</blockquote>
+
+<p>An equation in three unknowns.</p>
+
+<blockquote>
+  <p><em>Do you know some solutions to this equation?</em></p>
+</blockquote>
+
+<p>Sure.  (3,4,5) and (5,12,13).</p>
+
+<blockquote>
+  <p><em>Right.  Those are common pythagorean triplets.  Do you know others?</em></p>
+</blockquote>
+
+<p>Well, Google is my friend, let’s see.  (typing)  It looks like (7,24,25) and (9,40,41) all satisfy the equation.</p>
+
+<blockquote>
+  <p><em>Have you noticed that you’ve only supplied integer solutions?</em></p>
+</blockquote>
+
+<p>Oh, right.  I suppose that there are a whole load of non-integer solutions.</p>
+
+<blockquote>
+  <p><em>Have you heard of Diophantus?</em></p>
+</blockquote>
+
+<p>Is that a Greek name?</p>
+
+<blockquote>
+  <p><em>Yes.  Diophantus was interested in equations that had integral solutions.  We call such equations: Diophantine equations.</em></p>
+</blockquote>
+
+<p>So <code class="highlighter-rouge">a^2 + b^2 = c^2</code> is a Diophantine equation?</p>
+
+<blockquote>
+  <p><em>Yes.  And there are many others.  For example: <code class="highlighter-rouge">a^3 + b^3 = c^3</code></em></p>
+</blockquote>
+
+<p>Oh, sure.  And what are some solutions?</p>
+
+<blockquote>
+  <p><em>There aren’t any.</em></p>
+</blockquote>
+
+<p>Really?  None?</p>
+
+<blockquote>
+  <p><em>Yes.  None.  That has been proven.  In fact it has been proven that <code class="highlighter-rouge">a^n + b^n = c^n</code> has no integral solutions for <code class="highlighter-rouge">n&gt;2</code>.  This is known as Fermat’s conjecture.</em></p>
+</blockquote>
+
+<p>Huh.  OK, well this is kinda interesting I guess, but why should I care?</p>
+
+<blockquote>
+  <p><em>What is a digital computer?</em></p>
+</blockquote>
+
+<p>What do you mean?  This thing that you and I are conversing on is a digital computer.</p>
+
+<blockquote>
+  <p><em>Yes, but what does a digital computer do?</em></p>
+</blockquote>
+
+<p>Uh. It computes digitally?</p>
+
+<blockquote>
+  <p><em>Precisely!  And the word digitally means…?</em></p>
+</blockquote>
+
+<p>Um.  With digits?</p>
+
+<blockquote>
+  <p><em>Exactly!  And are the number of digits finite?</em></p>
+</blockquote>
+
+<p>Of course, though very very large nowadays.</p>
+
+<blockquote>
+  <p><em>…and a finite number of digits is…?</em></p>
+</blockquote>
+
+<p>Oh, I think I see where you are going.  A finite number of digits is an integer.</p>
+
+<blockquote>
+  <p><em>Right.  A digital computer is a computer that computes with integers.  Nothing but integers.</em></p>
+</blockquote>
+
+<p>Well, wait.  What about floating point numbers and rational numbers?</p>
+
+<blockquote>
+  <p><em>They are represented by integers in the computer.  The computer deals with integers, only integers.</em></p>
+</blockquote>
+
+<p>OK.  sure.  Integers.  But what does this have to do with Diophantine equations?</p>
+
+<blockquote>
+  <p><em>What are the inputs to a computer program?</em></p>
+</blockquote>
+
+<p>There are lots of kinds.  Keyboard characters, mouse movements, mouse clicks, network packets.  You name it.</p>
+
+<blockquote>
+  <p><em>They are all made up of integers aren’t they?</em></p>
+</blockquote>
+
+<p>Um.  Yeah, I guess they are.  OK, so every input to a computer program is integral.</p>
+
+<blockquote>
+  <p><em>And what about the outputs?</em></p>
+</blockquote>
+
+<p>Well, yes, pixels, characters, network packets.  They are all composed of integers too.</p>
+
+<blockquote>
+  <p><em>So a digital computer program takes in integers and returns integers.</em></p>
+</blockquote>
+
+<p>Right.  That’s right.  It’s all integers.</p>
+
+<blockquote>
+  <p><em>A digital computer program, therefore, represents a Diophantine equation.</em></p>
+</blockquote>
+
+<p>Wait. What?</p>
+
+<blockquote>
+  <p><em>Integers in.  Integers out.</em></p>
+</blockquote>
+
+<p>OK. sure.  But it’s one big complicated Diophantine equation.</p>
+
+<blockquote>
+  <p><em>Actually, the specification of the program is the equation.  The program finds the solutions to that equation.</em></p>
+</blockquote>
+
+<p>Yeah, yeah, ok.  That’s right.  The specification of a program is a great big Diophantine equation in a bazillion unknowns, and the program that meets that specification finds solutions to that ginormous equation.  Is this useful to know?</p>
+
+<blockquote>
+  <p><em>Who is David Hilbert?</em></p>
+</blockquote>
+
+<p>You mean that guy who designed that funny recursive curve that looks like mosquito netting?</p>
+
+<blockquote>
+  <p><em>(Ahem.) That was one of his accomplishments yes. He also helped Einstein with the General Theory of Relativity.  He was a very great mathematician.</em></p>
+</blockquote>
+
+<p>And he did something with Diophantine equations I’m guessing.</p>
+
+<blockquote>
+  <p><em>Indeed he did many, many things.  Among them was a very famous question.  The question of “Entscheidung” – decidability.</em></p>
+</blockquote>
+
+<p>What did he want to decide?</p>
+
+<blockquote>
+  <p><em>Remember Fermat’s conjecture?</em></p>
+</blockquote>
+
+<p>You mean that equation that has no solutions.  <code class="highlighter-rouge">a^n + b^n = c^n</code> where <code class="highlighter-rouge">n&gt;2</code>?</p>
+
+<blockquote>
+  <p><em>Yes, that’s the one.  For a long time there was no proof that <code class="highlighter-rouge">n=2</code> was the only solution.  How could you disprove that conjecture if you thought it was untrue?</em></p>
+</blockquote>
+
+<p>I could write a program to find counter examples.  Like, maybe <code class="highlighter-rouge">n=999,999,999</code> might work.</p>
+
+<blockquote>
+  <p><em>Right.  And if you found such a solution, you’d have disproven Fermat’s conjecture.  But how long would it take to PROVE the conjecture using that method?</em></p>
+</blockquote>
+
+<p>The program would run forever.  I couldn’t prove it that way.</p>
+
+<blockquote>
+  <p><em>Correct.  What Hilbert wanted was a finite algorithm to determine whether or not a solution exists.  He wanted a way to “decide” whether or not a search, such as the one you suggested, was practical.</em></p>
+</blockquote>
+
+<p>Wait, wait.  What?  He wasn’t asking for the solutions, he was asking for a way to know if there were any solutions?</p>
+
+<blockquote>
+  <p><em>Right.  He wanted a finite algorithm that could tell him whether a given diophantine equation had solutions or not.  That algorithm would not supply the solutions; it would just supply the decision.</em></p>
+</blockquote>
+
+<p>That’s why he called it “decidability”?</p>
+
+<blockquote>
+  <p><em>Entscheidung.  Yes</em></p>
+</blockquote>
+
+<p>Gesundheight!</p>
+
+<blockquote>
+  <p><em>Harumph!  Now.  Who do you think solved the problem of decidability?</em></p>
+</blockquote>
+
+<p>I think you’re about to tell me.</p>
+
+<blockquote>
+  <p><em>Two people whom you’ve heard of.  The two great founders of modern computer science.  Alonzo Church, and Alan Turing.</em></p>
+</blockquote>
+
+<p>Church!  That’s the guy who invented functional programming, right?</p>
+
+<blockquote>
+  <p><em>In a manner of speaking, yes.</em></p>
+</blockquote>
+
+<p>And Turing!  He won world war 2 right?</p>
+
+<blockquote>
+  <p><em>He certainly contributed.  The two of them proved, using very different techniques, that there was no general and finite solution to decidability.</em></p>
+</blockquote>
+
+<p>That must have disappointed Hilbert.</p>
+
+<blockquote>
+  <p><em>Perhaps.  But that’s not the issue.</em></p>
+</blockquote>
+
+<p>Yeah, just what is the issue here?</p>
+
+<blockquote>
+  <p><em>When you are given a program specification, i.e. a Diophantine equation, what is the first thing you are asked to do?</em></p>
+</blockquote>
+
+<p>Estimate it of course.  Folks want to know how long it will take to write the program.</p>
+
+<blockquote>
+  <p><em>And the program is what again, in terms of a that Diophantine equation?</em></p>
+</blockquote>
+
+<p>The program is the … solution … to the … OH!</p>
+
+<blockquote>
+  <p><em>(smile)  I perceive you’ve gotten the point.</em></p>
+</blockquote>
+
+<p>Yeah, like, they are asking me to DECIDE.  An estimate is a decision.</p>
+
+<blockquote>
+  <p><em>And is there a finite method for finding that decision in every case?</em></p>
+</blockquote>
+
+<p>No!  OH, that’s hilarious.</p>
+
+<blockquote>
+  <p><em>Right.  The founding documents of computer science are documents that prove that there is no finite mechanism for deciding if a program can even be written.  The founding of computer science was based on the proof that estimates were not guaranteed.</em></p>
+</blockquote>
+
+<p>Yeah, but we CAN estimate.</p>
+
+<blockquote>
+  <p><em>Yes, we can.  That’s because most specifications are estimable.</em></p>
+</blockquote>
+
+<p>So this has just been a cute little mathematical diversion with no pragmatic result.</p>
+
+<blockquote>
+  <p><em>I suppose you could say that.  But I enjoyed it.  And, after all, I think it’s deliciously ironic that it was the proof of NOESTIMATES that founded computer science.</em></p>
+</blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pickled State]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/06/06/PickledState.html"/>
+    <updated>2018-06-06T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/06/06/PickledState</id>
+    <content type="html"><![CDATA[<p>By now everyone is familiar with BDD (Behavior Driven Development) and its emblematic adjective/adverb/adverb triplet: <code class="highlighter-rouge">GIVEN/WHEN/THEN</code>.  There is something satisfying about using these three words to describe a requirement.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIVEN That the system is waiting for login.
+WHEN the user provides a valid username and password.
+THEN the user is presented with the welcome page.
+</code></pre></div></div>
+
+<p>The impact that this triplet has had on our industry is significant.  It began as a way to describe high level tests, and has become a general means for specifying requirements.  It has even acquired a name: <em>Gherkin</em>.</p>
+
+<p>Nowadays business analysts and programmers are encouraged to write suites of Gherkin scenarios to describe the systems they want to build.  An entire consulting industry has grown up around this idea.  Behavior Driven Development, which used to be a testing dialect, has become a management consulting strategy.</p>
+
+<blockquote>
+  <p><strong>Spock:</strong> <em>Fascinating.</em></p>
+</blockquote>
+
+<p>Why has this proven to be so effective?  One reason, that has recently occurred to me, is the connection between Gherkin and Finite State Machines.  If you look closely at a Gherkin triplet you will see that it specifies a state transition.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIVEN that we are in state S1
+WHEN we recieve event E1
+THEN we transition to state S2
+</code></pre></div></div>
+
+<blockquote>
+  <p><em>This means that a suite of Gherkin scenarios is a specification of a finite state machine.</em></p>
+</blockquote>
+
+<p>Let that last sentence sink in for a second or two.  The formalism that business analysts find most conducive to specifying system <em>requirements</em> just happens to be the same formalism that programmers frequently use to specify system <em>behavior</em>.  What’s more, that formalism started as, and continues to be, a popular language for specifying <em>tests</em>.</p>
+
+<p>If the Gherkin requirements are complete, then they describe the complete state machine of the system, <em>and</em> the complete test suite for the system.</p>
+
+<blockquote>
+  <p><strong>Spock:</strong> <em>Logical.</em></p>
+</blockquote>
+
+<p>Now hold that thought and let’s consider <em>unit tests</em>.[1]</p>
+
+<p>Well written unit tests always follow the <em>AAA</em> pattern:  <code class="highlighter-rouge">Arrange/Act/Assert</code>.</p>
+
+<p>First the test <em>arranges</em> the system so that it is in the appropriate state for the test.  Next the test executes the <em>action</em> to be tested.  Finally the test <em>asserts</em> that the state of the system has been appropriately changed by the action.</p>
+
+<p>I used the word <em>state</em> in that last paragraph intentionally.  It should be clear to you that the <em>AAA</em> pattern is also a description of a transition in a state machine.  Indeed, <em>AAA</em> and <em>GWT</em> are completely isomorphic:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIVEN that we have ARRANGED the system for the test.
+WHEN we perform the tested ACTION.
+THEN we can ASSERT the conditions that pass the test.
+</code></pre></div></div>
+
+<p>This, of course, means that the suite of unit tests produced through TDD specifies the finite state machine that describes the system behavior.  If the three laws of TDD are followed, then test coverage will be at (or very near) 100%, and the described finite state machine will be complete.</p>
+
+<p>Now, let’s say we have a complete suite of Gherkin scenarios that specify all the acceptance and integration[2] tests for the system.  Let’s also say that we have a complete suite of unit tests produced by the three laws of TDD.  How do the state machines specified by these two test suites differ?</p>
+
+<p>At the level of the business they shouldn’t differ at all.  All the states and transitions specified in the Gherkin scenarios ought to be present in the unit tests.  However, there will be states and transitions in the unit tests that are not present in the Gherkin.  These will be all the little programming details that the business has no visibility of.  For example, the state transitions that deal with the fact that lines of text sometimes end in <code class="highlighter-rouge">\n\r</code> but sometimes only end in <code class="highlighter-rouge">\n</code>.</p>
+
+<p>Thus the Gherkin is a proper <em>subset</em> of the unit tests.</p>
+
+<blockquote>
+  <p><strong>Spock:</strong> <em>Indeed.</em></p>
+</blockquote>
+
+<p>Now, let’s say that the system is written in F# or Clojure – i.e. a <em>functional</em> language.  The combination of the Gherkin, unit tests, and code is a living example of the Church-Turing thesis – that state machines are equivalent to predicate calculus.</p>
+
+<p>I think that’s cool.</p>
+
+<blockquote>
+  <p><strong>Spock:</strong> <em>Way cool.</em></p>
+</blockquote>
+
+<p>Anyway, back to the Gherkin.  Given all the different means by which people have specified requirements in the past; what is it about Gherkin that is so much more conducive to specification?</p>
+
+<p>Here’s my theory.  Gherkin is a language that sits perfectly between, and speaks equally to, the three disciplines of specification, testing, and programming.  Each of those disciplines gets precisely what they need from the language.  It is the common language that bridges that three-way divide and allows the practitioners to unambiguously communicate.</p>
+
+<p>On top of that, there is no better mechanism for exploring the behavior of a system than a well specified state machine.</p>
+
+<p>Perhaps that last statement needs some justification.  So consider a typical state machine.  It is composed of a list of transitions; each of which is a triplet.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CURRENT_STATE : EVENT : NEXT_STATE
+</code></pre></div></div>
+
+<p>The transition reads as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIVEN that we are in the CURRENT_STATE, 
+WHEN we get the EVENT, 
+THEN we go to the NEXT_STATE.  
+</code></pre></div></div>
+
+<p>This means that the criterion for to transitioning to <code class="highlighter-rouge">NEXT_STATE</code> is the pair: <code class="highlighter-rouge">{CURRENT_STATE, EVENT}</code>.</p>
+
+<p>So consider this simple state machine that represents a subway turnstile.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOCKED     COIN  UNLOCKED
+UNLOCKED   PASS  LOCKED
+</code></pre></div></div>
+
+<p>We read these two transitions as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GIVEN we are in the LOCKED state,
+WHEN the user drops a COIN,
+THEN we go to the UNLOCKED state.
+
+GIVEN we are in the UNLOCKED state,
+WHEN the user PASSes through the gate,
+THEN we go to the LOCKED state.
+</code></pre></div></div>
+
+<p>Do these two transitions fully describe the behavior of the subway turnstile?  Clearly not.  There are two states and two events.  That means there are four <code class="highlighter-rouge">{state, event}</code> pairs.  Therefore there should be four transitions as follows.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOCKED   COIN   UNLOCKED
+LOCKED   PASS   LOCKED (ALARM)
+UNLOCKED COIN   UNLOCKED (REFUND)
+UNLOCKED PASS   LOCKED  
+</code></pre></div></div>
+
+<p>The ALARM and REFUND notations are actions that must be executed as part of the respective transitions.  These extra transitions are the ones that business people tend not to think about.  They are well off the happy path of the system. After all, nobody expects a turnstile user to deposit a coin once the turnstile is unlocked.</p>
+
+<p>How often have you found, and fixed, bugs in systems that were due to some event happening in a state that didn’t expect it?  If you are like me, it happens all the time.  That’s because these situations are hard see.</p>
+
+<p>However, when a system is described in state transition form, and when the states and transitions are well identified, then the hunt for the missing <code class="highlighter-rouge">{state, event}</code> pairs becomes trivial.  I have personally had a great deal of success in finding missing <code class="highlighter-rouge">{state,event}</code> pairs simply be being careful to identify and isolate states and events.</p>
+
+<blockquote>
+  <p><strong>Spock:</strong> <em>A reasonable discipline.</em></p>
+</blockquote>
+
+<p>Anyway, the next time you are using BDD and/or Gherkin to specify a system, remember that what you are really doing is specifying a finite state machine.  If you are careful to identify the states and events, you will make it a lot easier to find the missing <code class="highlighter-rouge">{state,event}</code> pairs and create a more complete specification.</p>
+
+<hr />
+<p>[1] The word “unit” is entirely inappropriate.  No one knows what a <em>unit</em> is when applied to tests.  Some people call them <em>programmer tests</em> instead.  Others call them <em>micro-tests</em>.  Whatever they are called, they are the tests that programmers produce when practicing TDD (Test Driven Development).  They are the tests that are used by programmers to describe the behavior of the system.</p>
+
+<p>[2] “Acceptance” and “Integration” are inappropriate words here.  Some people call them <em>Customer</em> tests.  They are the tests that the business uses to describe the behavior of the system.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Craftsman, Craftswoman, Craftsperson]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/05/02/Craftsman-Craftswoman-Craftsperson.html"/>
+    <updated>2018-05-02T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/05/02/Craftsman-Craftswoman-Craftsperson</id>
+    <content type="html"><![CDATA[<p>In the past I have used the term “Craftswoman” only when refering directly to a woman.  In most other cases, including most gender neutral cases, I have used the term “Craftsman”.  I say “most” because when I would address a team of both men and women I’d be as likely as not to use some variation of “Craftsmen and Craftswomen”.</p>
+
+<p>When writing, however, I have used “Craftsman” for the gender neutral cases.  This is because there is a certain formality to writing; and “Craftsman” seemed to me to be proper English.</p>
+
+<p>I recently had a discussion with a software craftswoman named Liz Keogh.  She is a woman whom I consider to be far more adept at the craft we share than I, so I take her words very seriously.  She graciously, and patiently, explained to me that the appearance of the word “Craftsman” in written formal text, even when used in the gender neutral case, made her feel “set apart”.</p>
+
+<p>This was a surprise to me.  Call me dense if you like (I’ve been called worse) but I did not realize that the usage of the word was having this effect on her.  And that effect is not acceptable.  I want <em>nothing</em> I say or write to make a woman like Liz Keogh – or any other woman for that matter – feel excluded.</p>
+
+<p>I’m a programmer.  I need a formlua – an algorithm – I need to know how to write the <code class="highlighter-rouge">if</code> statements in my brain.  So here is what I’ve come up with.  I apologize if this seems a bit mechanical; but I need personal rules like this.</p>
+
+<ul>
+  <li>When referring directly to a man, I will use the term “Craftsman”.</li>
+  <li>When referring directly to a woman, I will use the term “Craftswoman”.</li>
+  <li>In the singular gender neutral case I will use “Craftsman or -woman”, or possibly “Craftsperson”. <code class="highlighter-rouge">[1]</code></li>
+  <li>In the plural gender neutral case I will use: “Craftswomen and -men” <code class="highlighter-rouge">[2]</code> or possibly “Craftspeople”<code class="highlighter-rouge">[4]</code></li>
+</ul>
+
+<p>Many people have recommended terms like Artisan, Professional, and even Mechanic <code class="highlighter-rouge">[5]</code>.  But I don’t find that those words carry the right tone and weight.  In any case the term “Craftsman” is in such common usage that I feel I must continue using it.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">[1]</code> I am uncomfortable with the term “Craftsperson” because it sounds clumsy in my head.  Perhaps it is the long chain of consonants “cra-FTSP-erson”, or perhaps it’s some more deeply seated phycological reaction.  Time will tell whether my discomfort level wanes.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">[2]</code> Note the refersal of the genders in the singular and plural case.  This ought to keep the order balanced, so that it does not appear that I am preferring one gender over another. <br /><br /> 
+I’m not sure about those hyphens.  Craftsman is not a hyphenated word so I’m not sure I can properly use the hyphen this way.  I’m using it to connect the last word to the word “Craft”.<code class="highlighter-rouge">[3]</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">[3]</code> If you think I’m being overly pedantic here, you haven’t met my copyeditors.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">[4]</code> I really don’t like the sounds of “Craftspeople”.  It sounds flippant somehow, as if it was being said by Maynard G. Krebs: “Hello Craftspeople, you rang?”</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">[5]</code> Mechanic?</p>
+  </li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FP vs. OO]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/04/13/FPvsOO.html"/>
+    <updated>2018-04-13T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/04/13/FPvsOO</id>
+    <content type="html"><![CDATA[<p>Over the last several years I have paired with people learning Functional Programming who have expressed an anti-OO bias.  This usually comes in the form of statements like: “Oh, that’s too much like an Object.”</p>
+
+<p>I think this comes from the notion that FP and OO are somehow mutually exclusive.  Many folks seem to think that a program is functional to the extent that it is <em>not</em> object oriented.  I presume this opinion comes as a natural consequence of learning something new.</p>
+
+<p>When we take on a new technique, we often tend to eschew the old techniques we used before.  This is natural because we believe the new technique to be “better” and therefore the old technique must be “worse”.</p>
+
+<p>In this blog I will make the case that while OO and FP are <em>orthogonal</em>, they are not mutually exclusive.  That a good functional program can (and should) be object oriented.  And that a good object oriented program can (and should) be functional.  But to accomplish this goal we are going to have to define our terms very carefully.</p>
+
+<h3 id="what-is-oo">What is OO?</h3>
+
+<p>I am going to take a very reductionist stance here.  There are many valid definitions of OO that cover a rich set of concepts, principles, techniques, patterns, and philosophies.  I am going to ignore all of that here and focus on nuts and bolts.  The reason for this reductionism is that all the richness surrounding OO is actually not specific to OO at all; but is part of the richness of software development overall.  Here, I will focus on that part of OO that is definitive and inextricable.</p>
+
+<p>Consider these two expressions:</p>
+
+<blockquote>
+  <p>1: <code class="highlighter-rouge">f(o);</code> <br />2: <code class="highlighter-rouge">o.f();</code></p>
+</blockquote>
+
+<p>What is the difference?</p>
+
+<p>Clearly there is no actual semantic difference.  The difference is entirely in the syntax.  But one looks procedural and the other looks object oriented.  This is because we have come to infer a special semantic behavior for expression 2. that we do not infer for expression 1.  The special semantic behavior is: polymorphism.</p>
+
+<p>When we see expression 1. we see a function named <code class="highlighter-rouge">f</code> being called upon an object named <code class="highlighter-rouge">o</code>.  We infer that there is only one such function named <code class="highlighter-rouge">f</code>, and that it may not be a member of the standard cohort of functions, if any, that surrounds <code class="highlighter-rouge">o</code>.</p>
+
+<p>On the other hand, when we see expression 2. we see an object named <code class="highlighter-rouge">o</code> being sent the message named <code class="highlighter-rouge">f</code>.  We expect that there may be other kinds of objects that can accept the message <code class="highlighter-rouge">f</code> and that therefore we do not know which particular <code class="highlighter-rouge">f</code> behavior is actually being invoked.  <em>The behavior is dependent upon the type of <code class="highlighter-rouge">o</code>.</em>  i.e. <code class="highlighter-rouge">f</code> is polymorphic.</p>
+
+<p>This expectation of polymorphism is the essence of OO programming.  It is the reductionist definition; and it is inextricable from OO.  OO without polymorphism is not OO.  All of the other attributes of OO, such as encapsulated data, and methods bound to that data, and even inheritance, are more related to expression 1. than to expression 2.</p>
+
+<p>C and Pascal programmers (and to some extend even Fortran, and Cobol programmers) have always created systems of encapsulated functions and data structures.  It does not require an OOPL to create and use such encapsulated structures.  Encapsulation, and even simple inheritance, is obvious and natural in such languages. (More natural in C and Pascal than the others.)</p>
+
+<p>So the thing that truly differentiates OO programs from non-OO programs is polymorphism.</p>
+
+<p>You might complain about this by saying that polymorphism can be achieved by using switch statements or long if/else chains within <code class="highlighter-rouge">f</code>.  This is true, so I must add one more constraint to OO.</p>
+
+<blockquote>
+  <p><em>The mechanism of polymorphism must not create a source code dependency from the caller to the callee.</em></p>
+</blockquote>
+
+<p>To explain this, look again at the two expressions.  Expression 1: <code class="highlighter-rouge">f(o)</code>, seems to have a source code dependency upon the function <code class="highlighter-rouge">f</code>.  We infer this because we also infer that there is only one <code class="highlighter-rouge">f</code> and so the caller must know the callee.</p>
+
+<p>However, when we look at Expression 2. <code class="highlighter-rouge">o.f()</code> we infer something different.  We know that there may be many implementations of <code class="highlighter-rouge">f</code>, and we don’t know which of those <code class="highlighter-rouge">f</code> functions is really going to be called.   Therefore the source code containing Expression 2 does <em>not</em> have a source code dependency upon the function being called.</p>
+
+<p>In concrete terms this means that modules (source files) that contain polymorphic calls to functions must not reference, in any way, modules (source files) that contain the implementations of those functions.  There can be no <code class="highlighter-rouge">include</code> or <code class="highlighter-rouge">use</code> or <code class="highlighter-rouge">require</code> or any other such declaration that causes one source file to depend upon another.</p>
+
+<p>So our reductive definition of OO is:</p>
+
+<blockquote>
+  <p><em>The technique of using dynamic polymorphism to call functions without the source code of the caller depending upon the source code of the callee.</em></p>
+</blockquote>
+
+<h3 id="what-is-fp">What is FP?</h3>
+
+<p>Again, I am going to be very reductive.  FP has a rich history and tradition that goes back well beyond software.  There are principles, techniques, theorems, philosophies, and concepts that pervade the paradigm.  I am going to ignore all of that and drive straight to the bottom, inextricable attribute that separates FP from any other style.  And it is, simply, this:</p>
+
+<blockquote>
+  <p><em><code class="highlighter-rouge">f(a) == f(b)</code> when <code class="highlighter-rouge">a == b</code>.</em></p>
+</blockquote>
+
+<p>In a functional program, every time you call a particular function with a particular value, you will get the same result; no matter how long the program has been executing. This is sometimes called <em>referential transparency</em>.</p>
+
+<p>The implication of this is that function <code class="highlighter-rouge">f</code> must not change any global state that affects the way function <code class="highlighter-rouge">f</code> behaves.  What’s more, if we say that function <code class="highlighter-rouge">f</code> represents all functions in the system – that all functions in the system must be referentially transparent – then no function in the system can change any global state at all.  No function in the system can do anything that will cause another function in the system to return a different value from the same inputs.</p>
+
+<p>The deeper implication of this is that no named value can ever be changed.  That is, <em>there can be no assignment operator</em>.</p>
+
+<p>Now if you think about this very carefully you might come to the conclusion that a program composed of nothing but referentially transparent functions can do nothing at all – since any useful system behavior changes the state of <em>something</em>; even if it is just the state of the printer or display. However, if we exclude the hardware, and any elements of the outside world, from our referential transparency constraint, then it turns out that we can create very useful systems indeed.</p>
+
+<p>The trick, of course, is recursion.  Consider a function that takes a <code class="highlighter-rouge">state</code> data structure as its argument.  This argument contains all the state information that the function uses for its work.  When the work is done the function creates a new <code class="highlighter-rouge">state</code> data structure  with updated values.  As its last act, the function calls itself with the new <code class="highlighter-rouge">state</code> structure.</p>
+
+<p>This is just one of the simple tricks that a functional program can use to track changes in internal state without appearing to actually change any internal state[1].</p>
+
+<p>So, the reductive definition of functional programming is:</p>
+
+<blockquote>
+  <p><em>Referential Transparency – no reassignment of values.</em></p>
+</blockquote>
+
+<h3 id="fp-vs-oo">FP vs OO</h3>
+
+<p>By how I have both the OO and the FP communities gunning for me.  Reductionism is not a good way to win friends.  But it is sometimes useful.  In this case, I think it is useful to shine some light on the FP vs OO meme that seems to be circulating.</p>
+
+<p>It seems clear that the two reductive definitions I have chosen are completely orthogonal.  Polymorphism and Referential Transparency have nothing, whatever, to do with each other.  There is no intersection between them.</p>
+
+<p>But orthogonality does not imply mutual exclusion (just ask James Clerk Maxwell).  It is perfectly possible to build a system that employs both dynamic polymorphism <em>and</em> referential transparency.  Not only is it possible, it is <em>desirable</em>!</p>
+
+<p>Why is it desirable?  For precisely the same reasons that the two aspects are desirable alone!  We desire systems built with dynamic polymorphism because they are strongly decoupled.  Dependencies can be inverted across architectural boundaries.  They are testable using Mocks and Fakes and other kinds of Test Doubles. Modules can be modified without forcing changes to other modules. This makes such systems much easier to change and improve.</p>
+
+<p>We also desire systems that are built with referential transparency because they are predictable.  The inability to change internal state makes systems much easier to understand, to change, and to improve.  It drastically reduces the chances of race conditions and other concurrent update problems.</p>
+
+<p>The bottom line is:</p>
+
+<blockquote>
+  <p><em>There is no FP vs OO.</em></p>
+</blockquote>
+
+<p>FP and OO work nicely together.  Both attributes are desirable as part of modern systems.  A system that is built on both OO and FP principles will maximize flexibility, maintainability, testability, simplicity, and robustness.  Excluding one in favor of the other can only weaken the structure of a system.</p>
+
+<hr />
+<p>[1] Since we are using machines with Von Neumann architectures, we must assume that there are memory cells that actually are changing state.  In the recursive mechanism I described; tail call optimization will prevent new stack frames from being created, and will reuse the original stack frame instead.  But this violation of referential transparency is (usually) entirely hidden and irrelevant.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[In The Large]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/04/02/InTheLarge.html"/>
+    <updated>2018-04-02T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/04/02/InTheLarge</id>
+    <content type="html"><![CDATA[<p>From the very first moments of the Agile revolution we pondered the question of <em>Agile in the Large</em>.  How could we take the principles of light-weight, iterative, incremental, high-feedback development and apply them to truly <em>huge</em> projects?</p>
+
+<p>At first the answers were things like <em>Scrum of Scrums</em>.  The idea was to recursively apply the principles of Agile development at ever higher levels of scale.  A project that required more than one team of 5-12 developers could be built by two such teams with a higher level team to “oversee?” them.</p>
+
+<p>Note the question mark.  As we start to consider large projects, we can’t avoid hierarchy; but hierarchy seems anathema to Agile.  After all, Agile is all about egalitarianism.  It is a rejection of command and control.  It is a rejection of plans and schedules and…</p>
+
+<blockquote>
+  <p><em>Oh Bollocks!  It is not!</em></p>
+</blockquote>
+
+<p>Agile was a revolution in the sense of “a turning of the wheel”.  In the earliest days of software we wrote code in an agile way.  We wrote little bits, tested them, built them into bigger bits, tested those bits, in a never ending cycle.  If you went back to the late 1960s and watched the way code was written, you’d see bits of Agile peeking out.</p>
+
+<p>Of course we were greatly hampered by the hardware.  Compiles took hours.   Editing was done on teletypes.  Most programmers back then didn’t know how to use a keyboard at all; so they had keypunch operators type in their code for them.  In that kind of environment quick feedback loops were difficult to achieve.</p>
+
+<p>Even so, we did what we could to shorten those feedback loops.  We wrote in assembler so we could sit at the console and debug by patching our software in octal or hex.  We’d test our code by executing it in a debugger, or even by single stepping the computer.[1]  We got pretty good at this.  It was the only way to get things done in anything like a reasonable amount of time.</p>
+
+<p>But the wheel turned.  We started using languages that were not easy to debug at the console.  We started to write bigger and bigger programs.  To make that work in an environment with such long feedback loops we needed <em>plans</em>.</p>
+
+<p>This is the environment from which waterfall emerged.  When it takes a full day to go around the edit/compile/test loop, lots of planning and checking are necessary.  You can’t to TDD and Refactoring in a 24 hour loop!</p>
+
+<p>But the wheel kept turning.  Moore’s law put us on an exponential curve that most of today’s programmers have no inkling of.  We went from 24 hour turnarounds in 1970, to 60 minute turnarounds in 1980, to ten minute turnarounds in 1990, to ten second turnarounds in 2000.  And by 2005 the turnaround time for most programmers was sub second.</p>
+
+<p>This is the environment in which Agile emerged.  Agile was a return to the quick turnaround, high feedback, development strategies of the 1960s but with much more powerful machines, much better languages and tools, and much larger projects.</p>
+
+<p>But Agile also emerged from the flames.  Waterfall, though necessary in the 70s and 80s, was painful in the extreme.  We learned a lot, during those decades, about what <em>not</em> to do.  So when Agile emerged in the late 90s it carried with it the lessons learned through those dark times.</p>
+
+<p>Agile, was not simply a return to short feedback cycles.  Agile imposed <em>disciplines</em> on top of those short feedback cycles.  Disciplines like testing, refactoring, pairing, and intense automation.  It’s true that Agile was a turning of the wheel; but when wheels turn, they drag the vehicle forward.  Agile definitely moved us forward from the strategies of the ’60s.</p>
+
+<p>But forward in what?  What was it that the Agile revolution improved?</p>
+
+<p>Agile was a revolution in how relatively <em>small</em> teams can develop relatively <em>small</em> software projects.  Note the emphasis on the word <em>small</em>.</p>
+
+<p>An Agile team is great at creating a software system of 100,000 lines or so.  And 100,000 lines can do a hell of a lot.  So for many companies one or two Agile teams is sufficient for just about anything they want to do.</p>
+
+<p>On the other hand, if you need to create a system of ten million lines, a single Agile team isn’t going to cut it.  You need about a hundred teams to build a ten million line system.</p>
+
+<p>But how do you manage a hundred agile teams?  How do you feed stories to them.  How do you coordinate the interfaces between them?  How do you segregate those ten million lines of code so that the teams can work independently of each other?</p>
+
+<p>And how (and this was the real question) do you do that in an “Agile” way?</p>
+
+<blockquote>
+  <p><em>Answer:  You don’t!</em></p>
+</blockquote>
+
+<p>Here’s the thing.  We, humans, are actually very good at building big projects.  We’ve known how to do this for a very long time.</p>
+
+<p><img src="/assets/pyramids.jpg" /></p>
+
+<p>Just think of the <em>truly huge</em> projects that we, humans, have accomplished.</p>
+
+<ul>
+  <li>Apollo: We put men on the moon!</li>
+  <li>D-Day: We invaded Normandy with 156,000 troops along a 50 mile, heavily fortified, border.</li>
+  <li>We have a world economy that supports 8 billion people.</li>
+  <li>The globe is ensconced in a massive digital network allowing you to read this blog on your phone while hiking in the woods!</li>
+  <li>You want a thingamajig?  You can get it delivered tomorrow, or even today, with a few taps on your phone.</li>
+</ul>
+
+<p>I don’t think I need to go on.  We, humans, are really quite good at doing big things.  It’s <em>who</em> we are.  It’s <em>what</em> we do.  We put red sports cars into solar orbit.  We do big things.</p>
+
+<p>So why are we worried about big software?  We already know how to build big software.  We’ve been doing it for 50 years or more.  The “big” part was never actually the problem.  The problem that we solved with Agile was the <em>small</em> part.  What we <em>didn’t</em> know how to do well, was build <em>small</em> projects.</p>
+
+<p>We’ve always known how to do big projects.  You do big projects by breaking them up into a bunch of <em>small</em> projects.  Agile solved the <em>small</em> part of that.  Agile really has nothing to do with the big part.</p>
+
+<p>But, but, but, but…  Egalitarianism!  The rejection of plans and of Command and Control!  Agile!</p>
+
+<blockquote>
+  <p><em>Bollocks!</em></p>
+</blockquote>
+
+<p>Agile was never about egalitarianism.  Agile was never about the rejection of plans, or  the rejection of command and control.  Indeed, Agile was the <em>embodiment</em> of the lowest level unit of command and control: <em>The squad</em>.</p>
+
+<p>Yes, at some level down the hierarchy command and control stops being effective.  A small squad of individuals can work together in short cycles with lots of feedback and intense communication to achieve an objective.  That’s an Agile team.  At that level strict command and control is intensely harmful.  But above that level command and control begin to become necessary.  The higher you go, the more concrete and obvious that becomes.  You don’t design, build, produce and sell hundreds of millions of iPhones without an awful lot of command and control.</p>
+
+<p>There are quite a few Agile in the Large strategies out there.  Books and blogs have been written about the topic.  Whole consulting companies have been created to transition companies to use Agile in the Large approaches.  There is nothing wrong with this.</p>
+
+<p>There is nothing wrong with the strategies and techniques described by these Agile in the Large approaches.  Except one thing.  They aren’t Agile.  They have nothing to do with Agile.  Rather, they are Agile “flavored” variations on the strategies and techniques that humans have been using for millennia to get big things done.</p>
+
+<p>The flavor comes from the use vocabulary and concepts from Agile.  There’s nothing wrong with that flavor – it’s fine.  If you find that it helps to use the words and concepts from Agile, go for the flavor.  But don’t be overly concerned with the actual “Agile-ness” of it.  Once you are doing something big, you have left the realm of Agile.  Hopefully your development teams are using Agile disciplines; but the overall project is not Agile.</p>
+
+<p>Because Agile is about the <em>small</em> things.</p>
+
+<hr />
+<p>[1] In those days, computers had switches on the front panel that allowed you to stop execution, and then step through a program one instruction at a time.  The front panel had lights that showed the contents of the various registers.  This allowed you to watch what was happening as your program executed.</p>
+
+<p>Look at the switches at the bottom right in the image below.  You’ll see <em>Sing Step</em> and <em>Sing Inst</em>.  A single <em>step</em> was one cycle of the clock.  An instruction often took several clock cycles.  So you could literally watch the internals of how the instructions were executed.</p>
+
+<p><img src="/assets/PDP8I_FrontPanel.jpg" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[<i>We Programmers</i>]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/03/29/WeProgrammers.html"/>
+    <updated>2018-03-29T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/03/29/WeProgrammers</id>
+    <content type="html"><![CDATA[<h2 id="the-good">The Good.</h2>
+<p><img src="/assets/starman.jpeg" /></p>
+<p />
+
+<p>There is a little red sports car heading out towards the asteroid belt and, <em>we programmers</em> put it there.  Oh, I don’t mean to give short shrift to Elon Musk and all the rocket scientists and engineers at SpaceEx.  It was their vision, and their accomplishment.  But they couldn’t have done it without us.</p>
+
+<p>Think, for a moment, about all the software involved in that project.  Think about the automation in the spacecraft itself.  Think about the ability of those boosters to land, in tandem.  Think about the steering vanes, and the engine gimbals, and the throttles.  Think about ground control, and the communication protocols, and…</p>
+
+<p>Think about how the engineers worked.  Think about the CAD/CAM software.  Think about the NC machines, and the 3D modeling software.  Think about the fluid dynamics simulations, the finite element analyses, the orbital calculations, the spreadsheets, the word processors, the email, the text messages, the phone calls…</p>
+
+<p>I think you see where I’m going with this.  Every minute step along the pathway from the dream, to the realization, was lubricated, enabled, enhanced, and simplified by software.  Billions and billions of lines of software that <em>we programmers</em> wrote.  [Yes, the Sagan-ism was intentional.]</p>
+
+<p>Now think about what this event means to our civilization.  Yes, it was a token – a gesture – a mere droplet in the sea of potentials.  But what a droplet!  Just think of the sheer chutzpah, the colossal, arrogant, exuberant, joyous wastefulness!  It was the peacock spreading it’s opulent tail feathers.  It was the prong-horn antelope leaping into the air out of sheer enthusiasm.  It was an expression of our rejection of limits, and our willingness to flippantly expend massive resources to achieve a tiny portion of a passionate dream.</p>
+
+<p>It was a message that we sent to ourselves, and to the universe at large, saying that we are coming, and nothing in this universe will stop us.  And it was <em>we programmers</em> who, more than anyone else, enabled the sending of that message. This is something that you, and I, and all programmers everywhere should feel very good about.</p>
+
+<h2 id="the-bad">The Bad.</h2>
+<p><img src="/assets/dashcamuber.jpg" width="300" /></p>
+<p />
+
+<p>Elaine Herzberg is dead.  She was struck by a “self-driving” car while walking her bicycle across the road.  And <em>we programmers</em> killed her.  Oh, I don’t mean to say that any programmer maliciously, or even negligently, wrote the code that killed her.  But, make no mistake about it, it was the code that killed her.</p>
+
+<p>Perhaps there was an <code class="highlighter-rouge">IF</code> statement somewhere in that code that, had the boolean predicate been in the opposite state, would have prevented the collision.  Or perhaps it was a function that generated a number that, had the number been different by a few bits, would have prevented the collision.</p>
+
+<p>We may never be able to identify that <code class="highlighter-rouge">IF</code> statement, or that function.  Machine learning neural networks are insidiously difficult to understand.  Even if the car’s log files contain all the inputs, and we can replay the event over and over again, we may never really understand, in the maelstrom of weights, and averages, and feedback loops, just why the car behaved the way it did.</p>
+
+<p>But what we <em>can</em> say is that <em>we programmers</em> wrote the code that killed her.  And this is something that you, and I, and all programmers everywhere should feel very bad about.</p>
+
+<h2 id="the-ugly">The Ugly.</h2>
+<p>There is a sentiment amongst programmers that arguments of ethics and morality should play no part in our discussions about disciplines and practices.  Those who hold this sentiment suggest that our practices and disciplines should be a matter of pure logic and economics.  Given the two scenarios above, I find this disturbing.  It seems to me that ethics and morality have become <em>intrinsic</em> to everything <em>we programmers</em> do; because so very much depends upon the quality of our work.</p>
+
+<h2 id="our-motto">Our Motto.</h2>
+
+<p>It is well past the time that <em>we programmers</em> can safely isolate ourselves from the rest of the world.  <em>We programmers</em> must no longer hide in our little techie bubbles.  The code <em>we programmers</em> write <em>matters</em>.  It <em>matters</em> to the hopes and dreams of our society and of our civilization.  It <em>matters</em> to people walking their bicycles across the street.  It matters to anyone and everyone because the code <em>we programmers</em> write lubricates, enables, enhances, and simplifies virtually every aspect of daily life.  From something as small as a young mother checking her baby monitor, to something as large as international nuclear-weapons policy, and interplanetary travel, our code <em>matters</em>.</p>
+
+<p>Recently Grady Booch tweeted something that I think <em>we programmers</em> should adopt as our motto:</p>
+
+<blockquote>
+  <p><em>Every line of code represents an ethical and moral decision.</em></p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Uncle Bob Fly-In.<br><font size="3">Have I got a deal for you!</font>]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/02/25/UncleBobFlyIn.html"/>
+    <updated>2018-02-25T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/02/25/UncleBobFlyIn</id>
+    <content type="html"><![CDATA[<p>I just got my pilot’s license.  That means I can fly!  So now I want to fly – <em>to you!</em>  I want to fly to anyone within a 500 nautical mile radius of Chicago (see map below), to give talks, conduct workshops, and provide training…</p>
+
+<p><strong><em><center>At Half Price!</center></em></strong></p>
+
+<p>500 nautical miles includes cities like:</p>
+
+<table style="background:transparent;">
+<tr><td style="padding:0px 0px; width:20%">Ann Arbor</td>
+  <td style="padding:0px 0px; width:20%">Cincinnati</td>
+  <td style="padding:0px 0px; width:20%">Cleveland</td>
+  <td style="padding:0px 0px; width:20%">Columbus</td></tr>
+<tr><td style="padding:0px 0px; width:20%">Detroit</td>
+  <td style="padding:0px 0px; width:20%">Duluth</td>
+  <td style="padding:0px 0px; width:20%">Fort Wayne</td>
+  <td style="padding:0px 0px; width:20%">Grand Rapids</td></tr>
+<tr><td style="padding:0px 0px; width:20%">Green Bay
+</td><td style="padding:0px 0px; width:20%">Indianapolis
+</td><td style="padding:0px 0px; width:20%">Kansas City
+</td><td style="padding:0px 0px; width:20%">Lincoln</td></tr>
+<tr><td style="padding:0px 0px; width:20%">Louisville
+</td><td style="padding:0px 0px; width:20%">Madison
+</td><td style="padding:0px 0px; width:20%">Milwaukee
+</td><td style="padding:0px 0px; width:20%">Minneapolis</td></tr>
+<tr><td style="padding:0px 0px; width:20%">Nashville
+</td><td style="padding:0px 0px; width:20%">Omaha
+</td><td style="padding:0px 0px; width:20%">Pittsburgh
+</td><td style="padding:0px 0px; width:20%">Rochester</td></tr>
+<tr><td style="padding:0px 0px; width:20%">Rockford
+</td><td style="padding:0px 0px; width:20%">Sioux City
+</td><td style="padding:0px 0px; width:20%">Sioux Falls
+</td><td style="padding:0px 0px; width:20%">Springfield, IL</td></tr>
+<tr><td style="padding:0px 0px; width:20%">Springfield, Mo
+</td><td style="padding:0px 0px; width:20%">St. Louis
+</td><td style="padding:0px 0px; width:20%">Toledo
+</td><td style="padding:0px 0px; width:20%">Toronto</td></tr>
+</table>
+<p />
+
+<p>Why half price?  Well, because, there are some things you’ll have to be flexible with.</p>
+
+<ul>
+  <li>
+    <p><strong>The Date</strong>.  Flying an airplane is weather dependent.  I might have to call you up the night before, or the morning of, and reschedule.  Sorry, I’m not flying through thunder storms to get to you.  No.  Not going to happen.  Deal with it!</p>
+  </li>
+  <li>
+    <p><strong>The Duration</strong>. One of my goals is to be home every night.  I love my wife!  I love my family!  What can I say?  I want to be home.  So I can fly out in the morning, and fly back in the evening.  An overnight stay is possible if you really want it; but we’d have to talk about the price. [Grin].</p>
+  </li>
+</ul>
+
+<p>Local airports are usually pretty friendly places.  Many have meeting rooms.  So if you host a user group you might want to consider contacting a local airport to see if you can bring 10, or 20, or 30 people in.  I’ll fly there.  We can have a day long workshop.</p>
+
+<p>Or, if your company would like to have me for a day (or maybe two [grin]) I could fly out and conduct a course, or a lecture, or a keynote, or…</p>
+
+<p>Well, the sky’s the limit!  [Big Smile].</p>
+
+<p>Perhaps you are wondering why I’d want to do this.  Well, first of all, flying is a hoot!  I enjoy the hell out of it.</p>
+
+<p>But secondly, I live smack in the middle of <em>fly-over country</em>.  This, it seems to me, is an area of the country that is badly underserved by speakers like me.  There are lots of programmers inside that circle who never see authors, or speakers, or industry experts.  I’d like to do my part to change that.</p>
+
+<p>So whaddya say?  Send an email to my diligent and delightful assistant (and Daughter) Angela Brooks (brooks@cleancoder.com), and start the conversation.</p>
+
+<p>Let’s have a fly in!</p>
+
+<p><img src="/assets/500NM Map.gif" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Citizenship Argument]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/01/18/TheCitizenshipArgument.html"/>
+    <updated>2018-01-18T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/01/18/TheCitizenshipArgument</id>
+    <content type="html"><![CDATA[<p>An old friend of mine recently posted a video blog that I found to be <em>brilliant</em>.</p>
+
+<p>Mike (GeePaw) Hill presented <a href="http://geepawhill.org/five-underplayed-premises-of-tdd-2/">Five Underplayed Premises of TDD</a> on a web page that contains an article and a video.  The video and the article appear to be identical in content; so you can read, or listen, or both.  However, there is much more information in the video, because Mike’s passion is an effective seasoning to the solid content of his article.</p>
+
+<p>The primary thrust of Mike’s message is that TDD helps you to:</p>
+
+<ul>
+  <li>Deliver Value Faster.</li>
+  <li>Exercise Good Judgement.</li>
+  <li>Improve Internal Quality.</li>
+  <li>Increase Efficiency.</li>
+  <li>Improve External Quality.</li>
+</ul>
+
+<p>Mike makes these points quickly, adeptly, and convincingly.  The video is a joy to watch.  The article is a joy to read.  They make me hope that the GeePaw series of video blogs will continue to produce such high quality content for a very long time.</p>
+
+<h3 id="a-quibble">A Quibble.</h3>
+<p>But I have a quibble.  And it’s kind of a big one – at least for me.  And so, for the rest of this article, I shall employ the <em>Writer’s Workshop</em> convention of using the phrase “The Author”, instead of the author’s name.</p>
+
+<p>It’s not a quibble with any of the author’s major points.  Those points are perfectly solid.  It’s a quibble with something the author said in an aside.</p>
+
+<p>While discussing that TDD helps us deliver value faster, the author says:</p>
+
+<blockquote>
+  <p><em>“TDD is not about good citizenship. You are not immoral if you don’t TDD. You’re not not a good looker forwarder or a protector of the future. It’s not about citizenship. TDD isn’t even about raising the quality of your code. Now TDD very often does increase the quality of teams that aren’t doing it to begin with, but that’s actually neither here nor there, because TDD isn’t about that. TDD is about more value faster.
+<br /><br />
+The other thing it’s not about? It’s not about art and it’s not about craftsmanship. It’s not about the excellence of our high standards. The reason we test drive is by test driving, we go faster. We put more value into the field faster than if we didn’t do TDD. And that is the money premise. We’re in this for the money.”</em></p>
+</blockquote>
+
+<p>These two paragraphs are entirely inconsistent with the rest of the article in the following ways:</p>
+
+<ul>
+  <li>
+    <p>The author asserts that TDD is not about quality; and yet his third and fifth points assert that TDD helps internal and external quality.  If you accept those points then clearly TDD <em>is</em> about raising the quality of your code, as well as the quality of your product.</p>
+  </li>
+  <li>
+    <p>The author asserts that TDD is not about art, or craftsmanship, or excellence of our high standards; and yet his five points stress <em>judgement</em>, and <em>quality</em>, and <em>efficiency</em> which are <em>the very essence</em> of craftsmanship, art, and high standards.</p>
+  </li>
+  <li>
+    <p>The author asserts that TDD is not about good citizenship or morality.  Herein lies the crux of my quibble; and so I must explain at some length.</p>
+  </li>
+</ul>
+
+<p>By “citizenship” I presume the author means <em>citizenship in the software community</em>.  By “morality” I presume the author means <em>professional ethics</em>.  In the following discussion we’ll stick with the author’s words and infer their meanings appropriately.</p>
+
+<p>How can programmers be good moral citizens if they are not using the best means at their disposal to: deliver value faster, use good judgement, improve internal quality, increase efficiency, and improve external quality?  Is the author suggesting that a programmer who, out of negligence, goes slow, uses bad judgement, makes an internal mess, create gross inefficiencies, and delivers bad features is being a good moral citizen?  I think that’s absurd.</p>
+
+<p>Now, to be fair, it may be that the author’s point is that TDD is not the <em>only</em> way to achieve these five goals; and that therefore TDD is not the only way to be a good moral citizen of the software community.  Whether that is so, or not, is irrelevant to the point.  The fact that TDD helps with those five goals <em>means</em> that TDD is about good moral citizenship.  It may not be the only path to that good moral citizenship; but it is a path.</p>
+
+<p>Let’s say this a different way.  Does the author believe that he would continue to be a good moral citizen of the software community if he abandoned TDD?  Now, since I know the author to be such a good moral citizen, the only possible answer to this question is: Yes!  Of course.  Because the only way the author would abandon TDD is if he found some better means to achieve those five goals.</p>
+
+<p>And so we can deduce that the five goals are the issue; and not TDD.  Striving to achieve those five goals is what makes you a good moral citizen of the software community.  TDD is merely one of the paths that assist in that striving.</p>
+
+<p>That’s all well and good.  However, since TDD is a path towards the goals, it is not fair to say that TDD is not about the goals. TDD <em>is</em>, in fact, about being a good moral citizen of the software community.  TDD <em>is</em> about professional ethics.</p>
+
+<p>Lastly, let me say that I eagerly await a better path to those goals.  So far, I haven’t found one.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Operating Behind the Power Curve]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2018/01/15/behindThePowerCurve.html"/>
+    <updated>2018-01-15T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2018/01/15/behindThePowerCurve</id>
+    <content type="html"><![CDATA[<p>I promise that this blog is about software.  So bear with me for a bit.</p>
+
+<p>What happens when you increase the throttle in an airplane?  You go faster, right?  More power to the engine means more thrust which means more speed.</p>
+
+<p>Most of the time this is true; but there’s a different mode you can get the aircraft into which reverses this relationship.  It’s called: <em>the region of reversed command</em>.</p>
+
+<p>Remember the four forces that govern flight: gravity, lift, thrust, and drag.  Lift opposes gravity, and thrust opposes drag.  An airplane, in straight and level flight, balances all these forces perfectly.</p>
+
+<p>Thrust, of course, comes from the engine.  Lift comes from the air flowing around the wings, and drag…?  Well, drag comes from two different sources.</p>
+
+<p>Parasitic drag is simply the cost of plowing through the air.  It is the air resisting the movement of the plane.  But there’s another kind of drag called <em>induced drag</em>.</p>
+
+<p>Induced drag is caused by the pilot.  It happens when the pilot raises the nose of the aircraft.  Raising the nose, changes the angle of the wings causing the lift vector, which is always perpendicular to the wings, to point a bit <em>backwards</em>, thereby <em>opposing</em> the forward motion of the aircraft.</p>
+
+<p>If you raise the nose just a little, the induced drag is small, and so increased thrust still causes increased speed.  But if you raise the nose a lot, then the induced drag can cancel out the thrust.  This is called getting <em>behind the power curve</em>.</p>
+
+<p><img src="https://i2.wp.com/aviationglossary.com/wp-content/uploads/2015/08/region-of-reversed-command.png?ssl=1" width="600" aligh="center" /></p>
+
+<p>The graph[1] shows an airplane in straight and level flight.  To the right, you can see that the speed and power have a positive relationship.  The more power, the more speed.  But to the left, in the region of reversed command, <em>it takes more and more power to go slower and slower</em>.</p>
+
+<p>In other words, the pilot has the nose so high that the thrust vector is being defeated by the backwards pointing lift vector; and the plane is kind of <em>mushing</em> through the air on raw power, barely making any headway.</p>
+
+<blockquote>
+  <p><em>Can you see where I’m going with this?</em></p>
+</blockquote>
+
+<p>Except during the final moments of landing, pilots don’t usually operate their aircraft behind the power curve.  It’s a bit dangerous back there.  The slower you go, the more power you need.  If you go slow enough, you’ll max out your power and descend with the stall warning screaming in your ears.  So pilots stay in front of the power curve by watching their airspeed, and keeping it above the inflection point.</p>
+
+<p>So what does this have to do with software?  (As if you haven’t already guessed.)</p>
+
+<p>Too many software teams operate behind the power curve <em>all the time</em>.  Rotten code is <em>induced drag</em>.  These teams have created so much induced drag that it takes a huge effort to make any forward progress.  The team mushes forward at full power, barely making any headway.   Indeed, many teams have maxed out their power and are in a slow uncontrollable descent.</p>
+
+<p>How does a pilot get out from behind the power curve?  By lowering the nose.  This brings the lift vector to vertical allowing the thrust vector to dominate, and the plane screams off into the wild blue yonder.</p>
+
+<p>How does a software team get out from behind the power curve?  By lowering their noses, cleaning up the messes, and reducing the induced drag.  With that drag gone, and all the power they have, the wild blue yonder is theirs to explore.</p>
+
+<p>Wouldn’t it be great if we could invent an airspeed indicator and a stall warning horn for software teams?  Oh, yeah, we did!  It’s called the velocity chart.  Good Agile teams operate in front of the power curve, because the velocity chart allows them to see their speed, and keep it in front of the inflection point.  When the velocity starts going down, good agile teams increase their refactoring to eliminate the induced drag.</p>
+
+<p>Startup culture in the U.S. <em>believes</em> in operating behind the power curve.  That’s where they think they <em>want</em> to be.  They are so focussed on fast progress, and so convinced that high quality means low speed, that they abandon discipline and principles for the sake of the goal. This is a tragedy.</p>
+
+<p>They start out believing that power and speed are related without paying any attention to drag.  So they haul back on the yoke, put their noses into the sky, ram the throttle forward, and then burn fuel madly while going nowhere in a hurry.  They don’t understand that when you make a mess, you induce drag, and you cancel out your power.</p>
+
+<hr />
+
+<p>[1] https://i2.wp.com/aviationglossary.com/wp-content/uploads/2015/08/region-of-reversed-command.png?ssl=1</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Excuses]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/12/18/Excuses.html"/>
+    <updated>2017-12-18T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/12/18/Excuses</id>
+    <content type="html"><![CDATA[<p>The parallels between double entry bookkeeping and Test Driven Development are deep and plentiful.</p>
+
+<ul>
+  <li>
+    <p>Both are disciplines used by experts who carefully manipulate complex documents full of arcane symbols that must, under pain of terrible consequences, be absolutely correct in both type and position.</p>
+  </li>
+  <li>
+    <p>Both involve representing a long sequence of granular gestures in two different forms on two different documents.</p>
+  </li>
+  <li>
+    <p>Both techniques update their documents one granular gesture at a time, and each such update concludes with a check to be sure that the two documents remain in balance with each other.</p>
+  </li>
+</ul>
+
+<p>To put this in more concrete terms:</p>
+
+<ul>
+  <li>Accountants enter each transaction into two different accounts.  One is a Liability account.  The other is an Asset or Equity account.  These accounts are summed on the balance sheet, and the following relationship must hold:  Assets + Equities = Liabilities.</li>
+  <li>Accountants are trained to enter transaction one at a time, checking the balance sheet after each such entry.</li>
+  <li>Programmers who practice TDD enter each new granule of behavior in two different programs.  One is a test program.  The other is the desired production program.  The two must execute in a complimentary fashion demonstrating that the production code works as the tests describe.</li>
+  <li>Programmers are trained to add one granule at a time to each program, and then to execute the tests after each such addition.</li>
+</ul>
+
+<p>As I said, the equivalence between the two disciplines is stark.  They are virtually identical approaches.</p>
+
+<p>And no wonder.  Both disciplines serve the same purpose.  Both allow those of us who maintain complex documents full of arcane symbols that must be absolutely correct under pain of severe consequences, to be confident that those consequences will not be encountered.</p>
+
+<p>Do accountants have deadlines?  Do managers put pressure on them to finish their accounting by a certain date?  Of course!  There’s no difference in the pressure.  Accountants feel the pressure just the same as programmers do.</p>
+
+<p>Are the programs of the programmers somehow less important than the accounts of the accountants?  Of course not!  Those programs are the instruments that make or save the company money.  They are critically important.  They are easily as important as the accountants’ accounts.</p>
+
+<p>So then why are accountants able to maintain their discipline so assiduously and so completely?  Can you imagine a group of accountants saying to each other: “Guys, we’re really under the gun.  We’ve got to finish these accounts by Friday.  So, do all the Assets and Equities.  We’ll come back and do the Liabilities later.”</p>
+
+<p>No.  You <em>can’t</em> imagine that.  Or, at least, you shouldn’t.  Accountants can go to jail for doing things like that.</p>
+
+<p>So then why is it that so many programmers wail and moan when confronted with the discipline of TDD?  Why do they present so many reasons why TDD is impractical, or unreasonable, or…</p>
+
+<p>Can you imagine an accountant making excuses like these: (All taken from articles about TDD)</p>
+
+<ul>
+  <li>I never do double entry bookkeeping because keeping track of all those accounts takes too much time.</li>
+  <li>Accounts don’t need to be prefect, they only need to be good enough.  Double entry bookkeeping is overkill.</li>
+  <li>All these accountants who practice double entry bookkeeping are just too religious about it.  They’re following an unnecessary dogma.</li>
+  <li>Balancing the Assets and Equities with the Liabilities doesn’t actually prove that the accounts are correct.  So double entry bookkeeping is too much work for too little benefit.</li>
+  <li>Double entry bookkeeping is a scam promoted by consultants who are just trying to make money by selling books and courses and videos.</li>
+  <li>Double entry bookkeeping is dead.  The guys at Andersen consulting wrote a blog about it.</li>
+  <li>I am against double entry because experience shows that it prevents high quality account design from emerging.</li>
+  <li>I thought double entry was an elaborate practical joke when I first heard of it.  It’s monumentally dumb.</li>
+  <li>Double entry doesn’t work.  I don’t care what you’ve heard.  I don’t care how much your manager wants it.  I don’t care how much the stress-spattered eyes of your coworkers gleam in their endorsement.  It. Doesn’t. Work.</li>
+  <li>Double entry promotes account design damage.</li>
+  <li>Not everything is accountable.</li>
+  <li>Double entry locks the account design.</li>
+  <li>Double entry sounds good in theory.  But, in practice, it’s not clear how good it is.</li>
+  <li>Life is short and there are only a finite number of hours in a day.  So we have to make choices about how we spend our time.  If we spend it by making double entries that is time we are not doing something else.</li>
+  <li>Using double entry does not guarantee that you’ll design good accounts.</li>
+  <li>I’m going to go out on a limb here and declare with brutal honesty that it’s <em>literally</em> a ritualistic waste of time.</li>
+  <li>Another concern is the debated degree of perfection to which one must do double entry to do it successfully.  Some insist that if double entry isn’t done persistently by everyone on the team from the beginning of the project, you’ll only suffer.</li>
+  <li>Double entry rides on guilt.  It encourages procedure over understanding. It has tons of doctrines and slogans.</li>
+  <li>For me, the double entry zealots are religious loonies knocking on my door, trying to prove that my way of doing things is irreparably broken and the only path to salvation is double entry.</li>
+  <li>What annoys me about double entry is the fact that there are a lot of rules or guidelines about it.</li>
+  <li>On your first double entry project there are two big losses, time and personal freedom.</li>
+</ul>
+
+<p>I could go on.  (And on.  And on.) You will find that there is no lack of silly, misinformed, and disgruntled detractors.</p>
+
+<p>The bottom line, for me, is simple.  TDD is a good discipline for ensuring that the complex documents, full of arcane symbols, are crafted in such a way so as to avoid significant negative consequences.  I know of no other discipline that comes close.</p>
+
+<p>Double entry bookkeeping was invented by the Koreans over a thousand years ago.  It was independently reinvented by the Italians over six hundred years ago.  It flourished and spread along with the capitalism and economic prosperity that it helped to secure.  However it’s adoption was not without resistance and delays.  The last countries to standardize on double entry bookkeeping did so in the twentieth century.</p>
+
+<p>Let’s hope it doesn’t take 500 years for a discipline of testing to becomes the standard for software developers.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dbtails]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/12/09/Dbtails.html"/>
+    <updated>2017-12-09T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/12/09/Dbtails</id>
+    <content type="html"><![CDATA[<h2 id="a-bit-of-history-about-bits">A Bit of History about Bits.</h2>
+
+<p>Memory was always the problem.  Once we had established that we could <em>process</em> information with relays, or vaccuum tubes, or transistors; the problem was where to keep the information we were processing.</p>
+
+<p><img src="/assets/Dbtails/core.jpg" width="300" align="right" />
+Random Access Memory (RAM) within the computer was tricky during those days.  By the time I became a programmer, in 1968, the move to <em>core</em> memory was pretty well established.  But in the years just before that there were many different schemes, including accoustic waves through tubes of mercury, or magnetic drums, or even using electron beams to store charge on the surface of a Cathode Ray Tube.</p>
+
+<p>Indeed, one of the early programmable calculators that I used in High School, <a href="https://en.wikipedia.org/wiki/Programma_101">the Olivetti-Underwood Programma 101</a>, stored its information in accoustic waves travelling down steel wires.</p>
+
+<h3 id="paper-with-holes">Paper with Holes.</h3>
+<p><img src="/assets/Dbtails/punched_card_file.jpg" width="300" align="right" />
+Early computers used paper tape and punched cards to store the information being processed.  In my earliest years as a programmer, back in 1968 when computers were frightfully expensive, I worked for a company that offered computing services to companies.  Those companies would ship us massive crates full of punched cards containing their business records.  We’d process that data and punch a new massive pile of punched cards that we’d crate up and ship back to them.  It was quite an operation.</p>
+
+<p><img src="/assets/Dbtails/punch_card_sorter.jpg" width="300" align="right" />
+What’s more, we had a whole room full of equipment just for dealing with cards.  We had card sorters, and card duplicators all over the place.  We even had little patch panel machines that could read cards and make small modifications to the information on those cards – like punching new sequence numbers.  Much of the preparation work for a big batch job was done on these machines because they were a lot cheaper than time on the big IBM 360.</p>
+
+<h3 id="magnetic-tape">Magnetic Tape.</h3>
+<p><img src="/assets/Dbtails/magtape.jpg" width="300" align="right" />
+I started working as a programmer just as magnetic tape was replacing punched cards.  As you can imagine, shipping reels of magnetic tape back and forth to the customer was a lot cheaper, and a lot more reliable, than shipping crates of cards.  What’s more, the computer could read those tapes a lot faster than it could read cards, so time on the computer was reduced by a huge margin.</p>
+
+<p>At first, of course, the cards were simply copied to tape.  A card was 80 bytes of data, so the data on tape was simply a linear array of 80 byte records.  But as time went by we realized that there was no need to limit ourselves to 80 byte records on tape.  So tape record size became independent of cards.</p>
+
+<p><img src="/assets/Dbtails/tape_library.jpg" width="300" align="right" />
+But as fast and convenient as tapes were, the information density was still pretty low.  You could store 800 bytes per inch on those tapes.  So a megabyte was a thousand inches.  A gigabyte would have required almost sixteen <em>miles</em> of tape.  What’s more, the data on tape was stored <em>serially</em>.  There was no way to get the data on the end of the tape other than to read the whole tape.  Random access was simply not an option.</p>
+
+<h3 id="disks">Disks.</h3>
+<p><img src="/assets/Dbtails/disk_pack.jpg" width="300" align="right" />
+Disks were invented to solve that problem.  Disks were thin platters of metal with a magnetic coating.  A dozen or so of these platters were stacked up on a spindle and then spun at high speed.  Typically 3600 RPM.  Magnetic read-write heads were mounted on servo motors so they could move radially across the platters.</p>
+
+<p>The data on the disk were written onto circular tracks.  Each platter could have several hundred of these tracks.  The tracks were subdivided into records that could hold a fixed amount of data.  Since the platters were stacked up vertically, we called the vertical group of tracks <em>cylinders</em>.  In order to read a record from the disk, the programmer would seek the heads to the appropriate cylinder, select the appropriate head, and then wait for the desired record to travel around the spindle until it came under the head.  We called the address of a record a <code class="highlighter-rouge">CHR</code>, or Cylinder-Head-Record.</p>
+
+<p>Programmers could format the disk any way they liked.  They could decide that the first 20 cylinders should hold Employee records that were 250 bytes long; and that the next 50 cylinders should hold item records that were 500 bytes long.  We could arrange the record size and the number of records per track, as part of the design of our application.  We could even split the disk vertically such that the top few platters held index information while the bottom platters held the data.  We could set that disk up any way we liked.  The data on the disk had a <em>fixed formal arrangement</em>.</p>
+
+<p>Of course that fixed formal arrangement meant that the disks were specific to a particular application.  When it was time to run the Bill of Materials application, the computer operators would load the Bill of Materials disks into the disk drives. Those disks were formatted just for that Bill of Materials application.</p>
+
+<h3 id="file-systems">File Systems.</h3>
+<p>As time went on we realized that we wanted to use the disks in a different way.  We wanted easy access to the capacity and random access that disks afforded without imposing a fixed formal arragnement to our data.  So we invented file systems.  In general, files systems required that we format the disks in a uniform way.  Every track was formatted to hold a relatively small number of records (called sectors).  All tracks were formatted identically.  We invented direcrories, and indexes, and files, and all of the trappings that we have become so used to in our daily work.</p>
+
+<p>File systems allowed us to view the memory on disk as named arrays of bytes.  They imposed no fixed formal arrangement of the data.  Rather, we could have any number of directories, containing any number of files, containing any number of bytes. The actual structure of the disk itself was invisible to this view.  It did not matter to us which cylinder, head, and record we were accessing.  We simply created, wrote, read, and deleted individual files.  The structure of the disk had been entirely abstracted away and decoupled from the structure of the data.</p>
+
+<h3 id="relational-databases">Relational Databases.</h3>
+<p>As convenient as file systems were for storing documents and simple linear files, they weren’t all that convenient at accessing vast arrays of fixed-sized, organized records.  Finding the <code class="highlighter-rouge">Employee</code> Record for <em>Bob</em> in the <code class="highlighter-rouge">Employees.dat</code> file usually implied a linear search, or some kind of ad hoc, nightmarish indexing scheme.  And so other modes of access were invented.  One of those methods was the <em>Relational Database</em>.</p>
+
+<p>Relational databases abstract away the physical nature of the disk, just as file systems do; but instead of storing informal arrays of bytes, relational databases provide access to sets of fixed sized records.  Each record type is called a table, and each record within a table is called a row.  Each row has a unique identifier called a key.</p>
+
+<p>This is similar to the way we conceived of disks in the early days, except back then we specifically formatted the disk to hold the fixed sized records, and we used the <code class="highlighter-rouge">CHR</code> as the key.</p>
+
+<h3 id="ssd">SSD.</h3>
+<p>The disks are going away.  Your laptop or desktop computer almost certainly does not contain a piece of spinning metal.  (If it does, I’m sorry. ;-)  Within the next few years. <em>all</em> the disks will go away.  They will have been replaced by solid state memory – RAM.  (We call it SSD.  What could that “D” stand for?  Not “disk”, certainly.  Not “drive”.  What?)</p>
+
+<p>Every time our technology has changed, from Cards, to Tape, to Disk, new access methods were invented.  The older technology fell away, and newer modes of access were adopted.</p>
+
+<p>Will this happen with SSD?  Will file systems and relational databases fall to the wayside?  If so, what will replace them?</p>
+
+<p>With each new technology a fact that we considered essential was abstracted away.  Cards were linear arrays of 80 byte records, period.  There wasn’t any arguing about that.  It was a physical limitation of the medium.</p>
+
+<p>Magnetic tape abstracted away the record size limit; but maintained the linear sequence.</p>
+
+<p>Disk abstracted away the linear sequence, but replaced it with that strange physical <code class="highlighter-rouge">CHR</code> addressing scheme.</p>
+
+<p>File systems abstracted away the physical structure of the disk but provided no easy access to fixed sized records.</p>
+
+<p>Relational databases (which often ride on top of file systems nowadays) provided random access to fixed sized records.</p>
+
+<p>What does SSD change?  What physical limitation can be abstracted away because of this change?</p>
+
+<p>Well, the one big thing that has changed is <em>time</em>.  Accessing SSD is <em>fast</em>.  There is no rotaional latency.  There is no seek time.  The time to access a byte in SSD is the same regardless of where that byte is.</p>
+
+<p>So what does this mean for us?</p>
+
+<p>Tape made cards faster; but changed the way we viewed records.  Disks made tape faster but changed the way we viewed access.  SSD makes <em>everything</em> faster but changed the way we viewed _____.  Fill in that blank.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bobby Tables]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/12/03/BobbyTables.html"/>
+    <updated>2017-12-03T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/12/03/BobbyTables</id>
+    <content type="html"><![CDATA[<blockquote>
+  <p><em><code class="highlighter-rouge">SQL</code> is demon spawn, and no self-respecting software developer should ever use it.</em></p>
+</blockquote>
+
+<p>OK, that’s a little hyperbolic.  Demons did not create <code class="highlighter-rouge">SQL</code>.  Indeed, the folks who created it were filled with nothing but good intentions.</p>
+
+<p>But you know what they say about the road to hell.</p>
+
+<p>I want you to think about just what a supremely bad idea it is to use a textual data access language.  Such a language can pass through the user interface of a system and provide unauthorized access to all the data contained within.</p>
+
+<p>Now, of course, we all know that we are supposed to scan all our inputs for potential <code class="highlighter-rouge">SQL</code> injection (<code class="highlighter-rouge">SQLi</code>) attacks.  And yet, hundreds of thousands, if not millions of users have had their data stolen by just this mechanism.  Why?  Because it is unreasonable to expect that every single user input of every single system is going to have the protections required.</p>
+
+<p>The problem, of course, could have been eliminated at the source, decades ago.  Back in 1998 <code class="highlighter-rouge">rain.forest.puppy</code> described, in <em>Phrack</em>, how to slip <code class="highlighter-rouge">SQL</code> statements in through a user interface and execute them.  The instant that article was published <em>every single programmer in the world should have ceased to use <code class="highlighter-rouge">SQL</code> on the spot!</em></p>
+
+<p>I find it absolutely amazing that <code class="highlighter-rouge">SQL</code> is still used.  Did we learn nothing from Equifax, or Yahoo, or…  Well, I mean, it’s been just about everybody hasn’t it?</p>
+
+<p>And here we all are, comforting ourselves that our current frameworks will handle the issue.  Hibernate will handle the issue.  JPF will handle the issue.  Rails will handle the issue.  Poppycock!  Frameworks don’t handle the issue; programmers do!  And programmers haven’t been handling that issue all that well; have they?</p>
+
+<p>Here’s an idea:</p>
+
+<blockquote>
+  <p><em><strong>STOP USING SQL!</strong></em></p>
+</blockquote>
+
+<p><code class="highlighter-rouge">SQL</code> is the ultimate security breech.  <code class="highlighter-rouge">SQL</code> is a portable, universal, textual language that can be transmitted through the user interface of a system and, if passed to the <code class="highlighter-rouge">SQL</code> engine, can provide absolute access and control to <em>all</em> the data in the system.</p>
+
+<p>The very idea that <code class="highlighter-rouge">SQL</code> statements might come in through the user interface and be held in RAM ought to fill you with unmitigated <em>terror</em>!  All it takes is for some poor idiot programmer to fail to remember the exact arcane gestures that offer the appropriate protections.</p>
+
+<p>For example, can you tell which of these statements is vulnerable to a <code class="highlighter-rouge">SQLi</code> attack?  The language is Ruby, and the framework is Rails (circa 2015).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Unsafe
+User.where("email = '#{email}'")
+User.where("email = '%{email}'" % { email: email })
+
+# Safe
+User.where(email: email)
+User.where("email = ?", email)
+User.where("email = :email", email: email)
+</code></pre></div></div>
+
+<p>Can you see the vulnerability?  Do you understand just what combinations of question marks, hash marks, parentheses, and percent signs makes a statement vulnerable?</p>
+
+<p>Do you understand that these kinds of statements appear thousands of times in a typical application?  Do you realize that if even one such statement has the wrong combination of question marks and parentheses it opens the system to a <code class="highlighter-rouge">SQLi</code> attack?  Isn’t it obvious that, so long as there is a SQL engine in the system, there is simply no reliable way to guarantee that such an attack can be prevented?</p>
+
+<p>Oh, don’t get me wrong.  A good clean architecture can absolutely prevent <code class="highlighter-rouge">SQLi</code> attacks.  If you put your <code class="highlighter-rouge">SQL</code> engine below an architectural boundary, and you make absolutely sure that all source code dependencies cross that boundary pointing away from the <code class="highlighter-rouge">SQL</code> engine.  And if you make absolutely certain that there is no <code class="highlighter-rouge">SQL</code> above that boundary.  And if you make absolutely certain that no text that crosses that boundary going towards the <code class="highlighter-rouge">SQL</code> engine has any <code class="highlighter-rouge">SQL</code> in it.  Then you will absolutely prevent <code class="highlighter-rouge">SQL</code> attacks.</p>
+
+<p>But there are too many “absolutelys” in that paragraph.  You never know when some 22 year old programmer, working at 3AM under a horrific schedule pressure, will forget to use just the right <code class="highlighter-rouge">?</code> and <code class="highlighter-rouge">#</code> in just the right positions.</p>
+
+<p>The solution.  The only solution.  Is to eliminate <code class="highlighter-rouge">SQL</code> from the system entirely.  If there is no <code class="highlighter-rouge">SQL</code> engine, then there can be no <code class="highlighter-rouge">SQLi</code> attacks.</p>
+
+<p>What would replace <code class="highlighter-rouge">SQL</code>?  An API of course!  And <em>NOT</em> an API that uses a textual language.  Instead, an API that uses an appropriate set of data structures and function calls to access the necessary data.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Living on the Plateau]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/11/18/OnThePlateau.html"/>
+    <updated>2017-11-18T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/11/18/OnThePlateau</id>
+    <content type="html"><![CDATA[<p>Languages have evolved quite a bit over the years.  The early evolution from machine language to assembler was necessary and obvious.  The evolution from assembler to Fortran and Basic was also necessary and obvious.  We might even say that the evolution of COBOL was predictable, if not entirely necessary.</p>
+
+<p>Let’s look at just one thread through that evolution:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 1946    1949     1958       1960     1966    1967  1970  1972 1980   2009
+Binary -&gt; Asm -&gt; ALGOL58 -&gt; ALGOL60 -&gt; CPL -&gt; BCPL -&gt; B -&gt; C -&gt; C++ -&gt; Go
+</code></pre></div></div>
+
+<p>What drove all these steps Why was Algol58 not good enough?  Or BCPL?  Or B?</p>
+
+<p>One factor, of course, is that we were just starting to learn about computer languages at that time.  It was difficult to separate the language from the architecture of the machine.  You can see the architecture of the hardware peeking out ever more clearly as you go back in time through these languages.  C, as abstract and portable as it was, remained very close to “the metal”.  Even Go admits that below all the turtles there’s some hardware.</p>
+
+<p>Another factor – and probably a much more important factor – is that the machines were getting exponentially more powerful.  In 1958 computers were slow, fragile, had 16K or less memory, and cost many millions of dollars.  By 1972 you could buy a fast 64K PDP-7 for ~$100,000.</p>
+
+<p>C held sway for a good long time.  Not because computers weren’t getting more powerful; but because they were shrinking.  They were shrinking in both size and cost.  In 1980 you could buy an 8085 microcomputer with 64K of RAM for a few thousand dollars.  And so even though the top end computers were getting more and more powerful; the bottom end machines remained the perfect size for C.</p>
+
+<p>But through the 80s the power and capacity of the machines continued to grow exponentially.   By 1990, C was just too small a language for the tasks at hand.  We needed something better.  And C++ was waiting in the wings.</p>
+
+<p>The C++ era was short lived because Java/C# came along in the latter half of the decade.  By this time machines had gotten so vastly powerful that it was possible to implement whole systemes in <em>virtual</em> machines.  Just ten years before: <em>that</em> would have been <em>unthinkable</em>.</p>
+
+<p>But the unthinkability wasn’t done with us.  By 2010 PHP, Ruby, and Python – <em>interpreted languages</em> – were running some of the biggest, and most profitable, systems on the planet.</p>
+
+<p>I want you to sit back for a second and contemplate just how <em>crazy</em> this is.  We, who used to worry about microseconds, now cavalierly push systems to production written in languages that execute in textual interpreters!</p>
+
+<p>So what is it that drove all this language evolution?  It should be quite apparent that the current state of our languages can be traced directly to Moore’s Law: the fact that computer speed, component density, and memory size <em>doubled</em> every 18 months; while at the same time, size, cost, and power consumption changed just as dramatically in the opposite direction.</p>
+
+<p>The reason we have Clojure, Elixr, Swift, Dart, F#, Scala, and Go today is the sheer raw power of our machines.  It is that power that enables Eclipse, Vim, EMacs, and IntelliJ.  It is that power that allows us to tolerate garbage collection, and to ignore memory, ignore processor speed, ingore efficiency.  It is that power that allows us to behave as though all resources are infinite – because, for nearly all intents and purposes, <em>they are</em>.</p>
+
+<p>Most of us work in an environment of virtual infinities.  There may be some contraints out there somewhere, but most of us know we will never bump into them.  That’s what happens when you ride Moore’s trains through twenty-eight doublings.</p>
+
+<p>But one of those trains reached the plateau and pulled into its final station over a decade ago.  Clock rates doubled from a few kilohertz to 2.8ghz and then, simply, stopped.</p>
+
+<p><img src="/assets/CPU-Scaling.jpg" width="500" align="middle" /></p>
+
+<p>There were those amongh us who expected this.  Others found it jarring.  Many people thought we had many more doublings to go.  That’s the way it is with limits – often you don’t see them coming until you hit them.</p>
+
+<p>We took some solace in the fact that although clock rates had plateaued, density was still on the rise.  We took even more solace, along with a fair bit of trepidation, from the fact that processor cores were multiplying.  We saw the first dual core machines in the early years of the new millenium.  Quad core machines followed within a few years.  We were all quite sure that the 8, 16, 32, and 64 core machines were on their way.</p>
+
+<p>Indeed, some of us viewed this as a crisis.  Multiple cores meant multiple threads – and not the kinds of thread we had been used to.  Multi-processor threads are wild beasts compared to the well behaved threads that are administered by an operating system.  So we looked to functional languages for our salvation.</p>
+
+<p>Functional langauges put extreme discipline on the mutation of state (i.e. assignment operations).  Disciplined use of assignment is the key to dealing with multiple threads.  You can’t have concurrent update problems if your threads don’t actually update anything.</p>
+
+<p>And so F# and Scala and Clojure and Elixr and even Erlang started to soar in popularity.</p>
+
+<p>But the 8 core processors never came – at least in the laptop space.  We’re still waiting.  And it’s looking more and more as though Moore’s law for density has hit the wall.</p>
+
+<p><img src="/assets/Cortex-A17.jpg" width="500" align="middle" /></p>
+
+<p>Now perhaps you want to make the argument that the Apple A10X has 6 processing cores and 12 GPU cores.  Yes, I’ll admit there is still progress being made in density.  However, that progress appears to be incremental rather than exponential.</p>
+
+<p>I think it is quite realistic to expect that the speed and density of computers have reached their practical limits.  It’s just possible that we have been living on the plateau for the last decade; and that we will remain on this plateau for the foreseeable future.</p>
+
+<p>We knew this was going to happen.  We knew it was just a matter of time.  We had hoped that there might be a few more doublings ahead of us – but that appears not to be the case.</p>
+
+<p>As a bit of anecdotal evidence for this I submit my lovely wife’s Macbook air.  This machine was purchased back in 2013.  It works quite well for her.  Every time I encourage her to buy a newer model she rebuffs me by saying that the machine is quite adequate for her needs.  Who among us would have said such a thing about a 5 year old machine back in the 90s?  Back then 5 years was three doublings!</p>
+
+<p>If we aren’t going to see 1024 core processors in the near future, what need have we of functional programming languages?  Oh, don’t get me wrong.  I think functional programming is a good idea.  Every programmer should learn it.  But the crisis that we anticipated – the crisis that drove the current infatuation with functional languages – seems not to be occurring.  And that may well mean that functional languages never achieve the ascendency that we had anticipated for them.  It may just be that Java/C#, and Ruby/Python, and Swift/Dart/Go are, and will be, sufficient.</p>
+
+<p>If Moore’s law was the driver of our language evolution, what will drive it now?  Could it be that we are living at the beginning of a period in which language evolution will slow it’s frenetic pace?  Will we see the number of languages cease it’s relentless rise, and begin to decline?  Will our industry gradually abandon the exuberance of adolescence and settle down into a stable period of adulthood and middle age?</p>
+
+<p>I, for one, hope so.  I, for one, look forward to the end of the barnstorming era and the onset of the era of professional, and ethical craftsmanship.  An era where we discard the detritus of the excesses of our youth, and settle upon a small complement of languages, platforms, and frameworks, with which to carry out the long work that is ahead of us.</p>
+
+<p>I, for one, having started near the bottom, and having climbed the plateau all the way to it’s current dizzying height, look forward to a long and healthy life up here.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Women In Demand]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/10/04/WomenInDemand.html"/>
+    <updated>2017-10-04T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/10/04/WomenInDemand</id>
+    <content type="html"><![CDATA[<p>The demand for programmers is high, and growing:</p>
+
+<blockquote>
+  <p><em>“According to the U.S. Bureau of Labor Statistics, software developer jobs are expected to grow 17% from 2014 till 2024. They categorize this growth as “much faster” than the average rate among other professions.”</em>  <a href="https://www.forbes.com/sites/quora/2017/01/20/will-the-demand-for-developers-continue-to-increase/#43f9088533ee">Forbes 2017</a></p>
+</blockquote>
+
+<p>The supply of programmers is well behind the demand.</p>
+
+<blockquote>
+  <p><em>“In an average month, there were 115,058 unique job postings for software developers and 33,579 actually hired. This means there was approximately 1 hire for every 3 unique job postings.”</em> – <a href="http://www.economicmodeling.com/2017/06/01/labor-market-supply-demand-software-developers/">Emsi 2017</a></p>
+</blockquote>
+
+<p>Why then is the industry ignoring nearly 50% of the population?</p>
+
+<blockquote>
+  <p><em>“92.1 percent of the respondents to Stack Overflow’s 2015 developer survey identified as male; only 5.8 percent identified as female. (The remaining respondents either chose “other” or declined to answer.) The survey was conducted online in February, using ads placed on Stack Overflow, and included respondents from 157 countries.”</em> – <a href="https://splinternews.com/survey-says-92-percent-of-software-developers-are-men-1793846921">Splinter 2015</a></p>
+</blockquote>
+
+<p>Could this be a clue?</p>
+
+<blockquote>
+  <p><em>“Computer Science and Engineering majors have stagnated at less than 10% of all degrees conferred [to women] in the U.S. for the past decade, while the demand for employees with programming and engineering skills continue to outpace the supply every year”</em> – <a href="http://www.randalolson.com/2014/06/14/percentage-of-bachelors-degrees-conferred-to-women-by-major-1970-2012/">Randal S. Olson 2014</a></p>
+</blockquote>
+
+<p>Or this?</p>
+
+<blockquote>
+  <p><em>“The share of computer science majors who are women also has been in a near constant decline since the early 1980s, with women representing about 15 percent of computer science majors in 2011.”</em> – <a href="https://www.insidehighered.com/news/2015/04/21/study-measures-causes-gender-gap-computer-science">Inside Higher Ed 2015</a></p>
+</blockquote>
+
+<p>This is made all the more poignant given that women outnumber men in college by 2:1.</p>
+
+<blockquote>
+  <p><em>“Although college enrollment has increased, the ratio of male to female students is nearly 1:2 “</em> – <a href="https://www.newsmax.com/US/women-men-college-students/2017/06/05/id/794317/">Denver Post 2017</a></p>
+</blockquote>
+
+<p>So, even though twice and many women enroll in college than men, fifteen times as many men become programmers than women.</p>
+
+<p>This ratio is much worse than the CS graduation rates.</p>
+
+<ul>
+  <li>
+    <p>Of the 812,669 bachelors degrees earned by men in 2015, 48,840 (6%) were in Computer science.  <a href="https://nces.ed.gov/programs/digest/d16/tables/dt16_322.40.asp">NCES</a></p>
+  </li>
+  <li>
+    <p>Of the 1,082,265 bachelors degrees earned by women in 2015, 10,741 (1%) were in Computer Science <a href="https://nces.ed.gov/programs/digest/d16/tables/dt16_322.50.asp">NCES</a></p>
+  </li>
+</ul>
+
+<p>So five times as many men than women graduate with BSCS degrees.  Then, nearly two out of three of those women do not pursue a programming career.</p>
+
+<p>I gave a keynote talk to several hundred programmers recently.  I asked all the programmers to stand up; and then asked all the men to sit down.  A paucity of people remained standing.  Perhaps one in twenty.</p>
+
+<p>I don’t want to overstate it; but that’s a significant signal. The question is, what does it signify and what can be done about it?</p>
+
+<p>The question is not an idle one.  The demand for programmers is not going to abate.  We are going to need more and more programmers over the next several decades.  The lack of supply is going to drive salaries higher and higher. You’d think that massive numbers of young people, both men and women, would be lining up. And yet most women are not.  Why not?</p>
+
+<p>I have pair programmed with women who coded rings around me.  I <em>know</em> women can code.  So why do so many who graduate in CS take another direction.  And why do so many entering college fail to consider the career?</p>
+
+<p>Is it possible that women are being actively rejected by the job market?  Given the high demand and the low supply, that possibility seems absurd.  Businesses that are starved for programmers can’t afford to filter based on gender.  They can’t afford to filter based on anything except merit[1], and they’ll have to compete for that.  What’s more, there are many employers who have engaged in outreach programs specifically aimed at recruiting minorities and women.  So, whatever it is that is shunting women away from becoming or remaining programmers, it’s difficult to believe that it’s a hiring policy.</p>
+
+<p>Is it possible that women are being actively resisted by the colleges?  In a student body that is dominated 2:1 by women, you’d think a problem like that would be resolved very quickly.  No institution is going to want to alienate two thirds of it’s paying clients.  Any institution that did, would find itself in deep financial trouble very quickly.</p>
+
+<p>If a plurality women students expressed interest in computer science, the universities would bend over backwards to accommodate them.  In fact, they are bending over backwards to accommodate them.  Or at least <a href="http://www.bestcollegesonline.com/blog/the-10-best-colleges-for-females-in-stem-fields/">some</a> are.  The rest are certainly very concerned.</p>
+
+<p>Some researchers think the problem is really in high school.</p>
+
+<blockquote>
+  <p><em>“Researchers found that computing appeal for girls peaks in middle school, where having an inspiring teacher and thinking that coding is “for girls” are instrumental in sparking interest. The appeal dips in high school in what researchers call the “high school trap” because of a lack of friends in coding classes or the lack of those classes at all.”</em> – <a href="https://www.usnews.com/news/data-mine/articles/2016-10-20/study-computer-science-gender-gap-widens-despite-increase-in-jobs">USNews 2016</a></p>
+</blockquote>
+
+<p>We can envision this as a pipeline of potential programmers.  This pipeline begins in primary school or before, and wends its way through middle school, high school, college, early internships and jobs, and finally to careers.  Somewhere along this pipeline, and perhaps at many places, women are shunted aside.</p>
+
+<p>That shunt may be very early indeed.  As Maggie Johnson, Director of Education and University Relations at (<em>ironically</em>) Google, says:</p>
+
+<blockquote>
+  <p><em>“It’s important to note that there are no biological or cognitive reasons that justify a gender disparity in individuals participating in computing (Hyde 2006). With similar training and experience, women perform just as well as men in computer-related activities (Margolis 2003). But there can be important differences in reinforced predilections and interests during childhood that affect the diversity of those choosing to pursue computer science.</em> 
+<br /><br />
+<em>In general, most young boys build and explore; play with blocks, trains, etc.; and engage in activity and movement. For a typical boy, a computer can be the ultimate toy that allows him to pursue his interests, and this can develop into an intense passion early on. Many girls like to build, play with blocks, etc. too. For the most part, however, girls tend to prefer social interaction. Most girls develop an interest in computing later through social media and YouTubers, girl-focused games, or through math, science and computing courses. They typically do not develop the intense interest in computing at an early age like some boys do – they may never experience that level of interest (Margolis 2003).”</em> – <a href="https://research.googleblog.com/2015/07/the-computer-science-pipeline-and.html">Google Research Blog 2015</a></p>
+</blockquote>
+
+<p>Director Johnson’s notion is, to put it very simply, that women tend not to be as interested in programming as men because, as very young girls, they prefer different forms of play.</p>
+
+<p>Whether she is correct or not is a matter of some debate.  However, it would appear that there are potential shunts all along the pipeline, from the very start to the very end.  How can we remove those shunts?</p>
+
+<p>There seems to me to be little downside in encouraging young girls and young women to consider programming as an entertaining activity, something fun to learn, and eventually a good career.  This could be undertaken by parents, schools, and employers using various educational and public outreach programs.  I also think that the boot-camp idea has merit, especially as an alternative to university.  All these mechanisms help to unclog the upstream portions of the pipeline, where it will do the most good.</p>
+
+<p>Is there a way to increase the demand?  After all, as demand increases so do salaries.  Won’t this attract women into the industry?  Unfortunately this is the strategy we have been using for the last few decades, and it does not seem to be working.  In fact, despite the increase in demand, and in salaries, the trend for women seems to be going in the opposite direction. <a href="http://www.huffingtonpost.com/2015/03/27/women-in-tech_n_6955940.html">HuffPost 2015</a></p>
+
+<p>What about hiring quotas?  Will they help to unclog the pipeline?  The theory of a quota program might be that it artificially increases the demand for women.  But, again, demand isn’t the problem.  It’s already sky high and rising.</p>
+
+<p>What quotas will do, however, is to redirect women into those companies that employ quotas, and redirect men into those companies that do not.   Let’s imagine a scenario.</p>
+
+<p>Assume that there are two sets of employers.  Set G represents the big, high profile, companies who hire 10% of all programmers.  They have big beautiful buildings, and lavish work areas.  They have all the glitz and glitter we have come to expect of big software companies.  They attract the best and brightest; and can keep them.  Resumes and candidates flood into G; but only a few make the cut.  If G’s demand is not sated, it is only because G keeps their standards very high.</p>
+
+<p>Set R represents all the rest.  These are small to medium sized employers who need programmers just as much as G does, but have to fight much harder to get the best people.  Resumes and candidates do not flood into R.  Instead, R must pay search firms and employment agencies for resumes.  They seldom see the best of the best.</p>
+
+<p>Now let’s use the numbers from above, rounded for convenience.  In 2015 there were 50,000 men, and 10,000 women who graduated with BSCS degrees.  G will hire 10% or 6,000 of them; 1,000 women, and 5,000 men.  R will hire the remaining 9,000 women, and 45,000 men.  G will choose the top decile from the batch.  R will draw from the rest.</p>
+
+<p>Now clearly I am making a lot of assumptions here.  There are many reasons why top decile programmers may not want to work at G.  I have completely bypassed the effect of startups, culture, and location.  Still, as a general principle, we should expect that G will succeed in hiring a disproportionate number of the top decile.</p>
+
+<p>I am also assuming that programmers can be divided up by a single performance dimension and assigned into deciles.  This is clearly simplistic.  There are many dimensions that an employer will use to select employees to hire.  Still, it should be clear that employers will attempt to rank the acumen of candidates; and choose from among those who rank highest.</p>
+
+<p>The end result of our thought experiment is that G and R will end up with the same ratio of men and women, and that the relative ranking of men and women in each set will be the same.  G gets the 6,000 in the top decile, and R gets the rest.</p>
+
+<p>Now let’s assume that G decides to establish a quota to hire 2,000 women, instead of 1,000.  This necessarily means that they must lower their standards to accept the top two deciles of women, while still maintaining their standards for the top decile of men.  In fact, since they will be hiring fewer than 10% of the available men, they can actually raise their standards for the men.  This means that, on average, men will outperform women in G.</p>
+
+<p>R will hire 8,000 women who rank at the 7th decile and below.  R will also hire 46,000 men who rank from just above the 8th decile and below.  The result is that R will see a lower ratio of women to men (17% instead of 20%), and on average the men will outperform the women.</p>
+
+<p>One argument that can be presented against this analysis is that G will not have to lower it’s standards in order to hire women, because G will be looking at “other factors” that compensate for raw acumen or ability.  Those factors may include culture, personality, etc.</p>
+
+<p>This may indeed be true.  However, regardless of what set of complex criteria G uses to hire more than the normal share of the women, R will have to choose from women that G passed over.</p>
+
+<p>A quota policy may seem to be helping women by offering them a greater chance of employment.  However, at least in this simplistic thought experiment, the net result is to tilt the playing field in favor of men.</p>
+
+<ul>
+  <li>
+    <p>No more women get hired overall, because demand is too high to allow any candidate, male or female, to go unhired.</p>
+  </li>
+  <li>
+    <p>In the vast majority of environments (R) women will appear scarcer than they really are, magnifying and reenforcing the male signal.</p>
+  </li>
+  <li>
+    <p>In every environment the women will be working with men who, on average, will outperform them.</p>
+  </li>
+</ul>
+
+<p>On top of all that, G will have hired 1,000 employees who fall below their normal standards.  Overall the performance of their staff will be decreased. They must also face the ethical question of bypassing more qualified candidates in favor of gender – which is clearly discriminatory.</p>
+
+<p>So it is difficult to see how a quota program helps anyone at all[2].</p>
+
+<hr />
+<p>[1] I use the term “merit” in the sense of academic or professional achievement.</p>
+
+<p>[2] I am fully aware that this post will generate a fair number of nasty responses.  That’s the way of things in our current polarized environment.  My hope is that it also stimulates some reasoned and civil discourse.  I do not hold that my conclusions are absolutely correct in every regard.  My goal is to learn from others.  So if you can tell me, kindly, and respectfully, where the flaws are in my analysis, I would be grateful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tools are not the Answer]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/10/04/CodeIsNotTheAnswer.html"/>
+    <updated>2017-10-04T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/10/04/CodeIsNotTheAnswer</id>
+    <content type="html"><![CDATA[<p>I just finished reading an extremely depressing <a href="https://www.theatlantic.com/technology/archive/2017/09/saving-the-world-from-code/540393/">article</a> in <em>The Atlantic</em> entitled: <em>The Coming Software Apocalypse</em>.  The article does a good job, at first, of describing several terrible software bugs that have harmed, maimed, and killed people.  But then the article veers off in a direction that I found disheartening.</p>
+
+<p>The author of the article interviewed many thought leaders in the industry, but chose only those thought leaders who were inventing new technologies.  Those technologies were things like <a href="http://lighttable.com/">Light Table</a>, <a href="https://en.wikipedia.org/wiki/Model-driven_engineering">Model Driven Engineering</a>, and <a href="https://lamport.azurewebsites.net/tla/tla.html">TLA+</a>.</p>
+
+<p>I have nothing against tools like this.  I’ve even contributed money to the Light Table project.  I think that good software tools make it easier to write good software. However, tools are not the answer to the “Apocalypse”.</p>
+
+<p>Nowhere in the article did the author examine the possibility that programmers are generally undisciplined.  The author did not interview software experts like Kent Beck, or Ward Cunningham, or Martin Fowler.  The author completely avoided the notion that the software apocalypse might be avoided if programmers just did a better job.  Instead, the author seemed convinced that the solution to the software apocalypse – the solution to bad code – is more code.</p>
+
+<p>I disagree.  Tools are fine; but the solution to the software apocalypse is not more tools. The solution is better programming discipline.</p>
+
+<p>Last night I watched the pilot episode of <a href="http://www.cbs.com/shows/wisdom-of-the-crowd/"><em>The Wisdom of the Crowd</em></a>.  It’s a fun new series on CBS.  The hero of the story is the inventor of a huge social network platform whose daughter is murdered.  He leaves everything to invent a new social network called Sophie which uses crowd sourcing to solve crimes.</p>
+
+<p>They must have a few programmers consulting on the show because there was one scene that made me hang my head in shame.  Someone posts a video of a crime scene on the platform.  It leads the investigators in a certain direction that doesn’t pan out.  Later they find that the video was actually much longer and contained clear evidence; but that the Sophie platform had truncated it to 30 seconds causing the investiators to miss that evidence.</p>
+
+<p>The hero was furious.  Murderers might have escaped.  More people might have died.  So he confronted the lead developer and demanded to know how this could have happened.  He was told that one of the programmers had reused some code from a different platform and had not realized that it had a built-in 30 second truncation.  The hero was livid.  He demanded to know which programmer had been so sloppy.  The lead developer refused to say.  She told him that if he wanted to fire someone, he should fire her.  So the hero backed down.</p>
+
+<p>Later, the guilty programmer thanked the lead developer for protecting him.  He said: 
+“I knew I shouldn’t have reused that code, but we were in a rush.”  She smiled at him and told him not to worry about it.</p>
+
+<p>And right there, ladies and gentlemen, you can see both the cause of the apocalypse, and the obvious solution.</p>
+
+<p>The cause:</p>
+
+<ol>
+  <li>Too many programmer take sloppy short-cuts under schedule pressure.</li>
+  <li>Too many other programmers think it’s fine, and provide cover.</li>
+</ol>
+
+<p>The obvious solution:</p>
+
+<ol>
+  <li>Raise the level of software discipline and professionalism.</li>
+  <li>Never make excuses for sloppy work.</li>
+</ol>
+
+<p>This is the point that the author of the Atlantic article missed entirely.  The one thing he failed to consider was that the reason we are facing bugs that kill people and lose fortunes, the reason that we are facing a software apocalypse, is that too many programmers think that schedule pressure makes it OK to do a half-assed job.</p>
+
+<p>I found it astounding that in that entire long article, the notion of testing was never examined as a solution – it was only presented as a forlorn and foolish hope.  At one point he said of bugs:</p>
+
+<blockquote>
+  <p><em>You could do all the testing you wanted and you’d never find them all.</em></p>
+</blockquote>
+
+<p>True as this may be, it is not a reason to discard, or reduce, or fail to increase testing as a discipline.</p>
+
+<p>Several of the tools that the author presented were simply glorified REPLs.  They allow the programmers to immediately visualize the results of their code.</p>
+
+<p>I think that such rapid feedback is wonderful.  I think that rapid feedback of that kind is extraordinarily valuable.  But REPLs don’t replace tests.</p>
+
+<p>Whenever I hear that a programmer “tested it in the REPL” I cringe.  You don’t <em>test</em> things in the REPL; you <em>try</em> things in the REPL.  A test is much more formal than a trial.  A test can be repeated.  A test can be enhanced.  You can add to a test.  You can review a test.  You can add a test to a larger suite of tests. A test is a document.  A test is a <em>program</em>.</p>
+
+<p>Better REPLs are not the answer.  Model Driven Engineering is not the answer.  Tools and platforms are not the answer.  Better languages are not the answer.  Better frameworks are not the answer.</p>
+
+<p>Yes, those things are shiny, and they sparkle and glisten; but…</p>
+
+<blockquote>
+  <p><em>“The fault, dear Brutus, is not in our stars, But in ourselves…“</em></p>
+</blockquote>
+
+<p>I stood before a sea of programmers a few days ago.  I asked them the question I always ask:  <em>“How many of you write unit tests on a regular basis?”</em>  Not one in twenty raised their hands.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test Contra-variance]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/10/03/TestContravariance.html"/>
+    <updated>2017-10-03T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/10/03/TestContravariance</id>
+    <content type="html"><![CDATA[<p>Do you write unit tests?</p>
+
+<blockquote>
+  <p><em>Yes, of course!</em></p>
+</blockquote>
+
+<p>Do you write them first?</p>
+
+<blockquote>
+  <p><em>Yes, I follow <a href="http://www.softwaretestingmagazine.com/knowledge/the-three-rules-of-test-driven-development/">the three laws of TDD</a>.</em></p>
+</blockquote>
+
+<p>What is the difference in module structure between your tests and your code?</p>
+
+<blockquote>
+  <p><em>I create one test class per production class.</em></p>
+</blockquote>
+
+<p>So if you have a production class named <code class="highlighter-rouge">User</code> you will have a test class named <code class="highlighter-rouge">UserTest</code>?</p>
+
+<blockquote>
+  <p><em>Yes, almost always.</em></p>
+</blockquote>
+
+<p>So the structure of your tests, and the structure of your code are <em>covariant</em>.</p>
+
+<blockquote>
+  <p><em>Um.  I suppose so, yes.</em></p>
+</blockquote>
+
+<p>And so you are coupling the structure of your tests to the structure of your production code.</p>
+
+<blockquote>
+  <p><em>I hadn’t thought about it being a coupling before; but, yes, I suppose I am.</em></p>
+</blockquote>
+
+<p>So when you refactor the class structure of your production code, without changing any behavior; do your tests all break?</p>
+
+<blockquote>
+  <p><em>Well, yes.  Of course.</em></p>
+</blockquote>
+
+<p>And that means you can’t run your tests while you are refactoring, doesn’t it?</p>
+
+<blockquote>
+  <p><em>Yes, yes, it does.</em></p>
+</blockquote>
+
+<p>So then you can’t really call it refactoring, can you?</p>
+
+<blockquote>
+  <p><em>Why not?</em></p>
+</blockquote>
+
+<p>Because refactoring is defined as a sequence of small changes that keep the tests passing at all times.</p>
+
+<blockquote>
+  <p><em>Well, OK.  I guess by that definition, the changes aren’t refactoring.</em></p>
+</blockquote>
+
+<p>Instead, you have to commit yourself to a big change and hope you can put everything back together again – including the tests.</p>
+
+<blockquote>
+  <p><em>Yes, yes.  What of it?</em></p>
+</blockquote>
+
+<p>That is an example of the Fragile Test Problem.</p>
+
+<blockquote>
+  <p><em>The Fragile Test Problem?</em></p>
+</blockquote>
+
+<p>Yes.  A common complaint amongst people who try TDD for the first time.  They note that small changes to the production code can cause large changes to the tests.</p>
+
+<blockquote>
+  <p><em>Yeah.  That’s really frustrating.  I almost gave up on TDD when I first encountered it.</em></p>
+</blockquote>
+
+<p>Unfortunately, that is a common reaction.</p>
+
+<blockquote>
+  <p><em>OK, but what can be done about it?</em></p>
+</blockquote>
+
+<p>Design the structure of your tests to be contra-variant with the structure of your production code.</p>
+
+<blockquote>
+  <p><em>Contra-variant?</em></p>
+</blockquote>
+
+<p>Yes.  The structure of your tests should not be a mirror of the structure of your code.  The fact that you have a class named <code class="highlighter-rouge">X</code> should not automatically imply that you have a test class named <code class="highlighter-rouge">XTest</code>.</p>
+
+<blockquote>
+  <p><em>But wait.  That breaks the rules!</em></p>
+</blockquote>
+
+<p>What rules?</p>
+
+<blockquote>
+  <p><em>The rules that say that there should be one test class per class.</em></p>
+</blockquote>
+
+<p>There is no such rule.</p>
+
+<blockquote>
+  <p><em>There isn’t?  I’m sure I’ve read it and seen it.</em></p>
+</blockquote>
+
+<p>Not everything your read and see is a rule.</p>
+
+<blockquote>
+  <p><em>Fair enough.  But if the structure of the code and the tests must be, um. contra-variant, then how should the tests be structured?</em></p>
+</blockquote>
+
+<p>First, let’s agree on a basic fact.  If a small change in one module of a system causes large changes in many other modules of the system, the system has a design problem.</p>
+
+<blockquote>
+  <p><em>Yes, I think that’s obvious – software design 101 so to speak.</em></p>
+</blockquote>
+
+<p>Then, clearly, if a small change to the production code causes large changes to the tests, there is a design problem.</p>
+
+<blockquote>
+  <p><em>I see that point, yes.</em></p>
+</blockquote>
+
+<p>Therefore the tests must have their own design.  They cannot simply follow along with the structure of the production code.</p>
+
+<blockquote>
+  <p><em>Hmmm.  I see.  If the two designs are the same, then they are coupled; and that coupling causes fragility.</em></p>
+</blockquote>
+
+<p>Right.  The coupling between the tests and the production code must be minimized.</p>
+
+<blockquote>
+  <p><em>But wait!  The tests and the code must be coupled because they both describe the same behavior.</em></p>
+</blockquote>
+
+<p>Correct.  Their behavior is coupled; but their structure need not be coupled.  And even the behavioral coupling need not be as tight as you think.</p>
+
+<blockquote>
+  <p><em>Can you give me an example?</em></p>
+</blockquote>
+
+<p>Suppose I begin writing a new class.  Call it <code class="highlighter-rouge">X</code>.  I first write a new test class named <code class="highlighter-rouge">XTest</code>.</p>
+
+<blockquote>
+  <p><em>But you said we shouldn’t do that.</em></p>
+</blockquote>
+
+<p>Bear with me.  We’ve just begun.  As I add more and more unit tests to <code class="highlighter-rouge">XTest</code> I add more and more code to <code class="highlighter-rouge">X</code>.</p>
+
+<blockquote>
+  <p><em>And you refactor that code!</em></p>
+</blockquote>
+
+<p>Indeed I do.  I refactor it by extracting private methods from the original functions that are called by <code class="highlighter-rouge">XTest</code>.</p>
+
+<blockquote>
+  <p><em>And you refactor the tests too, right?</em></p>
+</blockquote>
+
+<p>Absolutely!  I look at the coupling between <code class="highlighter-rouge">XTest</code> and <code class="highlighter-rouge">X</code> and I work to minimize it.  I might do this by adding constructor arguments to <code class="highlighter-rouge">X</code> or raising the abstraction level of the arguments I pass into <code class="highlighter-rouge">X</code>.  I may even impose a polymorphic interface between <code class="highlighter-rouge">XTest</code> and <code class="highlighter-rouge">X</code>.</p>
+
+<blockquote>
+  <p><em>You’d do all that just for a test?</em></p>
+</blockquote>
+
+<p>Think of it this way.  The <code class="highlighter-rouge">XTest</code> is just the first client of <code class="highlighter-rouge">X</code>.  I always want to decrease the coupling between clients and servers.  So I used the same techniques I would use in normal production code to reduce the coupling between the <code class="highlighter-rouge">XTest</code> and <code class="highlighter-rouge">X</code>.</p>
+
+<blockquote>
+  <p><em>OK, but the structure of the tests is still the same as the structure of the code.  You still have <code class="highlighter-rouge">X</code> and <code class="highlighter-rouge">XTest</code>.</em></p>
+</blockquote>
+
+<p>Yes, at the class level they are the same; and that’s about to change.  Before we explore that change, however, I want you to note that there are already profound structural differences at the method level.</p>
+
+<blockquote>
+  <p><em>Um.  Sure.  <code class="highlighter-rouge">XTest</code> is just using the public methods of <code class="highlighter-rouge">X</code>; but most of the code is now in the private methods that you extracted.</em></p>
+</blockquote>
+
+<p>Right!  The structural symmetry is already broken.  But now it’s going to break even more.</p>
+
+<blockquote>
+  <p><em>How so?</em></p>
+</blockquote>
+
+<p>As I look at all those private method in <code class="highlighter-rouge">X</code> I will inevitably see that there are ways to group those methods into different classes.  One group of methods will use a particular subset of the fields of <code class="highlighter-rouge">X</code>.  That group can be extracted as a class.</p>
+
+<blockquote>
+  <p><em>But you don’t write a new test for that class, do you?</em></p>
+</blockquote>
+
+<p>No!  Because every bit of the code within that new class is being covered by the tests that are still just using the public API of <code class="highlighter-rouge">X</code>.</p>
+
+<blockquote>
+  <p><em>And this process continues, doesn’t it?</em></p>
+</blockquote>
+
+<p>Yes!  More and more functions are extracted.  More and more classes are discovered.  After awhile we have a whole family of classes in the production code that sit behind that simple API of <code class="highlighter-rouge">X</code>.</p>
+
+<blockquote>
+  <p><em>And they are all tested by <code class="highlighter-rouge">XTest</code>.</em></p>
+</blockquote>
+
+<p>Right!  The structure has been almost perfectly decoupled.  What’s more the API of <code class="highlighter-rouge">X</code> has been successively refined to be so narrow and abstract that it is minimally coupled to the clients that use it; including <code class="highlighter-rouge">XTest</code>.</p>
+
+<blockquote>
+  <p><em>OK, I see that.  I see that the structure of the tests can vary independently from the structure of the production code.  And I agree that that’s a good thing.  But what about the behavior.  They are still strongly coupled by behavior.</em></p>
+</blockquote>
+
+<p>Think about what’s going while <code class="highlighter-rouge">X</code> is being developed.  What’s happening to <code class="highlighter-rouge">XTest</code>?</p>
+
+<blockquote>
+  <p><em>Well, more and more tests are being added to it; and the interface with <code class="highlighter-rouge">X</code> is being progressively narrowed and abstracted.</em></p>
+</blockquote>
+
+<p>Right.  Now say that first part again.</p>
+
+<blockquote>
+  <p><em>More and more tests are being added?</em></p>
+</blockquote>
+
+<p>Right.  And each one of those tests is entirely concrete.  Each one of those tests is a small specification of a very particular behavior.  Taken together the sum of all the tests is…</p>
+
+<blockquote>
+  <p><em>The specification of the behavior of the <code class="highlighter-rouge">X</code> API.</em></p>
+</blockquote>
+
+<p>Right!  So as development proceeds the test suite becomes more and more of a specification – it becomes more and more <em>specific</em>.</p>
+
+<blockquote>
+  <p><em>Sure.  I see that.</em></p>
+</blockquote>
+
+<p>But what is happening to the classes behind the <code class="highlighter-rouge">X</code> API?  What would any good software designer do when confronted with an ever growing list of specifications?</p>
+
+<blockquote>
+  <p><em>Well, of course, the way we deal with complex specifications is to generalize.</em></p>
+</blockquote>
+
+<p>Correct!  Instead of writing code for each and every case of every paragraph of every specification, we find ways to make the code <em>generic</em>.</p>
+
+<blockquote>
+  <p><em>Why does this matter to the coupling of the behavior?</em></p>
+</blockquote>
+
+<p>As development proceeds, the behavior of the tests becomes ever more specific.  The behavior of the production code becomes ever more generic.  The two behaviors move in opposite directions along the generalization axis.</p>
+
+<blockquote>
+  <p><em>And this reduces coupling?</em></p>
+</blockquote>
+
+<p>Yes.  Because while the behavior of the production code <em>satisfies</em> the specifications within the tests, it also has the ability to satisfy a whole spectrum of unspecified behaviors.</p>
+
+<p>And that last bit is absolutely essential, because no test suite can specify every required behavior.  The production code <em>must</em> generalize the subset of behaviors specified by the tests to <em>all</em> the behaviors required of the system.</p>
+
+<blockquote>
+  <p><em>So you are saying that the test suite in incomplete?</em></p>
+</blockquote>
+
+<p>Of course!  It is entirely impractical to specify absolutely everything.  So what happens instead is that we gradually increase the generality of the production code until every test that we could possibly write will pass.</p>
+
+<blockquote>
+  <p><em>Woah!  We keep writing failing tests in order to drive the generality of the production code to a point where it becomes impossible to write another failing test.  Woah!</em></p>
+</blockquote>
+
+<p>Woah indeed.  But here’s the thing.  The act of generalizing <em>is the act of decoupling</em>.  We decouple by generalizing!</p>
+
+<blockquote>
+  <p><em>Oh, wow!  And so we decouple structure AND behavior.  Wow.</em></p>
+</blockquote>
+
+<p>Right!  Now, give me a recap.</p>
+
+<blockquote>
+  <p><em>OK.  Um.  The structure of the tests must not reflect the structure of the production code, because that much coupling makes the system fragile and obstructs refactoring.  Rather, the structure of the tests must be independently designed so as to minimize the coupling to the production code.</em></p>
+</blockquote>
+
+<p>Good!  And what about behavior?</p>
+
+<blockquote>
+  <p><em>As the tests get more specific, the production code gets more generic.  The two streams of code move in opposite directions along the generality axis until no new failing test can be written.</em></p>
+</blockquote>
+
+<p>Good!  I think you’ve got it.</p>
+
+<blockquote>
+  <p><em>Yeah!  Contra-variance FTW!</em></p>
+</blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Unscrupulous Meme]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/09/29/TheUnscrupulousMeme.html"/>
+    <updated>2017-09-29T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/09/29/TheUnscrupulousMeme</id>
+    <content type="html"><![CDATA[<p>There is a meme running rampant in our society, and our industry, that we need to confront and resist.  It is the unscrupulous meme: <em>The ends justify the means.</em></p>
+
+<p>This meme is unscrupulous by definition.  When a person has scruples it means that they choose honorable means to achieve their ends.  A person without scruples will use dishonorable means to achieve their ends.  Therefore the notion that the ends justify the means is a notion without scruples, and therefore without honor.</p>
+
+<p>Let us choose a real example in order to illustrate this point.  Let us assert that there should be more women programmers.  This seems like a worthy goal.  After all, the distribution of the sexes in software favors males by 20:1 or so.</p>
+
+<p>What honorable means could we employ to increase the number of women programmers?</p>
+
+<p>Before we can answer that, we ought to try to determine what the cause of the 20:1 ratio might be.  Allow me to enumerate a few of the many possibilities:</p>
+
+<ul>
+  <li>Some in our industry may not view women as programmers.</li>
+  <li>Some in our industry may prefer men programmers over women programmers.</li>
+  <li>Some in our industry may actively discourage women from becoming programmers.</li>
+  <li>Some in our industry may abuse women programmers.</li>
+  <li>Women, in general, may not be as interested in programming as men are.</li>
+</ul>
+
+<p>I think it is apparent that there are honorable means to address all of these causes.  These include educational programs that help people see women as programmers; and work to reverse any conscious, or unconscious prejudice against women.  Also included would be disciplinary standards and consequences for the active discouragement and/or abuse of women.  Lastly, but of no lesser importance, would be public relations campaigns to help women become more interested in programming.</p>
+
+<p>What about hiring quotas?  Should we demand that more women be hired?  Is this honorable?  At first blush this might seems like a good tactic.  Upon reflection, however, it must inevitably require that hiring decisions are not to be based upon merit.  No matter how hard a candidate tries, no matter how much a candidate succeeds, that candidate may be passed over for someone of lesser merit solely because of their gender.  It is very difficult to find honor in that.  I would dare to say that the <em>only</em> honorable hiring policy is one that is entirely merit based.</p>
+
+<p>What about reverse social pressure?  Could we use that to achieve our ends?  What if we see a speaker at a conference using language and/or metaphors that could be construed to demean women programmers? Should we organize against that speaker? Should we boycott any conferences where that speaker speaks? Should we urge conference organizers to avoid, or even disinvite, such speakers?  Shall we put pressure on that speaker’s employer to terminate their employment?  Should we physically attack that speaker’s servers and websites?  Are these honorable means to achieve our end?</p>
+
+<p>Clearly not.  Such means are not honorable because they are unilateral and asymmetric.  They are done in relative secrecy by a few, but they affect many.  The few set themselves up as the judge, jury, and executioner.  The accused is tried in absentia, and in secret, without the ability to offer a defense; and is then sentenced to be labeled a pariah, and to be ostracized from the industry.  The sentence is enforced throughout the industry by the fear of reprisal.  And the many, who could have benefited from the teachings of that speaker, are denied that benefit.</p>
+
+<p>Not only are such a tactics dishonorable, they are disgusting.  Anyone living in a free society should judge them to be abhorrent and reprehensible.  The honorable way to deal with a bad idea is not to suppress that idea, but to <em>present a better idea.</em>  If we see someone using rhetoric that we believe demeans women programmers, then we should present better rhetoric, with better ideas, to counter them.</p>
+
+<p>Unfortunately, what we see in our industry (and in our society) today is an ever increasing use of the unscrupulous meme that says: <em>any</em> means is acceptable if it pursues the achievement of our ends.</p>
+
+<p>And so we saw Doug Crockford <a href="http://atom-morgan.github.io/in-defense-of-douglas-crockford">disinvited from Nodevember</a> for making a muscle.  We saw <code class="highlighter-rouge">cleancoders.com</code> endure a Ddos attack[*], because of <a href="http://blog.cleancoder.com/uncle-bob/2017/09/26/SierraJulietFoxtrot.html">this blog</a>. And we saw James Damore fired for suggesting that women may not be as interested in programming as men are.</p>
+
+<p>The firing of Damore was dishonorable. The disinvitation of Doug Crockford was dishonorable.  Any Ddos attack is both dishonorable and criminal.</p>
+
+<p>Here’s a better idea:</p>
+
+<blockquote>
+  <p><em>Have scruples.  Be Honorable!</em></p>
+</blockquote>
+
+<hr />
+<p>[*] <em>Thanks to all our supporters who made the two days of that attack among our highest revenue days on record.</em></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sierra Juliet Foxtrot]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/09/26/SierraJulietFoxtrot.html"/>
+    <updated>2017-09-26T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/09/26/SierraJulietFoxtrot</id>
+    <content type="html"><![CDATA[<blockquote>
+  <p><em>Thanks to John Sonmez for the <a href="https://www.youtube.com/watch?v=YsMXw_Vcz5A">title</a></em>.</p>
+</blockquote>
+
+<p><a href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164/">Clean Architecture</a> is on the stands!  The response has been terriffic.  Thanks for all your support.</p>
+
+<p>But just you wait until the SJFs read the chapter on <em>Frameworks</em>.  OMG!  Their poor little snowflake hearts will just melt away.  I mean, I actually had the <em>chicharrones</em> – the <em>horchata</em> – to use a (gasp) <em>relationship metaphor</em>!   I mean, this is far worse than the offense that caused <a href="https://en.wikipedia.org/wiki/Douglas_Crockford">Doug Crockford</a> to be disinvited from <a href="http://nodevember.org/">Nodevember</a>!</p>
+
+<p>Speaking of Doug Crockford and Nodevember, why do you think he was disinvited?  I mean, Nodevember had offered him the keynote slot last year; and then suddenly revoked it under the banner of <a href="http://atom-morgan.github.io/in-defense-of-douglas-crockford">making the conference more comfortable for all</a>.  Could it be that the SJFs skulked around the dark corners of the net and tweeted him down?  Oh, yes, I think it could be.  I mean, my god, the man had used the word “sangrita”!  (or was it “quesadilla”?)</p>
+
+<p><em>Skulking</em>.  Yeah, that’s the S in SJF.  Little skulkers who slither and slime around the net whispering innuendoes and lies onto people’s screens – making them nervous – making them fear – calling into question their political correctness and their social standing. Making them wonder <em>who</em> might be saying <em>what</em> about them – and <em>when</em>.</p>
+
+<p>You wouldn’t think anything quite so <em>juvenile</em> (yes, that’s the J in SJF) would actually scare someone – but it does.  Oh yes!  It works because <em>cowards abound</em>.  The cowards at Nodevember disinvited Crockford because he dared clench his bicep for 500<code class="highlighter-rouge">ms</code> during a talk, and some SJF was (gasp) <em>offended</em>.</p>
+
+<p>Oh, and he might have used the word “ranchero” too!</p>
+
+<p>It was too much for the SJFs to tolerate, so they tweeted their nasty little keystrokes and scared the Nodevember organizers shitless.  One of the little SJFs actually threatened to (gasp) not speak at any conference where Crockford spoke.  (I’ve actually had a few SJFs make the same threat about me.  So far I haven’t noticed any dearth in invitations.)</p>
+
+<p>The SJF methods are <em>fascist</em> in nature.  (Yes, that’s the F in SJF).  They won’t confront you if you offend them.  Oh no. They have no need to talk, debate, or try to come to an understanding.  <em>They understand already!</em>  So, instead of talking to you about it, they’ll send their slimy little tweets to people who might employ or hire you.  They’ll demand to know the nature of the relationship those employers have with you.</p>
+
+<p>The implications are clear.  You are a <em>pariah</em>, and all employers, supporters, friends, and everyone else, must immediately declare their distance from you or suffer the – <em>consequences.</em> (OH God, NO! Not –  <em>THE CONSEQUENCES!</em>  Brrrrr.)</p>
+
+<p>And so, with <a href="http://kevinold.com/2016/09/05/stepping-down-as-nodevember-organizer.html">one</a> exception that I know of, the dirtly little cowards at Nodevember quacked (yes, that’s the right word) in their boots, filled their pants, and then <em>publicly shamed</em> a good man who had contributed much to their community; and who had harmed no one.  (Except that he might have used the word “camarones”.)</p>
+
+<p>By that action, the organizers of Nodevember became <em>SJF meat</em>.  The SJFs ate them for lunch. And then the SJFs turned their pestilential little keyboards towards another target – and another – and another.  Relentlessly pursuing their twisted and perverse agenda for what they call “social justice”.  Two words that they have no right to use, because their methods are both anti-social and unjust.</p>
+
+<h3 id="illumination-is-the-sjf-cure">Illumination is the SJF cure.</h3>
+
+<p>If you happen to come accross the slime trail of an SJF, shine a light on it.  If you read a tweet that appears to be a skulking juvenile fascist innuendo, send that tweet to the target of the innuendo, so that they know about it.</p>
+
+<p>For example, if you see a tweet something like: “I didn’t think I could have less respect for Bill Davis; but here I am.”  Send that tweet to Bill Davis directly, and include the name of the original tweeter.  I’m sure Bill Davis might like to respond.</p>
+
+<p>If we shine enough light on the SJFs, perhaps they will see just how anti-social and unjust their ways have become.  Perhaps they will begin to use more honorable methods to pursue the more reasonable points in their agenda.</p>
+
+<p>And then, perhaps, that “F” can be changed back to What is Was.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Just Following Orders]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/08/28/JustFollowingOders.html"/>
+    <updated>2017-08-28T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/08/28/JustFollowingOders</id>
+    <content type="html"><![CDATA[<p>The year is 2006.  Executives at VW know that their diesel engine can not meet American emissions standards.  So they ask the enginers for a solution that does not require a redesign of the engine.</p>
+
+<p>Imagine the scene in that meeting room.  What was said?  What was agreed to?  We may never know all the details; but it’s clear that the executives asked the engineers to find a way to defeat the emission tests.</p>
+
+<p>Now think of the engineers.  What a cool problem to have to solve?  No, really!  Imagine how much fun it would be to figure out some sneaky way to bypass the emission test.  How would you do it?  Could you do it in hardware?  Could you do it in software?  How could you detect that you were on a test stand?</p>
+
+<p>“Wait!” one of the geeks says.  And he looks around the room, making sure all eyes are on him, playing the timing just right.   “On a test stand, … the wheels are spinning, … but the car is not moving.”</p>
+
+<p>“Oh, wow!” another engineer says.  “Could we use GPS to tell if the car is moving?”</p>
+
+<p>Imagine the brainstorming, the “good” ideas.  The coolness of knowing that there’s a really nifty solution to this problem.</p>
+
+<p>Imagine how pleased the executives would be with this really cool engineering solution.  Imagine how proud the engineer were.</p>
+
+<p>…</p>
+
+<p>And now one of them, James Liang, is going to jail.  There will be others who will follow him there.  Their defense, of course, was that they were just following orders.  They were just protecting their jobs – making sure they could feed their families.  But that defense didn’t fly.  It’s jail for them.  A big time in the big house:</p>
+
+<blockquote>
+  <p><em>“The 40-month jail sentence was [] at the high end of the maximum allowable five-year term for his crimes. Liang’s lawyer had argued that instead of jail time, he could be sentenced to a period of house arrest, arguing that he was only following orders out of ‘misguided loyalty to his employer.’“</em></p>
+</blockquote>
+
+<p>And it’s fines.  Big fines for a big screwup.</p>
+
+<blockquote>
+  <p><em>“Despite federal prosecutors only asking for a $20,000 fine, Michigan district court Judge Sean Cox decided to make an example of the techie and ordered he pay 10 times that as a deterrent to other auto engineers and executives.”</em></p>
+</blockquote>
+
+<p><a href="https://www.theregister.co.uk/2017/08/25/vw_engineer_gets_3yrs_for_emissionbusting_sw/">See this article</a>.</p>
+
+<p>Engineers take note:  Your employer can’t cover for you.  Doing your job does not mean that you just follow orders.  The courts are going to hold you to a high ethical standard, even if your employer does not.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Women in Tech]]></title>
+    <link href="http://blog.cleancoder.com/uncle-bob/2017/08/14/WomenInTech.html"/>
+    <updated>2017-08-14T00:00:00+00:00</updated>
+    <id>http://blog.cleancoder.com/uncle-bob/2017/08/14/WomenInTech</id>
+    <content type="html"><![CDATA[<p>I started my career as a programmer in 1969 at a company called A.S.C. Tabulating in Lake Bluff, Illinois.  ASC had two IBM 360s that they rented out to customers.  They also provided programming services for those customers.  I was hired as a COBOL programmer at the tender age of 18.  I was horrible at it.</p>
+
+<p>The other programmers there were all in their thirties or forties.  And, perhaps, a third of them were women.</p>
+
+<p>I worked there for a couple of years and got to know the men and women pretty well.  They taught me a lot.  One of the women had to take over a program that I couldn’t seem to get right.  She saved my bacon.  But that was common, we all helped each other when we could.</p>
+
+<p>A few months after being hired, some of us, including two of the women, began working on a minicomputer system that offered a real-time accounting system to Local 705 Trucker’s union in Chicago.  We were replacing a GE Datanet 30 with a Varian 620/f.  We had no libraries, no frameworks, no nothing.  The code was all written on punched cards in assembler.</p>
+
+<p>Again, the women were just part of the team.  Nobody treated them differently.  They were just as talented and dedicated as anyone else.  At least that’s the way my 18 year old brain percieved the situation.</p>
+
+<p>In fact, my 18 year old brain didn’t give it a lot of thought.  The issue wasn’t present.  Nobody was talking about the problem of <em>Women in Tech</em> back then.  The situation just was what it was.  I took it to be completely normal.  I took it for granted.</p>
+
+<p>I changed jobs a couple of times in the following years.  Looking back on it, I can identify two trends.  First, every time I changed jobs the average age of the programmers went down.  The thirties and forties gave way to the twenty-somethings.  Second, the number of women significantly decreased from one third to one tenth, or less.</p>
+
+<p>These changes were not something I noticed at the time.  I only see them now by looking back.  Again, in the 70s and 80s the issue of women in tech had not entered my awareness.  It wasn’t on my mind, or any of the minds around me.  I was obvlivious to the issue.</p>
+
+<p>In the early 90s I started a contract programming company.  RCM Consulting Inc.  I hired four of the best programmers I knew to help out with it.  Two men, and two women.  I didn’t think anything at all about the genders.  What mattered to me was the talent.  The women and men were paid and treated identically.  We were all part of a team.</p>
+
+<p>The systems we wrote were <em>very</em> technical.  Some were Windows GUI apps on the order of Autocad.  Others were deeply mathematical computational geometry applications.  This was real techie, nerdy, stuff.  I loved it.</p>
+
+<p>The code in those systems had no gender bias.  You could not look at a source file and tell whether a man or a woman wrote it.  It was just code.  And it was good code, for the day, too.  We delivered those systems, and they rocked!</p>
+
+<p>I did not become aware of the women in tech issue until the day of my, now notorious, <a href="https://www.youtube.com/watch?v=YX3iRjKj7C0">keynote talk</a> at RailsConf’09.  In this keynote I made a bad joke about C++ being the testosterone of languages, and Java being the estrogen of languages.  When I invented that joke, I didn’t think it was offensive because I was making fun of the stereotypes.  You can watch it at about 9 minutes into the video.  It did not occurr to me that anyone could interpret that as a serious gender slur.  It seemed the opposite to me.</p>
+
+<p>Of course I was wrong about that.  Some folks took significant exception to it.  After giving it some thought I realized that my attempt at gender stereotype humor was inartful, and I apologized.  I also began to realize that there was an <em>issue</em> that I had stumbled upon.</p>
+
+<p>You may wonder how I could have been ignorant of that issue.  It’s not like the women in tech issue began in 2009.  My excuse, for what it’s worth, is that, up to that point, I did not focus on the social issues of programming much.  I was then, and am now, much more interested in the technology itself.  So the issue took me by surprise.</p>
+
+<p>Now I am not always the sharpest tack in the drawer – especially about people issues.  So the ‘09 Rails talk was not the last time I managed to offend a group of people regarding gender issues.  I won’t go into all the details.  Suffice it to say that I managed to “step in it” a few more times and have been corrected, more than once.  Those corrections were sometimes made politely, and sometimes not.  In every case, however, I thought about the complaints and issued appropriate apologies if I thought they had a reasonable point.</p>
+
+<p>This brings us to James Damore’s now infamous memo at Google for which he was fired.  After a careful reading of that memo, I came to the conclusion that the firing was a huge mistake, and that the CEO of Google should resign or be fired.  A company that depends upon innovation and creative thinking cannot survive if it stifles creative thought by firing people who disagree.</p>
+
+<p>I’m not here to argue that point.  I made the point in a previous blog, and in subsequent tweets and facebook posts.</p>
+
+<p>I enjoy a good debate.  I like to argue.  It’s one of the most important ways that I learn.  So I engaged those who disagreed with me with enthusiatic energy.  Some folks engaged back. Some folks swore and made nasty accusations.  Some blocked or unfollowed me.  Some regretted buying my books.  etc. etc.  This is all pretty normal stuff on the internet nowadays.</p>
+
+<p>But today I stumbled across a long twitter thread that I can only describe as intentional character assassination.  The author of this thread is misrepresenting facts and making some pretty nasty accusations.  Again this is not all that unusual, except for the fact that I was not invited to defend myself.</p>
+
+<p>Usually people call me out on twitter by using my twitter handle.  This allows me to see and respond to their complaints and accusations.  But the author of this particular thread, and all the participants therein, were assiduously avoiding this practice.</p>
+
+<p>Now, of course, nothing on Twitter is private.  Anyone who says something mean about someone else must know that their words will eventually get back to the person they are talking about.  So I can’t imagine that the author really wanted long term privacy.  I think what the author really wanted was <em>momentum</em>.  It is difficult to defend yourself against a frothy mob.</p>
+
+<p>The gist of this author’s thread is that I am a misogynist; and that I should not be taken seriously in any regard.  I understand that efforts have been made to have me excluded from conferences, and to boycott the publisher of my books, etc.</p>
+
+<p>I am not a misogynist.  I do not hate women.  I do not think women are less capable than men.  I do not think women are less able to program than men.  I am a 64 year old white male who grew up with <em>Bewitched</em>, <em>Father Knows Best</em>, and <em>Petticoat Junction</em> and this has certainly colored my sense of humor and outlook.  I am working on that. But, more importantly, I am in no way opposed to women becoming programmers and leaders.</p>
+
+<p>I don’t engage in character assasination.  I don’t try to undercut people simply becuase I disagree with them.  I don’t drive twitter slur campaigns.  I’d have a tough time looking myself in the mirror if I did.</p>
+
+<p>Is character assasination really the strategy that is most likely to help women in tech?  I don’t think so.</p>
+]]></content>
+  </entry>
+  
+</feed>
+

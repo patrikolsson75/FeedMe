@@ -80,4 +80,38 @@ class FeedFetcherTest: XCTestCase {
         XCTAssertEqual(firstArticle?.guid, "42798.pbsds0 at https://www.imore.com")
         XCTAssertEqual(firstArticle?.published?.description, "2018-07-13 22:02:00 +0000")
     }
+
+    func testThatItParse_CleanCoders_ATOM() {
+        let store = FeedMeStoreMock()
+        let dataDownloader = DataDownloaderMock()
+        let rssData = contentsOfXMLFile(named: "cleancoder")
+        let notificationCenter = NotificationCenter()
+        let fetcher = FeedFetcher(store: store, dataDownloader: dataDownloader, notificationCenter: notificationCenter)
+        let asyncExpectation = expectation(description: "updatedFeed")
+        let feed = FeedMock()
+
+        notificationCenter.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { notification in
+            guard let operationCount = notification.userInfo?["operationCount"] as? Int,
+                operationCount == 0 else { return }
+            asyncExpectation.fulfill()
+        })
+        feed.feedURL = URL(string: "http://blog.cleancoder.com/atom.xml")!
+        dataDownloader.dataContentsOfURLMock = rssData
+        store.newArticlesReturned = []
+        store.articleWithGUIDReturnMock = nil
+        store.allFeedsReturnMock = [feed]
+        store.feedInContextReturnMock = feed
+        fetcher.fetch()
+
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(store.newArticlesReturned.count, 20)
+
+        let firstArticle = store.newArticlesReturned.first
+        XCTAssertEqual(firstArticle?.title, "Integers and Estimates")
+        XCTAssertEqual(firstArticle?.previewText?.prefix(13), "What is this:")
+        XCTAssertEqual(firstArticle?.articleURL?.absoluteString, "http://blog.cleancoder.com/uncle-bob/2018/06/21/IntegersAndEstimates.html")
+        XCTAssertEqual(firstArticle?.guid, "http://blog.cleancoder.com/uncle-bob/2018/06/21/IntegersAndEstimates")
+        XCTAssertEqual(firstArticle?.published?.description, "2018-06-21 00:00:00 +0000")
+        XCTAssertEqual(firstArticle?.isNew, true)
+    }
 }
