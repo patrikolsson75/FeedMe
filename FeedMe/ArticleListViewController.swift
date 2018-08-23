@@ -16,9 +16,15 @@ class ArticleListController {
         let articles: [Article]
     }
 
+    let store: FeedMeStore
     var sections: [Section] = []
 
-    func update(_ articles: [Article]) {
+    init(store: FeedMeStore) {
+        self.store = store
+    }
+
+    func update() {
+        let articles: [Article] = store.allArticles()
         sections = []
         let newArticles = articles.filter({ article -> Bool in
             return article.isNew
@@ -41,9 +47,8 @@ class ArticleListController {
 
 class ArticleListViewController: UITableViewController {
 
-    var store: FeedMeStore = FeedMeCoreDataStore.shared
-    var articleListController = ArticleListController()
-    lazy var feedFetcher = FeedFetcher(store: store)
+    lazy var articleListController = ArticleListController(store: FeedMeCoreDataStore.shared)
+    lazy var feedFetcher = FeedFetcher(store: FeedMeCoreDataStore.shared)
     @IBOutlet var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusSpinner: UIActivityIndicatorView!
@@ -62,7 +67,7 @@ class ArticleListViewController: UITableViewController {
                         UIBarButtonItem(customView: statusView),
                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
 
-        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner, store, articleListController] notification in
+        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner, articleListController] notification in
             guard let operationCount = notification.userInfo?["operationCount"] as? Int else { return }
             DispatchQueue.main.async {
                 if operationCount > 0 {
@@ -72,13 +77,13 @@ class ArticleListViewController: UITableViewController {
                     self?.updateStatusLabel()
                     statusSpinner?.stopAnimating()
                     refreshControl.endRefreshing()
-                    articleListController.update(store.allArticles())
+                    articleListController.update()
                     self?.tableView.reloadData()
                 }
             }
         })
 
-        articleListController.update(store.allArticles())
+        articleListController.update()
         tableView.reloadData()
         updateStatusLabel()
     }
