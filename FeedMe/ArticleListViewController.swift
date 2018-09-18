@@ -56,11 +56,11 @@ class ArticleListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
 
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action:  #selector(refreshData), for: UIControl.Event.valueChanged)
         self.refreshControl = refreshControl
 
         toolbarItems = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
