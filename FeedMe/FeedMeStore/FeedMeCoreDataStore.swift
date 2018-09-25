@@ -254,6 +254,30 @@ class FeedMeCoreDataStore: NSObject, FeedMeStore {
         }
     }
 
+    func deleteArticles(olderThen days: Int, in context: FeedMeStoreContext) {
+        guard let context = context as? NSManagedObjectContext else {
+            assertionFailure("Context is not NSManagedObjectContext")
+            return
+        }
+
+        let calendar = Calendar.current
+
+        let thirtyDaysAgo = calendar.date(byAdding: .day, value: -days, to: Date())
+
+        let fetchRequest = NSFetchRequest<ArticleMO>(entityName: "Article")
+
+        fetchRequest.predicate = NSPredicate(format: "(published < %@)", thirtyDaysAgo! as CVarArg)
+
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print (error)
+        }
+    }
+
     func delete(_ feed: Feed) {
         guard let feedMO = feed as? FeedMO else {
             assertionFailure("Feed objects is not FeedMO")

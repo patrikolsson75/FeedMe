@@ -29,6 +29,7 @@ protocol FeedMeStore {
     func load(_ image: RemoteImage, from context: FeedMeStoreContext) -> RemoteImage?
     func checkAllArticlesAsOld(in context: FeedMeStoreContext)
     func delete(_ feed: Feed)
+    func deleteArticles(olderThen days: Int, in context: FeedMeStoreContext)
 }
 
 enum DownloadStatus: Int16 {

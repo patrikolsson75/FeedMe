@@ -47,6 +47,7 @@ class FeedFetcher: NSObject {
 
     func fetch() {
         let context = store.newBackgroundContext()
+        store.deleteArticles(olderThen: 14, in: context)
         store.checkAllArticlesAsOld(in: context)
         store.save(context)
         let feeds = store.allFeeds()

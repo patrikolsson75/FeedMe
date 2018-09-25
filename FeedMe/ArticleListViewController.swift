@@ -26,21 +26,7 @@ class ArticleListController {
     func update() {
         let articles: [Article] = store.allArticles()
         sections = []
-        let newArticles = articles.filter({ article -> Bool in
-            return article.isNew
-        })
-        if newArticles.count > 0 {
-            let newArticleSection = Section(title: "New", articles: newArticles)
-            sections.append(newArticleSection)
-        }
-
-        let oldArticles = articles.filter({ article -> Bool in
-            return !article.isNew
-        })
-        if oldArticles.count > 0 {
-            let oldArticleSection = Section(title: "Old", articles: oldArticles)
-            sections.append(oldArticleSection)
-        }
+        sections.append(Section(title: "", articles: articles))
     }
 
 }
@@ -71,7 +57,7 @@ class ArticleListViewController: UITableViewController {
             guard let operationCount = notification.userInfo?["operationCount"] as? Int else { return }
             DispatchQueue.main.async {
                 if operationCount > 0 {
-                    statusLabel?.text = "Loading"
+                    statusLabel?.text = "Loading \(operationCount) feeds..."
                     statusSpinner?.startAnimating()
                 } else {
                     self?.updateStatusLabel()
@@ -111,6 +97,13 @@ class ArticleListViewController: UITableViewController {
     fileprivate func configure(_ cell: ArticleImageListTableViewCell, for article: Article) {
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
+        if article.isNew {
+            cell.previewLabel.textColor = .darkText
+            cell.titleLabel.textColor = .darkText
+        } else {
+            cell.previewLabel.textColor = .lightGray
+            cell.titleLabel.textColor = .lightGray
+        }
         cell.thumbnailURL = article.image.url
         cell.sourceTitleLabel.text = article.feed.title
         if let publishedDate = article.published {
@@ -130,9 +123,7 @@ class ArticleListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article: Article = articleListController.sections[indexPath.section].articles[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleImageListTableViewCell", for: indexPath) as? ArticleImageListTableViewCell else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleImageListTableViewCell", for: indexPath) as! ArticleImageListTableViewCell
         configure(cell, for: article)
         return cell
     }
