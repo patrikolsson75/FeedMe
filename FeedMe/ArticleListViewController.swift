@@ -47,30 +47,23 @@ class ArticleListViewController: UITableViewController {
                         UIBarButtonItem(customView: statusView),
                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
 
-        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner, articleListController] notification in
+        NotificationCenter.default.addObserver(forName: .fetchingFeedCount, object: nil, queue: nil, using: { [weak self, statusLabel, statusSpinner] notification in
             guard let operationCount = notification.userInfo?["operationCount"] as? Int else { return }
             DispatchQueue.main.async {
                 if operationCount > 0 {
                     statusLabel?.text = "Loading \(operationCount) feeds..."
                     statusSpinner?.startAnimating()
                 } else {
-                    self?.updateStatusLabel()
                     statusSpinner?.stopAnimating()
                     refreshControl.endRefreshing()
-                    articleListController.update(articles: FeedMeCoreDataStore.shared.allArticles())
-                    self?.tableView.reloadData()
+                    self?.updateStatusLabel()
+                    self?.updateArticleList()
                 }
             }
         })
 
-        articleListController.update(articles: FeedMeCoreDataStore.shared.allArticles())
-        tableView.reloadData()
+        updateArticleList()
         updateStatusLabel()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -144,6 +137,11 @@ class ArticleListViewController: UITableViewController {
         }
         let dateString = publishedDateFormatter.string(from: lastFetchedDate)
         statusLabel.text = String.localizedStringWithFormat(NSLocalizedString("Last updated %@", comment: ""), dateString)
+    }
+
+    func updateArticleList() {
+        articleListController.update(articles: FeedMeCoreDataStore.shared.allArticles())
+        tableView.reloadData()
     }
 
     @IBAction func unwindToArticleList(_ sender: UIStoryboardSegue) {
