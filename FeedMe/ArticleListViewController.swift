@@ -16,15 +16,9 @@ class ArticleListController {
         let articles: [Article]
     }
 
-    let store: FeedMeStore
     var sections: [Section] = []
 
-    init(store: FeedMeStore) {
-        self.store = store
-    }
-
-    func update() {
-        let articles: [Article] = store.allArticles()
+    func update(articles: [Article]) {
         sections = []
         sections.append(Section(title: "", articles: articles))
     }
@@ -33,7 +27,7 @@ class ArticleListController {
 
 class ArticleListViewController: UITableViewController {
 
-    lazy var articleListController = ArticleListController(store: FeedMeCoreDataStore.shared)
+    lazy var articleListController = ArticleListController()
     lazy var feedFetcher = FeedFetcher(store: FeedMeCoreDataStore.shared)
     @IBOutlet var statusView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
@@ -63,13 +57,13 @@ class ArticleListViewController: UITableViewController {
                     self?.updateStatusLabel()
                     statusSpinner?.stopAnimating()
                     refreshControl.endRefreshing()
-                    articleListController.update()
+                    articleListController.update(articles: FeedMeCoreDataStore.shared.allArticles())
                     self?.tableView.reloadData()
                 }
             }
         })
 
-        articleListController.update()
+        articleListController.update(articles: FeedMeCoreDataStore.shared.allArticles())
         tableView.reloadData()
         updateStatusLabel()
     }
