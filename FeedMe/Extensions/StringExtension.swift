@@ -19,3 +19,8 @@ extension String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 }
+
+extension String {
+    static let OK = NSLocalizedString("OK", comment: "")
+    static let addToReadingList = NSLocalizedString("Add to Reading List", comment: "")
+}

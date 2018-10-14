@@ -125,6 +125,26 @@ class ArticleListViewController: UITableViewController {
         present(web, animated: true, completion: nil)
     }
 
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let article: Article = articleListController.sections[indexPath.section].articles[indexPath.row]
+        guard let url = article.articleURL else {
+            return UISwipeActionsConfiguration(actions: [])
+        }
+        let readingListAction = UIContextualAction(style: .normal, title: .addToReadingList) { [weak self] (action, view, completionHandler) in
+            do {
+                try SSReadingList.default()?.addItem(with: url,
+                                                     title: article.title,
+                                                     previewText: article.previewText)
+                completionHandler(true)
+            } catch {
+                self?.showAlert(message: "Unexpected error: \(error).")
+                completionHandler(false)
+            }
+
+        }
+        return UISwipeActionsConfiguration(actions: [readingListAction])
+    }
+
     @objc
     func refreshData() {
         feedFetcher.fetch()
