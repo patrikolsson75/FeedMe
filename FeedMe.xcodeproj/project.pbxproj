@@ -10,6 +10,8 @@
 		5F0A85BE21735140009B8EE1 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A85BD21735140009B8EE1 /* UIViewControllerExtension.swift */; };
 		5F1C2F25210F031C0059C9B8 /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1C2F24210F031C0059C9B8 /* FeedListViewController.swift */; };
 		5F1C2F30210FA6040059C9B8 /* cleancoder.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5F1C2F2F210FA6040059C9B8 /* cleancoder.xml */; };
+		5FC4193621737EA5008F5BC4 /* FeedAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4193521737EA5008F5BC4 /* FeedAnalyzer.swift */; };
+		5FC4194121737EB4008F5BC4 /* FeedAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4194021737EB4008F5BC4 /* FeedAnalyzerTests.swift */; };
 		5FF9DE9B2101E5DA0054DAB7 /* RemoteImageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DE9A2101E5DA0054DAB7 /* RemoteImageMock.swift */; };
 		7C362A8820F9EF6E008155AA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A8720F9EF6E008155AA /* Cache.swift */; };
 		7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C362A9220F9F446008155AA /* FeedMe.xcdatamodeld */; };
@@ -153,6 +155,8 @@
 		5F0A85BD21735140009B8EE1 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		5F1C2F24210F031C0059C9B8 /* FeedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
 		5F1C2F2F210FA6040059C9B8 /* cleancoder.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cleancoder.xml; sourceTree = "<group>"; };
+		5FC4193521737EA5008F5BC4 /* FeedAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAnalyzer.swift; sourceTree = "<group>"; };
+		5FC4194021737EB4008F5BC4 /* FeedAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAnalyzerTests.swift; sourceTree = "<group>"; };
 		5FF9DE9A2101E5DA0054DAB7 /* RemoteImageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageMock.swift; sourceTree = "<group>"; };
 		5FF9DEAE210323560054DAB7 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5FF9DEAF210323560054DAB7 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 				7C362AA020FB7FC4008155AA /* FeedFetcherTest.swift */,
 				7C362AB820FCFE0A008155AA /* DataDownloader.swift */,
 				7C362ABA20FCFE2B008155AA /* FetchFeedOperation.swift */,
+				5FC4193521737EA5008F5BC4 /* FeedAnalyzer.swift */,
+				5FC4194021737EB4008F5BC4 /* FeedAnalyzerTests.swift */,
 			);
 			path = FeedFetcher;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				7C362AB920FCFE0A008155AA /* DataDownloader.swift in Sources */,
 				5F0A85BE21735140009B8EE1 /* UIViewControllerExtension.swift in Sources */,
 				7C362A9920F9F9DD008155AA /* FeedMeStore.swift in Sources */,
+				5FC4193621737EA5008F5BC4 /* FeedAnalyzer.swift in Sources */,
 				7C362A9420F9F446008155AA /* FeedMe.xcdatamodeld in Sources */,
 				7CB8FB2B20F93749001C6674 /* ArticleImageListTableViewCell.swift in Sources */,
 			);
@@ -609,6 +616,7 @@
 				7C362AA120FB7FC4008155AA /* FeedFetcherTest.swift in Sources */,
 				7C362AB020FCFBCB008155AA /* FeedMeStoreMock.swift in Sources */,
 				7C362AAE20FCFBA5008155AA /* XCTestExtension.swift in Sources */,
+				5FC4194121737EB4008F5BC4 /* FeedAnalyzerTests.swift in Sources */,
 				7C362AB420FCFC30008155AA /* DataDownloaderMock.swift in Sources */,
 				5FF9DE9B2101E5DA0054DAB7 /* RemoteImageMock.swift in Sources */,
 				7C362AA920FCFB16008155AA /* ArticleMock.swift in Sources */,
