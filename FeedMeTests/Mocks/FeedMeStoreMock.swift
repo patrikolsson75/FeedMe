@@ -10,6 +10,9 @@ import Foundation
 @testable import FeedMe
 
 class FeedMeStoreMock: FeedMeStore {
+    func deleteArticles(olderThen days: Int, in context: FeedMeStoreContext) {
+    }
+
     func newFeed(in context: FeedMeStoreContext) -> Feed {
         return FeedMock()
     }
