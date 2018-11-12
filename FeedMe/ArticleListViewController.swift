@@ -85,8 +85,8 @@ class ArticleListViewController: UITableViewController {
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
         if article.isNew {
-            cell.previewLabel.textColor = .darkText
-            cell.titleLabel.textColor = .darkText
+            cell.previewLabel.textColor = .white
+            cell.titleLabel.textColor = .white
         } else {
             cell.previewLabel.textColor = .lightGray
             cell.titleLabel.textColor = .lightGray
@@ -122,6 +122,8 @@ class ArticleListViewController: UITableViewController {
         configuration.entersReaderIfAvailable = true
         let web = SFSafariViewController(url: url, configuration: configuration)
         web.restorationIdentifier = "SFArticleViewController"
+        web.preferredBarTintColor = .black
+        web.preferredControlTintColor = .white
         present(web, animated: true, completion: nil)
     }
 
