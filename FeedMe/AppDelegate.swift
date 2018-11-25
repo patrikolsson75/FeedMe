@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UITableView.appearance().backgroundColor = .black
-        UITableViewCell.appearance().backgroundColor = .black
         UINavigationBar.appearance().backgroundColor = .black
         UIToolbar.appearance().backgroundColor = .black
         UIToolbar.appearance().tintColor = .white

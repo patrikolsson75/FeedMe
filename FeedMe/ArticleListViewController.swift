@@ -85,11 +85,11 @@ class ArticleListViewController: UITableViewController {
         cell.titleLabel.text = article.title
         cell.previewLabel.text = article.previewText
         if article.isNew {
-            cell.previewLabel.textColor = .white
-            cell.titleLabel.textColor = .white
+            cell.previewLabel.textColor = UIColor.init(named: "textColor")
+            cell.titleLabel.textColor = UIColor.init(named: "textColor")
         } else {
-            cell.previewLabel.textColor = .lightGray
-            cell.titleLabel.textColor = .lightGray
+            cell.previewLabel.textColor = UIColor.init(named: "unreadTextColor")
+            cell.titleLabel.textColor = UIColor.init(named: "unreadTextColor")
         }
         cell.thumbnailURL = article.image.url
         cell.sourceTitleLabel.text = article.feed.title
