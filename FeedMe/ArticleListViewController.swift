@@ -121,7 +121,6 @@ class ArticleListViewController: UITableViewController {
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
         let web = SFSafariViewController(url: url, configuration: configuration)
-        web.restorationIdentifier = "SFArticleViewController"
         web.preferredBarTintColor = .black
         web.preferredControlTintColor = .white
         present(web, animated: true, completion: nil)
@@ -170,27 +169,4 @@ class ArticleListViewController: UITableViewController {
 //        let sourceViewController = sender.source
         // Use data from the view controller which initiated the unwind segue
     }
-}
-
-extension ArticleListViewController: UIDataSourceModelAssociation {
-    func modelIdentifierForElement(at idx: IndexPath, in view: UIView) -> String? {
-        guard !idx.isEmpty else {
-            return nil
-        }
-        let article: Article = articleListController.sections[idx.section].articles[idx.row]
-        return article.identifier
-    }
-
-    func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
-        for (sectionIndex, section) in articleListController.sections.enumerated() {
-            let articleIndex = section.articles.index { (article) -> Bool in
-                return article.identifier == identifier
-            }
-            if articleIndex != nil {
-                return IndexPath(row: articleIndex!, section: sectionIndex)
-            }
-        }
-        return nil
-    }
-
 }
